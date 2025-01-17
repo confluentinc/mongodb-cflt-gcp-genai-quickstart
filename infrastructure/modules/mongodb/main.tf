@@ -1,11 +1,11 @@
-resource "mongodbatlas_project" "test" {
+resource "mongodbatlas_project" "project" {
   name   = var.mongodbatlas_project
   org_id = var.mongodbatlas_org_id
 }
 
 resource "mongodbatlas_cluster" "cluster" {
-  project_id = mongodbatlas_project.test.id
-  name       = var.mongodbatlas_cluster
+  project_id = mongodbatlas_project.project.id
+  name = var.mongodbatlas_cluster
 
   # Provider Settings for Free tier
   provider_name               = "TENANT"
@@ -25,7 +25,7 @@ resource "random_string" "dbuser" {
 }
 
 resource "mongodbatlas_database_user" "default" {
-  project_id         = mongodbatlas_project.test.id
+  project_id         = mongodbatlas_project.project.id
   username           = random_string.dbuser.result
   password           = random_password.dbuser.result
   auth_database_name = "admin"
@@ -37,7 +37,7 @@ resource "mongodbatlas_database_user" "default" {
 }
 
 resource "mongodbatlas_project_ip_access_list" "ip" {
-  project_id = mongodbatlas_project.test.id
+  project_id = mongodbatlas_project.project.id
   cidr_block = "0.0.0.0/0"
   comment    = "IP Address for accessing the cluster"
 }

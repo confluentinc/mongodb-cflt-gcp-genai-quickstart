@@ -20,7 +20,7 @@ from
     `products`,
     LATERAL TABLE (
         ML_PREDICT (
-            'BedrockGeneralModel',
+            'GCPGeneralModel',
             (
 '
 <instructions>

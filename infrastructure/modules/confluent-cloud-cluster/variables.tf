@@ -15,20 +15,20 @@ variable "env_display_id_postfix" {
 
 variable "create_table_sql_files" {
   description = "The set of SQL files that contain the create table statements"
-  type        = set(string)
-  default     = []
+  type = set(string)
+  default = []
 }
 
 variable "create_model_sql_files" {
   description = "The set of SQL files that contain the create model statements"
-  type        = set(string)
-  default     = []
+  type = set(string)
+  default = []
 }
 
 variable "insert_data_sql_files" {
   description = "The set of SQL files that contain the insert data statements"
-  type        = set(string)
-  default     = []
+  type = set(string)
+  default = []
 }
 
 variable "confluent_cloud_environment" {
@@ -67,9 +67,14 @@ variable "gcp_region" {
   type        = string
 }
 
-variable "gcp_service_account_key" {
+variable "gcp_service_account_key_file" {
   description = "GCP service account json key file"
-  type        = string  
+  type        = string
+}
+
+variable "gcp_gemini_api_key" {
+  description = "GCP Gemini API Key"
+  type        = string
 }
 
 variable "gcp_project_id" {

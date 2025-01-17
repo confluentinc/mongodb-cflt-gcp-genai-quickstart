@@ -13,7 +13,7 @@ WITH
             `chat_input`,
             LATERAL TABLE (
     ML_PREDICT (
-    'BedrockGeneralModel',
+    'GCPGeneralModel',
    (
     '<persona>
         You are a conversation summarizer tasked with creating a concise summary of the overall dialogue between a human and an AI assistant. Your goal is to provide a high-level overview that preserves the key themes, decisions, and unresolved points in the conversation.
@@ -53,7 +53,7 @@ FROM
     summary,
     LATERAL TABLE (
         ML_PREDICT (
-            'BedrockGeneralModel',
+            'GCPGeneralModel',
             (
 '<persona>
     You are a query generator for a vector database. Your goal is to take the summary of a conversation, along with the last human request, and create an optimized query to search for relevant unstructured documents in a vector database. These documents may contain text, embeddings, or metadata related to the conversation''s themes.

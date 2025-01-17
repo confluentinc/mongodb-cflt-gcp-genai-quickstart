@@ -3,9 +3,9 @@ variable "confluent_cloud_api_key" {
   type        = string
 }
 
-variable "gcp_service_account_key" {
-  description = "GCP service account json key file"
-  type        = string  
+variable "gcp_gemini_api_key" {
+  description = "GCP Gemini API Key"
+  type        = string
 }
 
 variable "gcp_project_id" {
@@ -99,7 +99,7 @@ variable "mongodbatlas_private_key" {
 variable "mongodbatlas_project" {
   description = "Atlas project"
   type        = string
-  default     = "GenAI-Quickstart"
+  default     = "CFLT-GenAI-Quickstart"
 }
 
 variable "mongodbatlas_cluster" {

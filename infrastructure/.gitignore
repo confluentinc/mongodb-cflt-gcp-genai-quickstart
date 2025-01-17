@@ -39,3 +39,4 @@ terraform.rc
 
 gcp-gemini-connection-result.json
 gcp-embed-connection-result.json
+service-account-key.json

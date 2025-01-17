@@ -1,14 +1,23 @@
 # GenAI Chatbot Quickstart
 
-Welcome to the Small Business Loan Agent Chatbot Quick Start! This repository provides a comprehensive guide to quickly deploy a fully functional chatbot for small business loan assistance. The solution leverages **MongoDB**, **Confluent Cloud**, **AWS**, **Anthropic** and **Flink** to deliver a scalable, intelligent, and real-time conversational experience.
+Welcome to the Small Business Loan Agent Chatbot Quick Start! This repository provides a comprehensive guide to quickly
+deploy a fully functional chatbot for small business loan assistance. The solution leverages **MongoDB**, **Confluent
+Cloud**, **AWS**, **Anthropic** and **Flink** to deliver a scalable, intelligent, and real-time conversational
+experience.
 
-This quick start is designed to help businesses streamline their loan application process by providing a chatbot that understands and answers customer queries, retrieves relevant loan documents, and provides actionable insights. The system also includes structured document indexing into MongoDB's vector database, enabling efficient retrieval-augmented generation (RAG) to enhance the chatbot's response accuracy.
+This quick start is designed to help businesses streamline their loan application process by providing a chatbot that
+understands and answers customer queries, retrieves relevant loan documents, and provides actionable insights. The
+system also includes structured document indexing into MongoDB's vector database, enabling efficient retrieval-augmented
+generation (RAG) to enhance the chatbot's response accuracy.
 
 ## Key Features
 
-* **Real-Time Data Processing**: Powered by Confluent Cloud and Flink, ensuring low-latency communication and event-driven architecture.
-* **Intelligent Conversations**: Integrated with Anthropic's AI models for natural and accurate conversational responses.
-* **Efficient Document Retrieval**: Leverages MongoDB Atlas with vector search capabilities for quick and accurate document indexing and retrieval.
+* **Real-Time Data Processing**: Powered by Confluent Cloud and Flink, ensuring low-latency communication and
+  event-driven architecture.
+* **Intelligent Conversations**: Integrated with Anthropic's AI models for natural and accurate conversational
+  responses.
+* **Efficient Document Retrieval**: Leverages MongoDB Atlas with vector search capabilities for quick and accurate
+  document indexing and retrieval.
 * **Scalable and Cloud-Native**: Built with AWS Lambda for a flexible and serverless REST API.
 * **Seamless Deployment**: Follow step-by-step instructions to deploy the entire solution with minimal effort.
 
@@ -20,35 +29,39 @@ This chatbot is tailored for small business loan agents to:
 * Retrieve structured documents and relevant loan information in real-time.
 * Automate repetitive tasks, enabling agents to focus on high-value interactions.
 
-Whether you're exploring new ways to enhance customer engagement or testing generative AI use cases in financial services, this quick start provides the perfect foundation.
+Whether you're exploring new ways to enhance customer engagement or testing generative AI use cases in financial
+services, this quick start provides the perfect foundation.
 
-👉 Please note that this quick start builds a working AI infrastructure for you, but it's fueled by a small quantity of fake data, so the results won't be at the level that you're accustomed to with AI chatbots like Chat-GPT. Read the Next Steps section at the end of this document to find out how you can tweak the architecture and improve or alter the AI results.
+👉 Please note that this quick start builds a working AI infrastructure for you, but it's fueled by a small quantity of
+fake data, so the results won't be at the level that you're accustomed to with AI chatbots like Chat-GPT. Read the Next
+Steps section at the end of this document to find out how you can tweak the architecture and improve or alter the AI
+results.
 
 ## Table of Contents
 
 - [GenAI Chatbot Quickstart](#genai-chatbot-quickstart)
-  - [Key Features](#key-features)
-  - [Use Case](#use-case)
-  - [Table of Contents](#table-of-contents)
-  - [Architecture](#architecture)
-    - [Document Indexing](#document-indexing)
-    - [Chatbot](#chatbot)
-    - [Key Concepts](#key-concepts)
-  - [Requirements](#requirements)
-    - [Docker](#docker)
-    - [Access Keys to Cloud Services Providers](#access-keys-to-cloud-services-providers)
-      - [Confluent Cloud](#confluent-cloud)
-      - [MongoDB Atlas](#mongodb-atlas)
-      - [AWS](#aws)
-        - [Enable Foundation Model Access](#enable-foundation-model-access)
-        - [AWS API Keys](#aws-api-keys)
-          - [Managed Policies](#managed-policies)
-          - [Fine-tuned Policies](#fine-tuned-policies)
-  - [Run the Quickstart](#run-the-quickstart)
-    - [1. Bring up the infrastructure](#1-bring-up-the-infrastructure)
-    - [2. Have a conversation](#2-have-a-conversation)
-      - [2b. Add a new product (Optional)](#2b-add-a-new-product-optional)
-    - [3. Bring down the infrastructure](#3-bring-down-the-infrastructure)
+    - [Key Features](#key-features)
+    - [Use Case](#use-case)
+    - [Table of Contents](#table-of-contents)
+    - [Architecture](#architecture)
+        - [Document Indexing](#document-indexing)
+        - [Chatbot](#chatbot)
+        - [Key Concepts](#key-concepts)
+    - [Requirements](#requirements)
+        - [Docker](#docker)
+        - [Access Keys to Cloud Services Providers](#access-keys-to-cloud-services-providers)
+            - [Confluent Cloud](#confluent-cloud)
+            - [MongoDB Atlas](#mongodb-atlas)
+            - [AWS](#aws)
+                - [Enable Foundation Model Access](#enable-foundation-model-access)
+                - [AWS API Keys](#aws-api-keys)
+                    - [Managed Policies](#managed-policies)
+                    - [Fine-tuned Policies](#fine-tuned-policies)
+    - [Run the Quickstart](#run-the-quickstart)
+        - [1. Bring up the infrastructure](#1-bring-up-the-infrastructure)
+        - [2. Have a conversation](#2-have-a-conversation)
+            - [2b. Add a new product (Optional)](#2b-add-a-new-product-optional)
+        - [3. Bring down the infrastructure](#3-bring-down-the-infrastructure)
 
 ## Architecture
 
@@ -63,8 +76,10 @@ This section focuses on ingesting and processing data for use in downstream appl
 
 1. **Data Sources:** Various data sources feed into the system. These could be structured or unstructured data streams.
 2. **Summarization:** Anthropic Claude is used to summarize data to extract meaningful information from documents.
-3. **Vectorization:** Embeddings are generated for the input data to convert textual information into high-dimensional numerical vectors.
-4. **Sink Connector:** Processed data (both summarized content and embeddings) is output via a sink connector to MongoDB Atlas vector database.
+3. **Vectorization:** Embeddings are generated for the input data to convert textual information into high-dimensional
+   numerical vectors.
+4. **Sink Connector:** Processed data (both summarized content and embeddings) is output via a sink connector to MongoDB
+   Atlas vector database.
 
 ### Chatbot
 
@@ -72,8 +87,10 @@ This section demonstrates how the system interacts with user queries in real tim
 
 1. **Frontend:** The frontend handles interactions with users. User inputs are sent to a topic for further processing.
 2. **Websocket:** Provides real-time communication between the frontend and backend for immediate responses.
-3. **Query Vectorization:** User queries are vectorized using the Embeddings model to transform them into numerical representations. This is done to match queries against stored vectors in the vector search database.
-4. **Vector Search:** MongoDB Atlas vector database, retrieves relevant information based on the vectorized query. It searches through embeddings generated during the document indexing phase.
+3. **Query Vectorization:** User queries are vectorized using the Embeddings model to transform them into numerical
+   representations. This is done to match queries against stored vectors in the vector search database.
+4. **Vector Search:** MongoDB Atlas vector database, retrieves relevant information based on the vectorized query. It
+   searches through embeddings generated during the document indexing phase.
 5. **Model Inference:** Anthropic Claude is used for model inference to generate responses.
 6. **Output to User:** The system sends the processed results back to the user via the websocket.
 
@@ -81,7 +98,8 @@ This section demonstrates how the system interacts with user queries in real tim
 
 1. **Embeddings:** These are vector representations of text, allowing the system to handle semantic search.
 
-2. **MongoDB Atlas:** Enables efficient, scalable, and real-time semantic matching of user queries against high-dimensional embeddings to deliver relevant results in the chatbot and document indexing workflows.
+2. **MongoDB Atlas:** Enables efficient, scalable, and real-time semantic matching of user queries against
+   high-dimensional embeddings to deliver relevant results in the chatbot and document indexing workflows.
 
 3. **Anthropic Claude:** Used for both summarization and generating responses in natural language.
 
@@ -103,7 +121,8 @@ Once you have `docker` installed, you just need to get keys to authenticate to t
 
 For Confluent Cloud, you need to get a *Cloud resource management* key.
 
-If you don't already have an account, after signing up, click the top right corner menu (AKA the hamburger menu) and select *API keys*.
+If you don't already have an account, after signing up, click the top right corner menu (AKA the hamburger menu) and
+select *API keys*.
 
 ![cc-api-keys](./assets/cc-api-keys.png)
 
@@ -126,7 +145,8 @@ If you feel like it, enter a name and description. Click the *Create API Key* (b
 Useful links:
 
 * [Grant Programmatic Access to an Organization](https://www.mongodb.com/docs/atlas/configure-api-access/#grant-programmatic-access-to-an-organization)
-* [MongoDB Atlas API Keys](https://www.mongodb.com/developer/products/atlas/mongodb-atlas-with-terraform/) (part of a tutorial on Terraform with Atlas)
+* [MongoDB Atlas API Keys](https://www.mongodb.com/developer/products/atlas/mongodb-atlas-with-terraform/) (part of a
+  tutorial on Terraform with Atlas)
 
 At last, get your Atlas Organization ID from the Atlas UI.
 
@@ -142,7 +162,8 @@ Enable access to `amazon.titan-embed-text-v2:0` and `anthropic.claude-3-haiku-20
 
 ##### AWS API Keys
 
-AWS credentials are required for Flink AI to connect to Bedrock, as well as using terraform to deploy resources. You will need a key and secret with appropriate IAM rights.
+AWS credentials are required for Flink AI to connect to Bedrock, as well as using terraform to deploy resources. You
+will need a key and secret with appropriate IAM rights.
 
 ###### Managed Policies
 
@@ -159,7 +180,8 @@ If you are using managed policies, Attach the following managed policies to your
 
 ###### Fine-tuned Policies
 
-For more granular permissions, refer to our [cloudtrail events](./assets/quickstart-iam-policy-cloudtrail.csv) for the exact resources and actions required.
+For more granular permissions, refer to our [cloudtrail events](./assets/quickstart-iam-policy-cloudtrail.csv) for the
+exact resources and actions required.
 
 **Useful links:**
 
@@ -180,7 +202,8 @@ For more granular permissions, refer to our [cloudtrail events](./assets/quickst
 
 ### 2. Have a conversation
 
-Once the infrastructure is up and running, you can interact with the chatbot by opening the cloudfront url generated by terraform.
+Once the infrastructure is up and running, you can interact with the chatbot by opening the cloudfront url generated by
+terraform.
 
 For example, if the terraform output is:
 
@@ -194,11 +217,14 @@ You may have the following conversation
 
 ![Chatbot Conversation](./assets/example-convo.gif)
 
-For the purposes of this quickstart, any username and password will be accepted, and you'll need to open the chat bubble on the bottom right (after you log in) to have a conversation
+For the purposes of this quickstart, any username and password will be accepted, and you'll need to open the chat bubble
+on the bottom right (after you log in) to have a conversation
 
 #### 2b. Add a new product (Optional)
 
-To showcase our real-time document indexing capabilities, you can add a new document to the system by inserting a new record into the `products` topic in Confluent Cloud using Flink SQL. This product will then get indexed in MongoDB Atlas and be available for retrieval in the chatbot.
+To showcase our real-time document indexing capabilities, you can add a new document to the system by inserting a new
+record into the `products` topic in Confluent Cloud using Flink SQL. This product will then get indexed in MongoDB Atlas
+and be available for retrieval in the chatbot.
 
 ```sql
 INSERT INTO
@@ -233,7 +259,19 @@ VALUES
 ## Next Steps - Improving the Results
 
 There are numerous actions you can take to influence the responses given by the chatbot:
-- Increase the size and the quality of the data set. This demo is built on top of a very small set of insurance products (found in `infrastructure/statements/insert/populate-products.sql`), and the description of each product is limited to only a couple of fields. You can also modify the prompt used for summarizing the products in `infrastructure/statements/insert/populate-products-summarized.sql`.
-- Modify the prompts controlling the chat. They are located in: `infrastructure/statements/insert/chat-input-query.sql` and `infrastructure/statements/insert/populate-chat-output.sql`
-- Modify the vectorization and search of the embeddings inside MongoDB Atlas: it's in `infrastructure/main.tf`, under `resource "mongodbatlas_search_index" "search-vector" {`. Check [Atlas Vector Search Index Fields](https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-type/#atlas-vector-search-index-fields) and [Vector Search Queries](https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-stage/) for more details.
-- Modify the parameters of the models, found in `infrastructure/statements/create-models/bedrock-titan-embed.sql`. Modifying the `temperature` of the model can yield to more accurate or creative results. Check [Anthropic Claude models](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters-claude.html) for more details on the model parameters.
+
+- Increase the size and the quality of the data set. This demo is built on top of a very small set of insurance
+  products (found in `infrastructure/statements/insert/populate-products.sql`), and the description of each product is
+  limited to only a couple of fields. You can also modify the prompt used for summarizing the products in
+  `infrastructure/statements/insert/populate-products-summarized.sql`.
+- Modify the prompts controlling the chat. They are located in: `infrastructure/statements/insert/chat-input-query.sql`
+  and `infrastructure/statements/insert/populate-chat-output.sql`
+- Modify the vectorization and search of the embeddings inside MongoDB Atlas: it's in `infrastructure/main.tf`, under
+  `resource "mongodbatlas_search_index" "search-vector" {`.
+  Check [Atlas Vector Search Index Fields](https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-type/#atlas-vector-search-index-fields)
+  and [Vector Search Queries](https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-stage/) for more
+  details.
+- Modify the parameters of the models, found in `infrastructure/statements/create-models/gcp-vertexai-embed.sql`.
+  Modifying the `temperature` of the model can yield to more accurate or creative results.
+  Check [Anthropic Claude models](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters-claude.html) for
+  more details on the model parameters.

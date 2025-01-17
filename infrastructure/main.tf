@@ -1,3 +1,17 @@
+resource "random_string" "unique_id" {
+  length  = 8
+  special = false
+  lower   = true
+  upper   = false
+}
+
+module "gcp" {
+  source         = "./modules/gcp"
+  gcp_region     = var.gcp_region
+  gcp_project_id = var.gcp_project_id
+  unique_id      = random_string.unique_id.result
+}
+
 module "mongodb" {
   source                      = "./modules/mongodb"
   mongodbatlas_public_key     = var.mongodbatlas_public_key
@@ -13,7 +27,6 @@ module "mongodb" {
     mongodbatlas = mongodbatlas
   }
 }
-
 
 module "confluent_cloud_cluster" {
   source                           = "./modules/confluent-cloud-cluster"
@@ -33,12 +46,13 @@ module "confluent_cloud_cluster" {
   mongodbatlas_database   = var.mongodbatlas_database
   mongodbatlas_collection = var.mongodbatlas_collection
 
-  gcp_project_id          = var.gcp_project_id
-  gcp_region              = var.gcp_region
-  gcp_service_account_key = var.gcp_service_account_key
+  gcp_project_id               = var.gcp_project_id
+  gcp_region                   = var.gcp_region
+  gcp_service_account_key_file = module.gcp.gcp_service_account_key_file
+  gcp_gemini_api_key           = var.gcp_gemini_api_key
 
   depends_on = [
-    module.mongodb
+    module.mongodb, module.gcp
   ]
 }
 

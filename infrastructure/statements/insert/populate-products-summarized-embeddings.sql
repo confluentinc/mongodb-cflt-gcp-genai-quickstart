@@ -19,4 +19,4 @@ select
     embeddings
 from
     `products_summarized`,
-    LATERAL TABLE (ML_PREDICT ('BedrockTitanEmbed', summary));
+    LATERAL TABLE (ML_PREDICT ('GCPVertexAIEmbed', summary));

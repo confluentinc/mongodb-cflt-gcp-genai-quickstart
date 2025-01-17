@@ -112,9 +112,10 @@ resource "null_resource" "create-flink-gcp-connections" {
       FLINK_ORG_ID        = data.confluent_organization.main.id
       FLINK_REST_ENDPOINT = data.confluent_flink_region.main.rest_endpoint
 
-      GCP_SERVICE_ACCOUNT_KEY = var.gcp_service_account_key
-      GCP_PROJECT_ID          = var.gcp_project_id
-      GCP_REGION              = var.gcp_region
+      GCP_SERVICE_ACCOUNT_KEY_FILE = var.gcp_service_account_key_file
+      GCP_GEMINI_API_KEY           = var.gcp_gemini_api_key
+      GCP_PROJECT_ID               = var.gcp_project_id
+      GCP_REGION                   = var.gcp_region
       # the rest should be set by deploy.sh
     }
   }
@@ -185,7 +186,7 @@ resource "confluent_flink_statement" "insert-data" {
     secret = confluent_api_key.app-manager-flink-api-key.secret
   }
 
-  stopped   = false
+  stopped = false
   statement = file(abspath(each.value))
 
   depends_on = [
@@ -623,7 +624,7 @@ resource "confluent_connector" "mongo-db-sink" {
     "connection.host"          = var.mongodb_host
     "connection.user"          = var.mongodb_user
     "input.data.format"        = "JSON_SR"
-    "topics"                   = "products_summarized_with_embeddings" // TODO replace with var?
+    "topics" = "products_summarized_with_embeddings" // TODO replace with var?
     "max.num.retries"          = "3"
     "retries.defer.timeout"    = "5000"
     "max.batch.size"           = "0"

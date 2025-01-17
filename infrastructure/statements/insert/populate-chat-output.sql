@@ -8,7 +8,7 @@ FROM
     `chat_input_with_products` /*+ OPTIONS('scan.startup.mode'='latest-offset') */,
     LATERAL TABLE (
         ML_PREDICT (
-            'BedrockGeneralModel',
+            'GCPGeneralModel',
             (
 '
 <persona>

@@ -9,4 +9,4 @@ SELECT
     ROW (`input`, `userId`, `messageId`, `history`)
 FROM
     `chat_input_query`,
-    LATERAL TABLE (ML_PREDICT ('BedrockTitanEmbed', query));
+    LATERAL TABLE (ML_PREDICT ('GCPVertexAIEmbed', query));
