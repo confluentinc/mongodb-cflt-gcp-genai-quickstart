@@ -1,3 +1,16 @@
+output "mongodb_host" {
+  value = module.mongodb.host
+}
+
+output "mongodb_db_user" {
+  value = module.mongodb.connection_user
+}
+
+output "mongodb_db_password" {
+  value     = module.mongodb.connection_password
+  sensitive = true
+}
+
 output "clients_schema_registry_api_key" {
   value       = module.confluent_cloud_cluster.clients_schema_registry_api_key
   description = "API Key for Schema Registry client"
@@ -36,23 +49,10 @@ output "flink_environment_id" {
   description = "Confluent Cloud Flink Environment ID"
 }
 
-output "frontend_url" {
-  value = "https://${module.frontend.frontend_url}"
-}
+# output "frontend_url" {
+#   value = "https://${module.frontend.frontend_url}"
+# }
 
-output "websocket_endpoint" {
-  value = module.backend.websocket_endpoint
-}
-
-output "mongodb_host" {
-  value = module.mongodb.host
-}
-
-output "mongodb_db_user" {
-  value = module.mongodb.connection_user
-}
-
-output "mongodb_db_password" {
-  value     = module.mongodb.connection_password
-  sensitive = true
-}
+# output "websocket_endpoint" {
+#   value = module.backend.websocket_endpoint
+# }

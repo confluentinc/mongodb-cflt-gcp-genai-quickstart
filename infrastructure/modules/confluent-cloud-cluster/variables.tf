@@ -60,3 +60,19 @@ variable "mongodbatlas_collection" {
   description = "Collection name to write to. If the connector is sinking data from multiple topics, this is the default collection the topics are mapped to."
   type        = string
 }
+
+
+variable "gcp_region" {
+  description = "The GCP region to deploy the infrastructure"
+  type        = string
+}
+
+variable "gcp_service_account_key" {
+  description = "GCP service account json key file"
+  type        = string  
+}
+
+variable "gcp_project_id" {
+  description = "GCP project ID"
+  type        = string
+}

@@ -3,6 +3,16 @@ variable "confluent_cloud_api_key" {
   type        = string
 }
 
+variable "gcp_service_account_key" {
+  description = "GCP service account json key file"
+  type        = string  
+}
+
+variable "gcp_project_id" {
+  description = "GCP project ID"
+  type        = string
+}
+
 variable "confluent_cloud_api_secret" {
   description = "Confluent Cloud API Secret"
   type        = string
@@ -17,11 +27,11 @@ variable "confluent_cloud_region" {
 variable "confluent_cloud_service_provider" {
   description = "The cloud provider of Confluent Cloud Network"
   type        = string
-  default     = "AWS"
+  default     = "GCP"
 }
 
-variable "aws_region" {
-  description = "The AWS region to deploy the infrastructure"
+variable "gcp_region" {
+  description = "The GCP region to deploy the infrastructure"
   type        = string
 }
 
@@ -62,7 +72,7 @@ variable "path_to_flink_sql_insert_statements" {
 variable "mongodbatlas_cloud_provider" {
   description = "The cloud provider of MongoDB Atlas"
   type        = string
-  default     = "AWS"
+  default     = "GCP"
 }
 
 variable "mongodbatlas_cloud_region" {

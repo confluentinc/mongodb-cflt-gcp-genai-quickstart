@@ -97,19 +97,14 @@ if [[ -n "$DEFAULT_ENV_FILE" && "$DEFAULT_ENV_FILE" != "-h" && "$DEFAULT_ENV_FIL
     fi
 fi
 
-# Prompt for AWS credentials
-[ -z "$AWS_ACCESS_KEY_ID" ] && prompt_for_input AWS_ACCESS_KEY_ID "Enter your AWS_ACCESS_KEY_ID" false
-[ -z "$AWS_SECRET_ACCESS_KEY" ] && prompt_for_input AWS_SECRET_ACCESS_KEY "Enter your AWS_SECRET_ACCESS_KEY" true
+# Prompt for GCP credentials
+[ -z "$GCP_SERVICE_ACCOUNT_KEY" ] && prompt_for_input GCP_SERVICE_ACCOUNT_KEY "Enter your GCP_SERVICE_ACCOUNT_KEY" false
 
-# Prompt for AWS session token if needed
-if ! prompt_for_yes_no "Do you have an AWS_SESSION_TOKEN?"; then
-    [ -z "$AWS_SESSION_TOKEN" ] && prompt_for_input AWS_SESSION_TOKEN "Enter your AWS_SESSION_TOKEN" true
-else
-    unset AWS_SESSION_TOKEN
-fi
+# Prompt for GCP credentials
+[ -z "$GCP_PROJECT_ID" ] && prompt_for_input GCP_PROJECT_ID "Enter your GCP_PROJECT_ID" false
 
-# Default to us-east-1 if AWS_REGION is not set
-[ -z "$AWS_REGION" ] && read -r -p "Enter the AWS region (default: us-east-1): " AWS_REGION && AWS_REGION=${AWS_REGION:-us-east-1}
+# Default to us-east1 if GCP_REGION is not set
+[ -z "$GCP_REGION" ] && read -r -p "Enter the GCP region (default: us-east1): " GCP_REGION && GCP_REGION=${GCP_REGION:-us-east1}
 
 # Prompt for Confluent Cloud and MongoDB credentials
 [ -z "$CONFLUENT_CLOUD_API_KEY" ] && prompt_for_input CONFLUENT_CLOUD_API_KEY "Enter your Confluent Cloud API Key" false
@@ -117,30 +112,30 @@ fi
 [ -z "$MONGODB_ORG_ID" ] && prompt_for_input MONGODB_ORG_ID "Enter your MongoDB Org ID" false
 [ -z "$MONGODB_PUBLIC_KEY" ] && prompt_for_input MONGODB_PUBLIC_KEY "Enter your MongoDB Public Key" false
 [ -z "$MONGODB_PRIVATE_KEY" ] && prompt_for_input MONGODB_PRIVATE_KEY "Enter your MongoDB Private Key" true
+[ -z "$MONGODB_GCP_REGION" ] && prompt_for_input MONGODB_GCP_REGION "Enter your MongoDB GCP Region" true
 
 # Create .env file from variables set in this file
 echo "[+] Setting up .env file for docker-compose"
 cat << EOF > .env
 IMAGE_ARCH=$IMAGE_ARCH
-AWS_REGION=$AWS_REGION
-AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
-AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+GCP_REGION=$GCP_REGION
+GCP_PROJECT_ID=$GCP_PROJECT_ID
+GCP_SERVICE_ACCOUNT_KEY=$GCP_SERVICE_ACCOUNT_KEY
 CONFLUENT_CLOUD_API_KEY=$CONFLUENT_CLOUD_API_KEY
 CONFLUENT_CLOUD_API_SECRET=$CONFLUENT_CLOUD_API_SECRET
 MONGODB_PUBLIC_KEY=$MONGODB_PUBLIC_KEY
 MONGODB_PRIVATE_KEY=$MONGODB_PRIVATE_KEY
 MONGODB_ORG_ID=$MONGODB_ORG_ID
+MONGODB_GCP_REGION=$MONGODB_GCP_REGION
 EOF
 
-# Add AWS_SESSION_TOKEN to .env if it is set
-[ -n "$AWS_SESSION_TOKEN" ] && echo "AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN" >> .env
-
 echo "[+] Setting up infrastructure/variables.tfvars"
-# populate tfvars file with AWS credentials
+# populate tfvars file with GCP credentials
 cat << EOF > infrastructure/variables.tfvars
-aws_region = "$AWS_REGION"
-confluent_cloud_region = "$AWS_REGION"
-mongodbatlas_cloud_region = "$AWS_REGION"
+gcp_region = "$GCP_REGION"
+gcp_project_id = "$GCP_PROJECT_ID"
+gcp_service_account_key = "$GCP_SERVICE_ACCOUNT_KEY"
+confluent_cloud_region = "$GCP_REGION"
 confluent_cloud_api_key = "$CONFLUENT_CLOUD_API_KEY"
 confluent_cloud_api_secret = "$CONFLUENT_CLOUD_API_SECRET"
 path_to_flink_sql_create_table_statements = "statements/create-tables"
@@ -149,6 +144,7 @@ path_to_flink_sql_insert_statements = "statements/insert"
 mongodbatlas_public_key = "$MONGODB_PUBLIC_KEY"
 mongodbatlas_private_key = "$MONGODB_PRIVATE_KEY"
 mongodbatlas_org_id = "$MONGODB_ORG_ID"
+mongodbatlas_cloud_region = "$MONGODB_GCP_REGION"
 EOF
 
 echo "[+] Applying terraform"

@@ -8,7 +8,7 @@ set -oe pipefail
 # Required environment variables
 REQUIRED_ENV_VARS=(
   "FLINK_API_KEY" "FLINK_API_SECRET" "FLINK_ENV_ID" "FLINK_ORG_ID"
-  "FLINK_REST_ENDPOINT" "AWS_ACCESS_KEY_ID" "AWS_SECRET_ACCESS_KEY" "AWS_REGION"
+  "FLINK_REST_ENDPOINT" "GCP_SERVICE_ACCOUNT_KEY" "GCP_REGION" "GCP_PROJECT_ID"
 )
 
 # Check if required environment variables are set
@@ -22,14 +22,10 @@ done
 # Encode API key and secret for basic authentication
 BASIC_AUTH=$(echo -n "$FLINK_API_KEY:$FLINK_API_SECRET" | base64 -w 0)
 
-# Prepare AWS authentication data
-if [ -z "$AWS_SESSION_TOKEN" ]; then
-  AUTH_DATA=$(jq -n -r --arg aws_access_key_id "$AWS_ACCESS_KEY_ID" --arg aws_secret_access_key "$AWS_SECRET_ACCESS_KEY" \
-  '{AWS_ACCESS_KEY_ID: $aws_access_key_id, AWS_SECRET_ACCESS_KEY: $aws_secret_access_key}' | jq '.|tostring')
-else
-  AUTH_DATA=$(jq -n -r --arg aws_access_key_id "$AWS_ACCESS_KEY_ID" --arg aws_secret_access_key "$AWS_SECRET_ACCESS_KEY" --arg aws_session_token "$AWS_SESSION_TOKEN" \
-  '{AWS_ACCESS_KEY_ID: $aws_access_key_id, AWS_SECRET_ACCESS_KEY: $aws_secret_access_key, AWS_SESSION_TOKEN: $aws_session_token}' | jq '.|tostring')
-fi
+CONTENT=$(cat "$GCP_SERVICE_ACCOUNT_KEY")
+
+# Prepare GCP authentication data
+SERVICE_KEY=$(jq -n -r --arg service_key "$CONTENT" '{SERVICE_KEY: $service_key}' | jq '.|tostring')
 
 # Create connection in Confluent Cloud cluster
 echo
@@ -38,30 +34,30 @@ curl --request POST \
   --header "Authorization: Basic $BASIC_AUTH" \
   --header "content-type: application/json" \
   --data '{
-    "name": "bedrock-titan-embed-connection",
+    "name": "gcp-embed-connection",
     "spec": {
-      "connection_type": "BEDROCK",
-      "endpoint": "https://bedrock-runtime.'"$AWS_REGION"'.amazonaws.com/model/amazon.titan-embed-text-v2:0/invoke",
+      "connection_type": "VERTEXAI",
+      "endpoint": "https://'"$GCP_REGION"'-aiplatform.googleapis.com/v1/projects/'"$GCP_PROJECT_ID"'/locations/'"$GCP_REGION"'/publishers/google/models/text-embedding-004:predict",
       "auth_data": {
         "kind": "PlaintextProvider",
-        "data": '"$AUTH_DATA"'
+        "data": '"$SERVICE_KEY"'
       }
     }
-  }' | jq . > titan-embed-connection-result.json
+  }' | jq . > gcp-embed-connection-result.json
 
 # Create connection in Confluent Cloud cluster
-curl --request POST \
-  --url "$FLINK_REST_ENDPOINT/sql/v1/organizations/$FLINK_ORG_ID/environments/$FLINK_ENV_ID/connections" \
-  --header "Authorization: Basic $BASIC_AUTH" \
-  --header "content-type: application/json" \
-  --data '{
-    "name": "bedrock-claude-3-haiku-connection",
-    "spec": {
-      "connection_type": "BEDROCK",
-      "endpoint": "https://bedrock-runtime.'"$AWS_REGION"'.amazonaws.com/model/anthropic.claude-3-haiku-20240307-v1:0/invoke",
-      "auth_data": {
-        "kind": "PlaintextProvider",
-        "data": '"$AUTH_DATA"'
-      }
-    }
-  }' | jq . > claude-3-haiku-connection-result.json
+# curl --request POST \
+#   --url "$FLINK_REST_ENDPOINT/sql/v1/organizations/$FLINK_ORG_ID/environments/$FLINK_ENV_ID/connections" \
+#   --header "Authorization: Basic $BASIC_AUTH" \
+#   --header "content-type: application/json" \
+#   --data '{
+#     "name": "gcp-gemini-connection",
+#     "spec": {
+#       "connection_type": "BEDROCK",
+#       "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent",
+#       "auth_data": {
+#         "kind": "PlaintextProvider",
+#         "data": '"$AUTH_DATA"'
+#       }
+#     }
+#   }' | jq . > gcp-gemini-connection-result.json

@@ -100,9 +100,9 @@ resource "confluent_flink_statement" "create-tables" {
   }
 }
 
-# registers flink sql connections with bedrock. should be replaced when
+# registers flink sql connections with gcp. should be replaced when
 # terraform provider supports managing flink sql connections
-resource "null_resource" "create-flink-bedrock-connections" {
+resource "null_resource" "create-flink-gcp-connections" {
   provisioner "local-exec" {
     command = "${path.module}/scripts/flink-connection-create.sh"
     environment = {
@@ -111,12 +111,16 @@ resource "null_resource" "create-flink-bedrock-connections" {
       FLINK_ENV_ID        = confluent_flink_compute_pool.main.environment[0].id
       FLINK_ORG_ID        = data.confluent_organization.main.id
       FLINK_REST_ENDPOINT = data.confluent_flink_region.main.rest_endpoint
+
+      GCP_SERVICE_ACCOUNT_KEY = var.gcp_service_account_key
+      GCP_PROJECT_ID          = var.gcp_project_id
+      GCP_REGION              = var.gcp_region
       # the rest should be set by deploy.sh
     }
   }
 
   triggers = {
-    # changes to the flink sql cluster will trigger the bedrock connections to be created
+    # changes to the flink sql cluster will trigger the gcp connections to be created
     flink_sql_cluster_id = confluent_flink_compute_pool.main.id
     # change if the script changes
     script = filesha256("${path.module}/scripts/flink-connection-create.sh")
@@ -149,7 +153,7 @@ resource "confluent_flink_statement" "create-models" {
   }
   statement = file(abspath(each.value))
   depends_on = [
-    null_resource.create-flink-bedrock-connections
+    null_resource.create-flink-gcp-connections
   ]
   lifecycle {
     ignore_changes = [rest_endpoint, organization[0].id]
