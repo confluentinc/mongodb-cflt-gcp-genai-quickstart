@@ -3,6 +3,8 @@ spring:
     name: "QuickstartApplication"
   config:
     activate.on-profile: default
+server:
+  port: ${PORT:8080}
 ---
 spring:
   application:
@@ -10,3 +12,5 @@ spring:
   config:
     activate.on-profile: gcp
     import: sm://
+server:
+  port: ${PORT:8080}
