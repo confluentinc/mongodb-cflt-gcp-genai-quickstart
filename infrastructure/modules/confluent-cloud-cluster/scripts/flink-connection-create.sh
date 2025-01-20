@@ -55,7 +55,7 @@ curl --request POST \
      "name": "gcp-gemini-connection",
      "spec": {
        "connection_type": "GOOGLEAI",
-       "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent",
+       "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent",
        "auth_data": {
          "kind": "PlaintextProvider",
          "data": '"$API_KEY"'
