@@ -16,6 +16,16 @@ if ! docker info > /dev/null 2>&1; then
   exit 1
 fi
 
+if [ ! -d "./.config" ]; then
+  echo "[+] Authenticating gcloud"
+  docker run -v ./.config:/root/.config/ -ti --rm --name gcloud-config gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud auth application-default login
+  if [ $? -ne 0 ]; then
+      echo "[-] Failed to authenticate gcloud"
+      exit 1
+  fi
+  echo "[+] gcloud authentication complete"
+fi
+
 # destroy infrastructure
 # Check if terraform is initialized
 if [ ! -d "./infrastructure/.terraform" ]; then
