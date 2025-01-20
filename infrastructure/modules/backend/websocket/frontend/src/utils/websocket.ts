@@ -17,7 +17,13 @@ class WebSocketService {
         const currentLocation = window.location;
         console.log(currentLocation);
 
-        this.ws = new WebSocket('ws://' + location.host + '/ws');
+        // Connect to the WebSocket server
+        if (currentLocation.protocol === 'https:') {
+            this.ws = new WebSocket('wss://' + location.host + '/ws');
+        }
+        else {
+            this.ws = new WebSocket('ws://' + location.host + '/ws');
+        }
 
         this.ws.onopen = () => {
             console.log('Connected to WebSocket');
