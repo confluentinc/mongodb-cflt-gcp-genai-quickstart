@@ -98,7 +98,7 @@ if [[ -n "$DEFAULT_ENV_FILE" && "$DEFAULT_ENV_FILE" != "-h" && "$DEFAULT_ENV_FIL
 fi
 
 # Prompt for GCP credentials
-[ -z "$GCP_SERVICE_ACCOUNT_KEY" ] && prompt_for_input GCP_SERVICE_ACCOUNT_KEY "Enter your GCP_SERVICE_ACCOUNT_KEY" false
+[ -z "$GCP_GEMINI_API_KEY" ] && prompt_for_input GCP_GEMINI_API_KEY "Enter your GCP_GEMINI_API_KEY" false
 
 # Prompt for GCP credentials
 [ -z "$GCP_PROJECT_ID" ] && prompt_for_input GCP_PROJECT_ID "Enter your GCP_PROJECT_ID" false
@@ -120,7 +120,7 @@ cat << EOF > .env
 IMAGE_ARCH=$IMAGE_ARCH
 GCP_REGION=$GCP_REGION
 GCP_PROJECT_ID=$GCP_PROJECT_ID
-GCP_SERVICE_ACCOUNT_KEY=$GCP_SERVICE_ACCOUNT_KEY
+GCP_GEMINI_API_KEY=$GCP_GEMINI_API_KEY
 CONFLUENT_CLOUD_API_KEY=$CONFLUENT_CLOUD_API_KEY
 CONFLUENT_CLOUD_API_SECRET=$CONFLUENT_CLOUD_API_SECRET
 MONGODB_PUBLIC_KEY=$MONGODB_PUBLIC_KEY
@@ -134,7 +134,7 @@ echo "[+] Setting up infrastructure/variables.tfvars"
 cat << EOF > infrastructure/variables.tfvars
 gcp_region = "$GCP_REGION"
 gcp_project_id = "$GCP_PROJECT_ID"
-gcp_service_account_key = "$GCP_SERVICE_ACCOUNT_KEY"
+gcp_gemini_api_key = "$GCP_GEMINI_API_KEY"
 confluent_cloud_region = "$GCP_REGION"
 confluent_cloud_api_key = "$CONFLUENT_CLOUD_API_KEY"
 confluent_cloud_api_secret = "$CONFLUENT_CLOUD_API_SECRET"
@@ -146,6 +146,14 @@ mongodbatlas_private_key = "$MONGODB_PRIVATE_KEY"
 mongodbatlas_org_id = "$MONGODB_ORG_ID"
 mongodbatlas_cloud_region = "$MONGODB_GCP_REGION"
 EOF
+
+echo "[+] Authenticating gcloud"
+docker run -v ./.config:/root/.config/ -ti --rm --name gcloud-config gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud auth application-default login
+if [ $? -ne 0 ]; then
+    echo "[-] Failed to authenticate gcloud"
+    exit 1
+fi
+echo "[+] gcloud authentication complete"
 
 echo "[+] Applying terraform"
 IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans --rm terraform apply --auto-approve -var-file=variables.tfvars

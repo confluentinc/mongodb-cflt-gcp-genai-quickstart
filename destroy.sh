@@ -28,7 +28,10 @@ IMAGE_ARCH=$IMAGE_ARCH docker compose run --rm terraform destroy -auto-approve -
 
 echo "[+] Infrastructure destroyed successfully"
 # delete .env and infrastructure/variables.tf
-echo "[+] Cleaning up .env and infrastructure/variables.tf"
+echo "[+] Cleaning up .env, infrastructure/variables.tf and other files"
 rm -f .env
 rm -f infrastructure/variables.tfvars
+rm -rf .config
+rm -f infrastructure/gcp-embed-connection-result.json
+rm -f infrastructure/gcp-gemini-connection-result.json
 echo "[+] Clean up completed"
