@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: "QuickstartApplication"
+  config:
+    activate.on-profile: default
+---
+spring:
+  application:
+    name: "QuickstartApplication"
+  config:
+    activate.on-profile: gcp
+    import: sm://
