@@ -15,7 +15,6 @@ class WebSocketService {
 
     private connect() {
         const currentLocation = window.location;
-        console.log(currentLocation);
 
         // Connect to the WebSocket server
         if (currentLocation.protocol === 'https:') {

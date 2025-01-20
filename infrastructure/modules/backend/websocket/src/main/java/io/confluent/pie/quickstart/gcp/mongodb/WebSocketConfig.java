@@ -20,7 +20,7 @@ public class WebSocketConfig implements WebSocketConfigurer {
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        registry.addHandler(userRequestHandler, "/ws");
+        registry.addHandler(userRequestHandler, "/ws").setAllowedOriginPatterns("*");
     }
 
     @Bean
