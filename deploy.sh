@@ -2,6 +2,11 @@
 
 set -eo pipefail
 
+get_full_path() {
+    local path=$1
+    realpath "$path"
+}
+
 # Function to display help message
 show_help() {
     echo "Usage: $0 [options] [env_file]"
@@ -62,6 +67,26 @@ prompt_for_yes_no() {
     done
 }
 
+authenticate() {
+    echo "[+] Authenticating gcloud"
+    IMAGE_ARCH=$IMAGE_ARCH docker run -v ./.config:/root/.config/ -ti --rm --name gcloud-config gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud auth login
+    if [ $? -ne 0 ]; then
+        echo "[-] Failed to authenticate gcloud"
+        exit 1
+    fi
+
+    ACCOUNT=$(IMAGE_ARCH=$IMAGE_ARCH docker run -v ./.config:/root/.config/ -ti --rm --name check-auth gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud auth list --format="value(account)")
+    if [ -z "$ACCOUNT" ]; then
+        echo "[-] Failed to get authenticated account"
+        exit 1
+    fi
+
+    IMAGE_ARCH=$IMAGE_ARCH docker run -v ./.config:/root/.config/ -ti --rm --name check-auth gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud config set account "$ACCOUNT"
+    echo "[+] gcloud authenticated as $ACCOUNT"
+
+    echo "[+] gcloud authentication complete"
+}
+
 # Set platform to linux/arm64 if m1 mac is detected. Otherwise set to linux/amd64
 IMAGE_ARCH=$(uname -m | grep -qE 'arm64|aarch64' && echo 'arm64' || echo 'x86_64')
 
@@ -97,13 +122,9 @@ if [[ -n "$DEFAULT_ENV_FILE" && "$DEFAULT_ENV_FILE" != "-h" && "$DEFAULT_ENV_FIL
     fi
 fi
 
-# Prompt for GCP credentials
+# Prompt for GCP Informations
 [ -z "$GCP_GEMINI_API_KEY" ] && prompt_for_input GCP_GEMINI_API_KEY "Enter your GCP_GEMINI_API_KEY" false
-
-# Prompt for GCP credentials
 [ -z "$GCP_PROJECT_ID" ] && prompt_for_input GCP_PROJECT_ID "Enter your GCP_PROJECT_ID" false
-
-# Default to us-east1 if GCP_REGION is not set
 [ -z "$GCP_REGION" ] && read -r -p "Enter the GCP region (default: us-east1): " GCP_REGION && GCP_REGION=${GCP_REGION:-us-east1}
 
 # Prompt for Confluent Cloud and MongoDB credentials
@@ -147,13 +168,17 @@ mongodbatlas_org_id = "$MONGODB_ORG_ID"
 mongodbatlas_cloud_region = "$MONGODB_GCP_REGION"
 EOF
 
-echo "[+] Authenticating gcloud"
-docker run -v ./.config:/root/.config/ -ti --rm --name gcloud-config gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud auth application-default login
-if [ $? -ne 0 ]; then
-    echo "[-] Failed to authenticate gcloud"
-    exit 1
+if [ -d ./.config ]; then
+    echo "[+] .config folder exists"
+    IMAGE_ARCH=$IMAGE_ARCH docker run -v ./.config:/root/.config/ -ti --rm --name check-auth gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud auth print-identity-token --quiet
+    if [ $? -ne 0 ]; then
+      authenticate
+    else
+      echo "[+] .config folder exists and is authenticated"
+    fi
+else
+  authenticate
 fi
-echo "[+] gcloud authentication complete"
 
 echo "[+] Applying terraform"
 IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans --rm terraform apply --auto-approve -var-file=variables.tfvars
@@ -163,4 +188,16 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "[+] Terraform apply complete"
+
+file_path="./.config"
+gcp_config_foler=$(get_full_path "$file_path")
+
+echo "[+] Deploying backend"
+
+export GCP_CONFIG_FOLDER=$gcp_config_foler
+export GCP_REGION=$GCP_REGION
+export GCP_PROJECT_ID=$GCP_PROJECT_ID
+
+./infrastructure/modules/backend/websocket/deploy.sh
+
 echo "[+] Done"
