@@ -56,25 +56,25 @@ module "confluent_cloud_cluster" {
   ]
 }
 
-# resource "mongodbatlas_search_index" "search-vector" {
-#   name            = "${var.mongodbatlas_collection}-vector"
-#   project_id      = module.mongodb.project_id
-#   cluster_name    = var.mongodbatlas_cluster
-#   collection_name = var.mongodbatlas_collection
-#   database        = var.mongodbatlas_database
-#   type            = "vectorSearch"
-#   depends_on = [
-#     module.confluent_cloud_cluster
-#   ]
-#   fields = <<-EOF
-# [{
-#       "type": "vector",
-#       "path": "embeddings",
-#       "numDimensions": 1024,
-#       "similarity": "euclidean"
-# }]
-# EOF
-# }
+resource "mongodbatlas_search_index" "search-vector" {
+  name            = "${var.mongodbatlas_collection}-vector"
+  project_id      = module.mongodb.project_id
+  cluster_name    = var.mongodbatlas_cluster
+  collection_name = var.mongodbatlas_collection
+  database        = var.mongodbatlas_database
+  type            = "vectorSearch"
+  depends_on = [
+    module.confluent_cloud_cluster
+  ]
+  fields = <<-EOF
+[{
+      "type": "vector",
+      "path": "embeddings",
+      "numDimensions": 1024,
+      "similarity": "euclidean"
+}]
+EOF
+}
 
 # module "backend" {
 #   source                 = "./modules/backend"
@@ -90,26 +90,31 @@ module "confluent_cloud_cluster" {
 #     secret = module.confluent_cloud_cluster.clients_schema_registry_api_key.secret
 #   }
 #   system_architecture = local.system_architecture
-
+#
 #   connections_api_topics_info = var.connections_api_topics_info
 #   vectorsearch_topics_info    = var.vectorsearch_topics_info
-
+#
 #   mongodb_db_user = {
 #     id     = module.mongodb.connection_user
 #     secret = module.mongodb.connection_password
 #   }
-
+#
 #   mongodb_vectorsearch_info = {
 #     collection_name = module.mongodb.collection
 #     index_name      = mongodbatlas_search_index.search-vector.name
 #     field_path      = "embeddings"
 #   }
-
+#
 #   mongodb_db_info = {
 #     host    = module.mongodb.host
 #     db_name = module.mongodb.database
 #   }
-
+#
+#   gcp = {
+#     project_id = var.gcp_project_id
+#     region     = var.gcp_region
+#   }
+#
 #   depends_on = [
 #     module.confluent_cloud_cluster
 #   ]

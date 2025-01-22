@@ -81,3 +81,11 @@ variable "connections_api_topics_info" {
     input_topic = string
   })
 }
+
+variable "gcp" {
+  description = "The GCP module output"
+  type = object({
+    project_id = string
+    region     = string
+  })
+}

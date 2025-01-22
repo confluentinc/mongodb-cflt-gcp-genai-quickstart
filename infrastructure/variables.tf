@@ -35,6 +35,11 @@ variable "gcp_region" {
   type        = string
 }
 
+variable "gcp_account" {
+  description = "The GCP account used to deploy the infrastructure"
+  type        = string
+}
+
 variable "env_display_id_postfix" {
   description = "A string that will be appended to different resources to make them unique. If not provided, a random string will be generated."
   type        = string

@@ -67,24 +67,26 @@ prompt_for_yes_no() {
     done
 }
 
-authenticate() {
-    echo "[+] Authenticating gcloud"
-    IMAGE_ARCH=$IMAGE_ARCH docker run -v ./.config:/root/.config/ -ti --rm --name gcloud-config gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud auth login
-    if [ $? -ne 0 ]; then
-        echo "[-] Failed to authenticate gcloud"
-        exit 1
+# Function to replace a string in a file
+replace_string_in_file() {
+    local file=$1
+    local search=$2
+    local replace=$3
+
+    if [[ -f "./$file" ]]; then
+      #Check if the file name does not starts with .
+      if [[ $file != .* ]]; then
+        cp "./$file" "./.$file"
+        file=".$file"
+      fi
+
+      sed -i '' "s/$search/$replace/g" "./$file"
+    else
+      echo "[-] File $file not found"
+      exit 1
     fi
 
-    ACCOUNT=$(IMAGE_ARCH=$IMAGE_ARCH docker run -v ./.config:/root/.config/ -ti --rm --name check-auth gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud auth list --format="value(account)")
-    if [ -z "$ACCOUNT" ]; then
-        echo "[-] Failed to get authenticated account"
-        exit 1
-    fi
-
-    IMAGE_ARCH=$IMAGE_ARCH docker run -v ./.config:/root/.config/ -ti --rm --name check-auth gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud config set account "$ACCOUNT"
-    echo "[+] gcloud authenticated as $ACCOUNT"
-
-    echo "[+] gcloud authentication complete"
+    echo "$file"
 }
 
 # Set platform to linux/arm64 if m1 mac is detected. Otherwise set to linux/amd64
@@ -100,7 +102,6 @@ if ! docker info > /dev/null 2>&1; then
   echo 'Error: Docker is not running.' >&2
   exit 1
 fi
-
 
 # Check if terraform is initialized
 if [ ! -d "./infrastructure/.terraform" ]; then
@@ -123,8 +124,9 @@ if [[ -n "$DEFAULT_ENV_FILE" && "$DEFAULT_ENV_FILE" != "-h" && "$DEFAULT_ENV_FIL
 fi
 
 # Prompt for GCP Informations
-[ -z "$GCP_GEMINI_API_KEY" ] && prompt_for_input GCP_GEMINI_API_KEY "Enter your GCP_GEMINI_API_KEY" false
-[ -z "$GCP_PROJECT_ID" ] && prompt_for_input GCP_PROJECT_ID "Enter your GCP_PROJECT_ID" false
+[ -z "$GCP_ACCOUNT" ] && prompt_for_input GCP_ACCOUNT "Enter your GCP Account to use:" false
+[ -z "$GCP_GEMINI_API_KEY" ] && prompt_for_input GCP_GEMINI_API_KEY "Enter your GCP_GEMINI_API_KEY:" false
+[ -z "$GCP_PROJECT_ID" ] && prompt_for_input GCP_PROJECT_ID "Enter your GCP_PROJECT_ID:" false
 [ -z "$GCP_REGION" ] && read -r -p "Enter the GCP region (default: us-east1): " GCP_REGION && GCP_REGION=${GCP_REGION:-us-east1}
 
 # Prompt for Confluent Cloud and MongoDB credentials
@@ -142,6 +144,7 @@ IMAGE_ARCH=$IMAGE_ARCH
 GCP_REGION=$GCP_REGION
 GCP_PROJECT_ID=$GCP_PROJECT_ID
 GCP_GEMINI_API_KEY=$GCP_GEMINI_API_KEY
+GCP_ACCOUNT=$GCP_ACCOUNT
 CONFLUENT_CLOUD_API_KEY=$CONFLUENT_CLOUD_API_KEY
 CONFLUENT_CLOUD_API_SECRET=$CONFLUENT_CLOUD_API_SECRET
 MONGODB_PUBLIC_KEY=$MONGODB_PUBLIC_KEY
@@ -156,6 +159,7 @@ cat << EOF > infrastructure/variables.tfvars
 gcp_region = "$GCP_REGION"
 gcp_project_id = "$GCP_PROJECT_ID"
 gcp_gemini_api_key = "$GCP_GEMINI_API_KEY"
+gcp_account = "$GCP_ACCOUNT"
 confluent_cloud_region = "$GCP_REGION"
 confluent_cloud_api_key = "$CONFLUENT_CLOUD_API_KEY"
 confluent_cloud_api_secret = "$CONFLUENT_CLOUD_API_SECRET"
@@ -168,16 +172,15 @@ mongodbatlas_org_id = "$MONGODB_ORG_ID"
 mongodbatlas_cloud_region = "$MONGODB_GCP_REGION"
 EOF
 
-if [ -d ./.config ]; then
-    echo "[+] .config folder exists"
-    IMAGE_ARCH=$IMAGE_ARCH docker run -v ./.config:/root/.config/ -ti --rm --name check-auth gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud auth print-identity-token --quiet
-    if [ $? -ne 0 ]; then
-      authenticate
-    else
-      echo "[+] .config folder exists and is authenticated"
-    fi
-else
-  authenticate
+# Check if .config folder exists
+if [ ! -d ./.config ]; then
+  echo "[+] Authenticating gcloud"
+  IMAGE_ARCH=$IMAGE_ARCH docker run -v ./.config:/root/.config/ -ti --rm --name gcloud-config gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud auth application-default login
+  if [ $? -ne 0 ]; then
+      echo "[-] Failed to authenticate gcloud"
+      exit 1
+  fi
+  echo "[+] gcloud authentication complete"
 fi
 
 echo "[+] Applying terraform"
@@ -186,18 +189,22 @@ if [ $? -ne 0 ]; then
     echo "[-] Failed to apply terraform"
     exit 1
 fi
-
 echo "[+] Terraform apply complete"
-
-file_path="./.config"
-gcp_config_foler=$(get_full_path "$file_path")
 
 echo "[+] Deploying backend"
 
-export GCP_CONFIG_FOLDER=$gcp_config_foler
 export GCP_REGION=$GCP_REGION
 export GCP_PROJECT_ID=$GCP_PROJECT_ID
+export BOOTSTRAP_SERVER=$(IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans --rm terraform output -raw bootstrap_servers)
+export KAFKA_API_KEY=$(IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans --rm terraform output -raw clients_kafka_api_key)
+export KAFKA_API_SECRET=$(IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans --rm terraform output -raw clients_kafka_api_secret)
+export SR_API_KEY=$(IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans --rm terraform output -raw clients_schema_registry_api_key)
+export SR_API_SECRET=$(IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans --rm terraform output -raw clients_schema_registry_api_secret)
+export SR_URL=$(IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans --rm terraform output -raw schema_registry_url)
+export MONGODB_HOST=$(IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans --rm terraform output -raw mongodb_host)
+export MONGODB_USER=$(IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans --rm terraform output -raw mongodb_db_user)
+export MONGODB_PASSWORD=$(IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans --rm terraform output -raw mongodb_db_password)
 
-./infrastructure/modules/backend/websocket/deploy.sh
+./services/deploy.sh
 
 echo "[+] Done"
