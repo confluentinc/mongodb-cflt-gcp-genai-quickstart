@@ -67,28 +67,6 @@ prompt_for_yes_no() {
     done
 }
 
-# Function to replace a string in a file
-replace_string_in_file() {
-    local file=$1
-    local search=$2
-    local replace=$3
-
-    if [[ -f "./$file" ]]; then
-      #Check if the file name does not starts with .
-      if [[ $file != .* ]]; then
-        cp "./$file" "./.$file"
-        file=".$file"
-      fi
-
-      sed -i '' "s/$search/$replace/g" "./$file"
-    else
-      echo "[-] File $file not found"
-      exit 1
-    fi
-
-    echo "$file"
-}
-
 # Set platform to linux/arm64 if m1 mac is detected. Otherwise set to linux/amd64
 IMAGE_ARCH=$(uname -m | grep -qE 'arm64|aarch64' && echo 'arm64' || echo 'x86_64')
 

@@ -1,9 +1,29 @@
 #!/usr/bin/env bash
 
+echo "[+] Deploying services"
+
 get_full_path() {
     local path=$1
     realpath "$path"
 }
+
+# Function to check if an environment variable is set
+check_env_var() {
+    local var_name=$1
+    if [ -z "${!var_name}" ]; then
+        echo "[-] Error: Environment variable $var_name is not set."
+        exit 1
+    fi
+}
+
+# List of mandatory environment variables
+mandatory_vars=("GCP_REGION" "GCP_PROJECT_ID" "BOOTSTRAP_SERVER" "KAFKA_API_KEY" "KAFKA_API_SECRET" "SR_API_KEY" "SR_API_SECRET" "SR_URL")
+
+# Check each mandatory environment variable
+for var in "${mandatory_vars[@]}"; do
+    check_env_var "$var"
+done
+
 
 IMAGE_ARCH=$(uname -m | grep -qE 'arm64|aarch64' && echo 'arm64' || echo 'x86_64')
 CURRENT_DIR=$(dirname "$0")
@@ -35,36 +55,6 @@ prompt_for_input() {
     done
 }
 
-deploy() {
-  local service_name=$1
-  local has_ui=$2
-
-  local service_path="$SCRIPT_FOLDER"/"$service_name"
-
-  echo "[+] Building and Deploying $service_path"
-
-  if [ "$has_ui" = true ]; then
-    echo "[+] Building $service_name ui"
-    IMAGE_ARCH=$IMAGE_ARCH docker run -v "$service_path"/frontend:/root/source/ -ti --rm --name build-$service_name-cli node:23-alpine3.20 sh -c "cd /root/source/ && npm ci && npm run build"
-    if [ $? -ne 0 ]; then
-        echo "[-] Failed to build $service_name ui"
-        exit 1
-    fi
-    echo "[+] $service_name ui built successfully"
-  fi
-
-  echo "[+] Building and Deploying back end"
-  IMAGE_ARCH=$IMAGE_ARCH docker run -v "$CONFIG_FOLDER":/root/.config/  -v "$service_path":/root/source -ti --rm --name quickstart-deploy-backend gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud run deploy quickstart-gcp-mongo --source "/root/source" --region "$GCP_REGION" --allow-unauthenticated --project "$GCP_PROJECT_ID" \
-  --set-env-vars BOOTSTRAP_SERVER="$BOOTSTRAP_SERVER",KAFKA_API_KEY="$KAFKA_API_KEY",KAFKA_API_SECRET="$KAFKA_API_SECRET",SR_API_KEY="$SR_API_KEY",SR_API_SECRET="$SR_API_SECRET",SR_URL="$SR_URL"
-  if [ $? -ne 0 ]; then
-      echo "[-] Failed to deploy back end"
-      exit 1
-  fi
-  echo "[+] Back end deployed successfully"
-
-  echo "[+] $service_name deployed successfully"
-}
-
 # Check if the the .config folder does not exists
 if [ ! -d "$CONFIG_FOLDER" ]; then
   echo "[+] Authenticating gcloud for cli"
@@ -76,11 +66,25 @@ if [ ! -d "$CONFIG_FOLDER" ]; then
   echo "[+] gcloud authentication complete"
 fi
 
-deploy websocket true
+#Deploying Websocket
+SERVICE_PATH="$SCRIPT_FOLDER/websocket"
+
+echo "[+] Building WebSocket Frontend"
+IMAGE_ARCH=$IMAGE_ARCH docker run -v "$SERVICE_PATH"/frontend:/root/source/ -ti --rm --name build-frontend node:23-alpine3.20 sh -c "cd /root/source/ && npm ci && npm run build"
 if [ $? -ne 0 ]; then
-    echo "[-] Failed to deploy websocket"
+    echo "[-] Failed to build WebSocket ui"
     exit 1
 fi
+echo "[+] WebSocket Frontend built successfully"
+
+echo "[+] Building and Deploying WebSocket backend"
+IMAGE_ARCH=$IMAGE_ARCH docker run -v "$CONFIG_FOLDER":/root/.config/  -v "$SERVICE_PATH":/root/source -ti --rm --name quickstart-deploy-backend gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud run deploy quickstart-gcp-mongo --source "/root/source" --region "$GCP_REGION" --allow-unauthenticated --project "$GCP_PROJECT_ID" \
+--set-env-vars BOOTSTRAP_SERVER="$BOOTSTRAP_SERVER",KAFKA_API_KEY="$KAFKA_API_KEY",KAFKA_API_SECRET="$KAFKA_API_SECRET",SR_API_KEY="$SR_API_KEY",SR_API_SECRET="$SR_API_SECRET",SR_URL="$SR_URL"
+if [ $? -ne 0 ]; then
+    echo "[-] Failed to deploy back end"
+    exit 1
+fi
+echo "[+] WebSocket deployed successfully"
 
 #gcloud run deploy quickstart-gcp-mongo --source . --region us-central1 --allow-unauthenticated
 #gcloud run services delete quickstart-gcp-mongo --region us-central1 --quiet

@@ -10,26 +10,6 @@ get_full_path() {
     realpath "$path"
 }
 
-authenticate() {
-    echo "[+] Authenticating gcloud"
-    IMAGE_ARCH=$IMAGE_ARCH docker run -v ./.config:/root/.config/ -ti --rm --name gcloud-config gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud auth application-default login
-    if [ $? -ne 0 ]; then
-        echo "[-] Failed to authenticate gcloud"
-        exit 1
-    fi
-
-#    ACCOUNT=$(IMAGE_ARCH=$IMAGE_ARCH docker run -v ./.config:/root/.config/ -ti --rm --name check-auth gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud auth list --format="value(account)")
-#    if [ -z "$ACCOUNT" ]; then
-#        echo "[-] Failed to get authenticated account"
-#        exit 1
-#    fi
-
-#    IMAGE_ARCH=$IMAGE_ARCH docker run -v ./.config:/root/.config/ -ti --rm --name check-auth gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud config set account "$ACCOUNT"
-#    echo "[+] gcloud authenticated as $ACCOUNT"
-
-    echo "[+] gcloud authentication complete"
-}
-
 # Check if docker is installed
 if ! [ -x "$(command -v docker)" ]; then
   echo 'Error: docker is not installed.' >&2
@@ -48,29 +28,22 @@ if [ ! -f .env ]; then
 fi
 source .env
 
-# Check if .config folder exists
-#if [ -d ./.config ]; then
-#    echo "[+] .config folder exists"
-#    IMAGE_ARCH=$IMAGE_ARCH docker run -v ./.config:/root/.config/ -ti --rm --name check-auth gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud auth print-identity-token --quiet
-#    if [ $? -ne 0 ]; then
-#      authenticate
-#    else
-#      echo "[+] .config folder exists and is authenticated"
-#    fi
-#else
-#  authenticate
-#fi
-
-
 # destroy backend
-file_path="./.config"
-gcp_config_folder=$(get_full_path "$file_path")
-
-export GCP_CONFIG_FOLDER=$gcp_config_folder
 export GCP_REGION=$GCP_REGION
 export GCP_PROJECT_ID=$GCP_PROJECT_ID
 
-#./infrastructure/modules/backend/websocket/destroy.sh
+./services/destroy.sh
+
+# Check if .config folder exists
+if [ ! -d ./.config ]; then
+  echo "[+] Authenticating gcloud"
+  IMAGE_ARCH=$IMAGE_ARCH docker run -v ./.config:/root/.config/ -ti --rm --name gcloud-config gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud auth application-default login
+  if [ $? -ne 0 ]; then
+      echo "[-] Failed to authenticate gcloud"
+      exit 1
+  fi
+  echo "[+] gcloud authentication complete"
+fi
 
 # destroy infrastructure
 # Check if terraform is initialized
