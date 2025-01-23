@@ -182,13 +182,13 @@ if [ ! -d ./.config ]; then
   echo "[+] gcloud authentication complete"
 fi
 
-#echo "[+] Applying terraform"
-#IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans --rm terraform apply --auto-approve -var-file=variables.tfvars
-#if [ $? -ne 0 ]; then
-#    echo "[-] Failed to apply terraform"
-#    exit 1
-#fi
-#echo "[+] Terraform apply complete"
+echo "[+] Applying terraform"
+IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans --rm terraform apply --auto-approve -var-file=variables.tfvars
+if [ $? -ne 0 ]; then
+    echo "[-] Failed to apply terraform"
+    exit 1
+fi
+echo "[+] Terraform apply complete"
 
 source .env
 
