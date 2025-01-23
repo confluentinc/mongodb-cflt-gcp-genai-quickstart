@@ -147,3 +147,4 @@ builds/
 .terraform.lock.hcl
 .DS_Store
 .config
+.unique_id

@@ -1,4 +1,4 @@
-package io.confluent.pie.quickstart.gcp.mongodb;
+package io.confluent.pie.quickstart.gcp.mongodb.socket;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

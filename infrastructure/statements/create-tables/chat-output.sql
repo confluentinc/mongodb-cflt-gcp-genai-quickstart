@@ -2,6 +2,7 @@ CREATE TABLE
     chat_output (
         sessionId STRING PRIMARY KEY NOT ENFORCED,
         userId STRING,
+        messageId STRING,
         output STRING
     ) DISTRIBUTED INTO 1 BUCKETS
 WITH

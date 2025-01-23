@@ -1,4 +1,8 @@
+import {UserMessage} from "@/utils/UserMessage.tsx";
+import {v4 as uuidv4} from 'uuid';
+
 class WebSocketService {
+    private userId: string = uuidv4();
     private ws: WebSocket | null = null;
     private static instance: WebSocketService;
 
@@ -19,8 +23,7 @@ class WebSocketService {
         // Connect to the WebSocket server
         if (currentLocation.protocol === 'https:') {
             this.ws = new WebSocket('wss://' + location.host + '/ws');
-        }
-        else {
+        } else {
             this.ws = new WebSocket('ws://' + location.host + '/ws');
         }
 
@@ -49,19 +52,22 @@ class WebSocketService {
             const messageId = Date.now().toString();
 
             const handleMessage = (event: MessageEvent) => {
-                const response = JSON.parse(event.data);
+                const response: UserMessage = JSON.parse(event.data);
                 if (response.messageId === messageId) {
                     this.ws?.removeEventListener('message', handleMessage);
-                    resolve(response.text);
+                    resolve(response.message);
                 }
             };
 
             this.ws.addEventListener('message', handleMessage);
 
-            this.ws.send(JSON.stringify({
-                messageId,
-                text: message
-            }));
+            const userMessage: UserMessage = {
+                userId: this.userId,
+                messageId: messageId,
+                message: message
+            };
+
+            this.ws.send(JSON.stringify(userMessage));
         });
     }
 }

@@ -1,4 +1,4 @@
-package io.confluent.pie.quickstart.gcp.mongodb;
+package io.confluent.pie.quickstart.gcp.mongodb.socket;
 
 import org.springframework.stereotype.Controller;
 

@@ -3,14 +3,26 @@ spring:
     name: "QuickstartApplication"
   config:
     activate.on-profile: default
-server:
-  port: ${PORT:8080}
----
-spring:
-  application:
-    name: "QuickstartApplication"
-  config:
-    activate.on-profile: gcp
-    import: sm://
+  kafka:
+    bootstrap-servers: ${BOOTSTRAP_SERVER}
+    producer:
+      client-id: ${CLIENT_ID}
+      key-serializer: io.confluent.pie.quickstart.gcp.mongodb.entities.ChatKeySerializer
+      value-serializer: io.confluent.pie.quickstart.gcp.mongodb.entities.ChatInputSerializer
+    admin:
+      properties:
+        bootstrap.servers: ${BOOTSTRAP_SERVER}
+    properties:
+      schema.registry.url: ${SR_URL}
+      basic.auth.credentials.source: USER_INFO
+      schema.registry.basic.auth.user.info: ${SR_API_KEY}:${SR_API_SECRET}
+      security.protocol: SASL_SSL
+      sasl.mechanism: PLAIN
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${KAFKA_API_KEY}" password="${KAFKA_API_SECRET}";
+    consumer:
+      client-id: ${CLIENT_ID}
+      group-id: ${CLIENT_ID}_grp
+      key-deserializer: io.confluent.pie.quickstart.gcp.mongodb.entities.ChatKeyDeserializer
+      value-deserializer: io.confluent.pie.quickstart.gcp.mongodb.entities.ChatOutputDeserializer
 server:
   port: ${PORT:8080}

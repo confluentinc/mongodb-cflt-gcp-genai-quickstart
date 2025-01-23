@@ -3,6 +3,7 @@ INSERT INTO
 SELECT
     requestId AS sessionId,
     metadata.userId AS userId,
+    metadata.messageId AS messageId,
     response AS output
 FROM
     `chat_input_with_products` /*+ OPTIONS('scan.startup.mode'='latest-offset') */,

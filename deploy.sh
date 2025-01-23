@@ -83,7 +83,8 @@ else
   echo $unique_id > .unique_id
 fi
 
-echo "[+] Deploying quickstart with unique ID: $unique_id"
+export CLIENT_ID="pie_labs|mongodb-cflt-gcp-genai-quickstart|$unique_id"
+echo "[+] Deploying quickstart with unique ID: $unique_id with CLIENT_ID: $CLIENT_ID"
 
 
 # Set platform to linux/arm64 if m1 mac is detected. Otherwise set to linux/amd64
