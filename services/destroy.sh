@@ -11,7 +11,7 @@ get_full_path() {
 check_env_var() {
     local var_name=$1
     if [ -z "${!var_name}" ]; then
-        echo "Error: Environment variable $var_name is not set."
+        echo "[-] Environment variable $var_name is not set."
         exit 1
     fi
 }
@@ -80,10 +80,12 @@ if [ ! -d "$CONFIG_FOLDER" ]; then
   echo "[+] gcloud authentication complete"
 fi
 
+SVC_NAME=quickstart-gcp-mongo-"$UNIQUE_ID"
+
 #Cehck is the service exists
-if check_service_exists "quickstart-gcp-mongo" "$GCP_REGION" "$GCP_PROJECT_ID"; then
+if check_service_exists "$SVC_NAME" "$GCP_REGION" "$GCP_PROJECT_ID"; then
   echo "[+] Destroying WebSocket service"
-  IMAGE_ARCH=$IMAGE_ARCH docker run -v "$CONFIG_FOLDER":/root/.config/ -ti --rm --name quickstart-deploy-backend gcr.io/google.com/cloudsdktool/google-cloud-cli:stable  gcloud run services delete quickstart-gcp-mongo --region "$GCP_REGION" --project "$GCP_PROJECT_ID" --quiet
+  IMAGE_ARCH=$IMAGE_ARCH docker run -v "$CONFIG_FOLDER":/root/.config/ -ti --rm --name quickstart-destroy-backend gcr.io/google.com/cloudsdktool/google-cloud-cli:stable  gcloud run services delete quickstart-gcp-mongo-"$UNIQUE_ID" --region "$GCP_REGION" --project "$GCP_PROJECT_ID" --quiet
   if [ $? -ne 0 ]; then
       echo "[-] Failed to destroy backend"
       exit 1

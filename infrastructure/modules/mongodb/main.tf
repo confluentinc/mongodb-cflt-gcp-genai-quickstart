@@ -14,20 +14,20 @@ resource "mongodbatlas_cluster" "cluster" {
   provider_instance_size_name = "M0"
 }
 
-resource "random_password" "dbuser" {
+resource "random_password" "dbPassword" {
   length  = 16
   special = false
 }
 
-resource "random_string" "dbuser" {
-  length  = 8
-  special = false
+locals {
+  userid = lower(var.unique_id)
+  dbuser = "cflt-quickstart-${local.userid}"
 }
 
 resource "mongodbatlas_database_user" "default" {
   project_id         = mongodbatlas_project.project.id
-  username           = random_string.dbuser.result
-  password           = random_password.dbuser.result
+  username           = local.dbuser
+  password           = random_password.dbPassword.result
   auth_database_name = "admin"
 
   roles {

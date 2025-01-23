@@ -3,8 +3,12 @@ provider "google" {
   region  = var.gcp_region
 }
 
+locals {
+  userid = lower(var.unique_id)
+}
+
 resource "google_service_account" "service_account" {
-  account_id   = "cflt-quickstart-${var.unique_id}"
+  account_id   = "cfltquickstart${local.userid}"
   display_name = "Service Account For Confluent Quickstart"
 }
 

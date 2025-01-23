@@ -9,7 +9,7 @@ module "gcp" {
   source         = "./modules/gcp"
   gcp_region     = var.gcp_region
   gcp_project_id = var.gcp_project_id
-  unique_id      = random_string.unique_id.result
+  unique_id      = var.unique_id
 }
 
 module "mongodb" {
@@ -23,6 +23,7 @@ module "mongodb" {
   mongodbatlas_project        = var.mongodbatlas_project
   mongodbatlas_cloud_provider = var.mongodbatlas_cloud_provider
   mongodbatlas_cloud_region   = var.mongodbatlas_cloud_region
+  unique_id                   = var.unique_id
   providers = {
     mongodbatlas = mongodbatlas
   }
@@ -75,56 +76,3 @@ resource "mongodbatlas_search_index" "search-vector" {
 }]
 EOF
 }
-
-# module "backend" {
-#   source                 = "./modules/backend"
-#   env_display_id_postfix = local.env_display_id_postfix
-#   bootstrap_servers      = module.confluent_cloud_cluster.bootstrap_servers
-#   kafka_api_key = {
-#     id     = module.confluent_cloud_cluster.clients_kafka_api_key.id
-#     secret = module.confluent_cloud_cluster.clients_kafka_api_key.secret
-#   }
-#   schema_registry_url = module.confluent_cloud_cluster.schema_registry_url
-#   schema_registry_api_key = {
-#     id     = module.confluent_cloud_cluster.clients_schema_registry_api_key.id
-#     secret = module.confluent_cloud_cluster.clients_schema_registry_api_key.secret
-#   }
-#   system_architecture = local.system_architecture
-#
-#   connections_api_topics_info = var.connections_api_topics_info
-#   vectorsearch_topics_info    = var.vectorsearch_topics_info
-#
-#   mongodb_db_user = {
-#     id     = module.mongodb.connection_user
-#     secret = module.mongodb.connection_password
-#   }
-#
-#   mongodb_vectorsearch_info = {
-#     collection_name = module.mongodb.collection
-#     index_name      = mongodbatlas_search_index.search-vector.name
-#     field_path      = "embeddings"
-#   }
-#
-#   mongodb_db_info = {
-#     host    = module.mongodb.host
-#     db_name = module.mongodb.database
-#   }
-#
-#   gcp = {
-#     project_id = var.gcp_project_id
-#     region     = var.gcp_region
-#   }
-#
-#   depends_on = [
-#     module.confluent_cloud_cluster
-#   ]
-# }
-
-# module "frontend" {
-#   source                 = "./modules/frontend"
-#   env_display_id_postfix = local.env_display_id_postfix
-#   websocket_endpoint     = module.backend.websocket_endpoint
-#   depends_on = [
-#     module.backend
-#   ]
-# }

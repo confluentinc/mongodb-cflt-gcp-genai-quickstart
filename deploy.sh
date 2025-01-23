@@ -2,6 +2,14 @@
 
 set -eo pipefail
 
+# Function to generate a random string of a given length
+generate_random_string() {
+    local length=$1
+    LC_CTYPE=C tr -dc A-Za-z0-9 </dev/urandom | head -c "$length"
+    echo
+}
+
+# Function to get the full path of a file or directory
 get_full_path() {
     local path=$1
     realpath "$path"
@@ -67,6 +75,17 @@ prompt_for_yes_no() {
     done
 }
 
+#Reusing the unique_id if it exists
+if [ -f .unique_id ]; then
+  unique_id=$(cat .unique_id)
+else
+  unique_id=$(generate_random_string 8)
+  echo $unique_id > .unique_id
+fi
+
+echo "[+] Deploying quickstart with unique ID: $unique_id"
+
+
 # Set platform to linux/arm64 if m1 mac is detected. Otherwise set to linux/amd64
 IMAGE_ARCH=$(uname -m | grep -qE 'arm64|aarch64' && echo 'arm64' || echo 'x86_64')
 
@@ -118,17 +137,18 @@ fi
 # Create .env file from variables set in this file
 echo "[+] Setting up .env file for docker-compose"
 cat << EOF > .env
-IMAGE_ARCH=$IMAGE_ARCH
-GCP_REGION=$GCP_REGION
-GCP_PROJECT_ID=$GCP_PROJECT_ID
-GCP_GEMINI_API_KEY=$GCP_GEMINI_API_KEY
-GCP_ACCOUNT=$GCP_ACCOUNT
-CONFLUENT_CLOUD_API_KEY=$CONFLUENT_CLOUD_API_KEY
-CONFLUENT_CLOUD_API_SECRET=$CONFLUENT_CLOUD_API_SECRET
-MONGODB_PUBLIC_KEY=$MONGODB_PUBLIC_KEY
-MONGODB_PRIVATE_KEY=$MONGODB_PRIVATE_KEY
-MONGODB_ORG_ID=$MONGODB_ORG_ID
-MONGODB_GCP_REGION=$MONGODB_GCP_REGION
+export IMAGE_ARCH=$IMAGE_ARCH
+export GCP_REGION=$GCP_REGION
+export GCP_PROJECT_ID=$GCP_PROJECT_ID
+export GCP_GEMINI_API_KEY=$GCP_GEMINI_API_KEY
+export GCP_ACCOUNT=$GCP_ACCOUNT
+export CONFLUENT_CLOUD_API_KEY=$CONFLUENT_CLOUD_API_KEY
+export CONFLUENT_CLOUD_API_SECRET=$CONFLUENT_CLOUD_API_SECRET
+export MONGODB_PUBLIC_KEY=$MONGODB_PUBLIC_KEY
+export MONGODB_PRIVATE_KEY=$MONGODB_PRIVATE_KEY
+export MONGODB_ORG_ID=$MONGODB_ORG_ID
+export MONGODB_GCP_REGION=$MONGODB_GCP_REGION
+export UNIQUE_ID=$unique_id
 EOF
 
 echo "[+] Setting up infrastructure/variables.tfvars"
@@ -148,6 +168,7 @@ mongodbatlas_public_key = "$MONGODB_PUBLIC_KEY"
 mongodbatlas_private_key = "$MONGODB_PRIVATE_KEY"
 mongodbatlas_org_id = "$MONGODB_ORG_ID"
 mongodbatlas_cloud_region = "$MONGODB_GCP_REGION"
+unique_id = "$unique_id"
 EOF
 
 # Check if .config folder exists
@@ -161,18 +182,18 @@ if [ ! -d ./.config ]; then
   echo "[+] gcloud authentication complete"
 fi
 
-echo "[+] Applying terraform"
-IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans --rm terraform apply --auto-approve -var-file=variables.tfvars
-if [ $? -ne 0 ]; then
-    echo "[-] Failed to apply terraform"
-    exit 1
-fi
-echo "[+] Terraform apply complete"
+#echo "[+] Applying terraform"
+#IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans --rm terraform apply --auto-approve -var-file=variables.tfvars
+#if [ $? -ne 0 ]; then
+#    echo "[-] Failed to apply terraform"
+#    exit 1
+#fi
+#echo "[+] Terraform apply complete"
+
+source .env
 
 echo "[+] Deploying backend"
 
-export GCP_REGION=$GCP_REGION
-export GCP_PROJECT_ID=$GCP_PROJECT_ID
 export BOOTSTRAP_SERVER=$(IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans --rm terraform output -raw bootstrap_servers)
 export KAFKA_API_KEY=$(IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans --rm terraform output -raw clients_kafka_api_key)
 export KAFKA_API_SECRET=$(IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans --rm terraform output -raw clients_kafka_api_secret)

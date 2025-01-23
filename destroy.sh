@@ -29,9 +29,6 @@ fi
 source .env
 
 # destroy backend
-export GCP_REGION=$GCP_REGION
-export GCP_PROJECT_ID=$GCP_PROJECT_ID
-
 ./services/destroy.sh
 
 # Check if .config folder exists
@@ -64,4 +61,5 @@ rm -f infrastructure/variables.tfvars
 rm -rf .config
 rm -f infrastructure/gcp-embed-connection-result.json
 rm -f infrastructure/gcp-gemini-connection-result.json
+rm -f .unique_id
 echo "[+] Clean up completed"

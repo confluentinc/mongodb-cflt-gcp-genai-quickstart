@@ -16,8 +16,15 @@ check_env_var() {
     fi
 }
 
+# Function to convert a string to lowercase
+to_lowercase() {
+    local input_string=$1
+    echo "$input_string" | tr '[:upper:]' '[:lower:]'
+}
+
+
 # List of mandatory environment variables
-mandatory_vars=("GCP_REGION" "GCP_PROJECT_ID" "BOOTSTRAP_SERVER" "KAFKA_API_KEY" "KAFKA_API_SECRET" "SR_API_KEY" "SR_API_SECRET" "SR_URL")
+mandatory_vars=("GCP_REGION" "GCP_PROJECT_ID" "BOOTSTRAP_SERVER" "KAFKA_API_KEY" "KAFKA_API_SECRET" "SR_API_KEY" "SR_API_SECRET" "SR_URL" "UNIQUE_ID")
 
 # Check each mandatory environment variable
 for var in "${mandatory_vars[@]}"; do
@@ -70,15 +77,18 @@ fi
 SERVICE_PATH="$SCRIPT_FOLDER/websocket"
 
 echo "[+] Building WebSocket Frontend"
-IMAGE_ARCH=$IMAGE_ARCH docker run -v "$SERVICE_PATH"/frontend:/root/source/ -ti --rm --name build-frontend node:23-alpine3.20 sh -c "cd /root/source/ && npm ci && npm run build"
+IMAGE_ARCH=$IMAGE_ARCH docker run -v "$SERVICE_PATH":/root/source/ -ti --rm --name build-frontend node:23-alpine3.20 sh -c "cd /root/source/frontend && npm ci && npm run build"
 if [ $? -ne 0 ]; then
     echo "[-] Failed to build WebSocket ui"
     exit 1
 fi
 echo "[+] WebSocket Frontend built successfully"
 
+LOWER_UNIQUE_ID=$(to_lowercase "$UNIQUE_ID")
+SVC_NAME="quickstart-gcp-mongo-"$LOWER_UNIQUE_ID
+
 echo "[+] Building and Deploying WebSocket backend"
-IMAGE_ARCH=$IMAGE_ARCH docker run -v "$CONFIG_FOLDER":/root/.config/  -v "$SERVICE_PATH":/root/source -ti --rm --name quickstart-deploy-backend gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud run deploy quickstart-gcp-mongo --source "/root/source" --region "$GCP_REGION" --allow-unauthenticated --project "$GCP_PROJECT_ID" \
+IMAGE_ARCH=$IMAGE_ARCH docker run -v "$CONFIG_FOLDER":/root/.config/  -v "$SERVICE_PATH":/root/source -ti --rm --name quickstart-deploy-backend gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud run deploy "$SVC_NAME" --source "/root/source" --region "$GCP_REGION" --allow-unauthenticated --project "$GCP_PROJECT_ID" \
 --set-env-vars BOOTSTRAP_SERVER="$BOOTSTRAP_SERVER",KAFKA_API_KEY="$KAFKA_API_KEY",KAFKA_API_SECRET="$KAFKA_API_SECRET",SR_API_KEY="$SR_API_KEY",SR_API_SECRET="$SR_API_SECRET",SR_URL="$SR_URL"
 if [ $? -ne 0 ]; then
     echo "[-] Failed to deploy back end"

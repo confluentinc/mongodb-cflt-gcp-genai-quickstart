@@ -1,3 +1,8 @@
+variable "unique_id" {
+  description = "A unique identifier for the deployment"
+  type        = string
+}
+
 variable "confluent_cloud_api_key" {
   description = "Confluent Cloud API Key (also referred as Cloud API ID) with EnvironmentAdmin and AccountAdmin roles provided by Kafka Ops team"
   type        = string
