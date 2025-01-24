@@ -71,7 +71,7 @@ resource "mongodbatlas_search_index" "search-vector" {
 [{
       "type": "vector",
       "path": "embeddings",
-      "numDimensions": 1024,
+      "numDimensions": 768,
       "similarity": "euclidean"
 }]
 EOF
