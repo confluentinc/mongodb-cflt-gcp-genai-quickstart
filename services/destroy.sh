@@ -16,6 +16,12 @@ check_env_var() {
     fi
 }
 
+# Function to convert a string to lowercase
+to_lowercase() {
+    local input_string=$1
+    echo "$input_string" | tr '[:upper:]' '[:lower:]'
+}
+
 # List of mandatory environment variables
 mandatory_vars=("GCP_REGION" "GCP_PROJECT_ID" )
 
@@ -80,12 +86,13 @@ if [ ! -d "$CONFIG_FOLDER" ]; then
   echo "[+] gcloud authentication complete"
 fi
 
-SVC_NAME=quickstart-gcp-mongo-"$UNIQUE_ID"
+LOWER_UNIQUE_ID=$(to_lowercase "$UNIQUE_ID")
+SVC_NAME="quickstart-gcp-mongo-"$LOWER_UNIQUE_ID
 
 #Cehck is the service exists
 if check_service_exists "$SVC_NAME" "$GCP_REGION" "$GCP_PROJECT_ID"; then
   echo "[+] Destroying WebSocket service"
-  IMAGE_ARCH=$IMAGE_ARCH docker run -v "$CONFIG_FOLDER":/root/.config/ -ti --rm --name quickstart-destroy-backend gcr.io/google.com/cloudsdktool/google-cloud-cli:stable  gcloud run services delete quickstart-gcp-mongo-"$UNIQUE_ID" --region "$GCP_REGION" --project "$GCP_PROJECT_ID" --quiet
+  IMAGE_ARCH=$IMAGE_ARCH docker run -v "$CONFIG_FOLDER":/root/.config/ -ti --rm --name quickstart-destroy-backend gcr.io/google.com/cloudsdktool/google-cloud-cli:stable  gcloud run services delete "$SVC_NAME" --region "$GCP_REGION" --project "$GCP_PROJECT_ID" --quiet
   if [ $? -ne 0 ]; then
       echo "[-] Failed to destroy backend"
       exit 1
