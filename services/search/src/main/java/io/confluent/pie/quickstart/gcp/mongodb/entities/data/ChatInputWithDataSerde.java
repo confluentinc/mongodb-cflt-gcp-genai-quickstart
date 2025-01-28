@@ -1,4 +1,4 @@
-package io.confluent.pie.quickstart.gcp.mongodb.entities;
+package io.confluent.pie.quickstart.gcp.mongodb.entities.data;
 
 import org.apache.kafka.common.serialization.Serdes;
 

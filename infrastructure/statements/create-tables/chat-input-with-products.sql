@@ -1,6 +1,6 @@
 CREATE TABLE
     chat_input_with_products (
-        requestId STRING PRIMARY KEY NOT ENFORCED,
+        sessionId STRING PRIMARY KEY NOT ENFORCED,
         results ARRAY < ROW < `product_id` STRING,
         `summary` STRING,
         `description` STRING,

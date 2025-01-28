@@ -1,7 +1,7 @@
 INSERT INTO
     `chat_input_embeddings`
 SELECT
-    requestId,
+    sessionId,
     embeddings,
     100,
     5,

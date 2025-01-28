@@ -74,11 +74,10 @@ public class ChatInputHandler {
     /**
      * Handle chat output
      *
-     * @param key   Chat key
      * @param value Chat output
      */
     @KafkaListener(topics = "#{kafkaTopicConfig.chatOutputTopic()}", containerFactory = "kafkaListenerContainerFactory", groupId = "${spring.kafka.consumer.group-id}")
-    public void onChatOutput(ChatKey key, ChatOutput value) {
+    public void onChatOutput(ChatOutput value) {
         if (!sessions.containsKey(value.sessionId())) {
             log.error("Session not found for session id {}", value.sessionId());
             return;

@@ -14,7 +14,7 @@ spring:
       sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${KAFKA_API_KEY}" password="${KAFKA_API_SECRET}";
     streams:
       client-id: ${CLIENT_ID}|search
-      application-id: ${CLIENT_ID}_app
+      application-id: ${CLIENT_ID}_search_app
       properties:
         default-key-serde: io.confluent.pie.quickstart.gcp.mongodb.entities.ChatKeySerde
         default-value-serde: io.confluent.pie.quickstart.gcp.mongodb.entities.ChatInputSerde

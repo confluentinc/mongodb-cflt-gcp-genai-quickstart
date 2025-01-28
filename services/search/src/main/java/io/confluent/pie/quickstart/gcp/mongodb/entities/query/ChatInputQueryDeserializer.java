@@ -1,4 +1,4 @@
-package io.confluent.pie.quickstart.gcp.mongodb.entities;
+package io.confluent.pie.quickstart.gcp.mongodb.entities.query;
 
 import io.confluent.kafka.serializers.json.KafkaJsonSchemaDeserializer;
 import io.confluent.kafka.serializers.json.KafkaJsonSchemaDeserializerConfig;

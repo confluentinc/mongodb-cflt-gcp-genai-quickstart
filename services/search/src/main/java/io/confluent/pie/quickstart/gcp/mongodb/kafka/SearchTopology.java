@@ -1,8 +1,8 @@
 package io.confluent.pie.quickstart.gcp.mongodb.kafka;
 
-import io.confluent.pie.quickstart.gcp.mongodb.entities.ChatInputKeySerde;
-import io.confluent.pie.quickstart.gcp.mongodb.entities.ChatInputQuerySerde;
-import io.confluent.pie.quickstart.gcp.mongodb.entities.ChatInputWithDataSerde;
+import io.confluent.pie.quickstart.gcp.mongodb.entities.key.ChatInputKeySerde;
+import io.confluent.pie.quickstart.gcp.mongodb.entities.query.ChatInputQuerySerde;
+import io.confluent.pie.quickstart.gcp.mongodb.entities.data.ChatInputWithDataSerde;
 import io.confluent.pie.quickstart.gcp.mongodb.repository.ProductRepo;
 import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.kstream.Consumed;

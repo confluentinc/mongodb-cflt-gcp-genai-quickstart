@@ -148,3 +148,5 @@ builds/
 .DS_Store
 .config
 .unique_id
+dump_env.sh
+services/websocket/src/main/resources/static/

@@ -1,6 +1,7 @@
-package io.confluent.pie.quickstart.gcp.mongodb.entities;
+package io.confluent.pie.quickstart.gcp.mongodb.entities.query;
 
 import io.confluent.kafka.schemaregistry.annotations.Schema;
+import io.confluent.pie.quickstart.gcp.mongodb.entities.Metadata;
 
 import java.util.List;
 
@@ -123,29 +124,29 @@ import java.util.List;
                 }
               ]
             },
-            "requestId": {
+            "sessionId": {
               "connect.index": 0,
               "type": "string"
             }
           },
           "required": [
-            "requestId"
+            "sessionId"
           ],
           "title": "Record",
           "type": "object"
         }""", refs = {})
-public record ChatInputQuery(String requestId,
+public record ChatInputQuery(String sessionId,
                              List<Double> embeddings,
                              int numberOfCandidate,
                              int limit,
                              double minScore,
                              Metadata metadata) {
-    public ChatInputQuery(String requestId, List<Double> embeddings, int numberOfCandidate, int limit, double minScore) {
-        this(requestId, embeddings, numberOfCandidate, limit, minScore, null);
+    public ChatInputQuery(String sessionId, List<Double> embeddings, int numberOfCandidate, int limit, double minScore) {
+        this(sessionId, embeddings, numberOfCandidate, limit, minScore, null);
     }
 
-    public ChatInputQuery(String requestId, List<Double> embeddings, int numberOfCandidate, int limit, double minScore, Metadata metadata) {
-        this.requestId = requestId;
+    public ChatInputQuery(String sessionId, List<Double> embeddings, int numberOfCandidate, int limit, double minScore, Metadata metadata) {
+        this.sessionId = sessionId;
         this.embeddings = embeddings;
         this.numberOfCandidate = numberOfCandidate;
         this.limit = limit;
@@ -153,7 +154,7 @@ public record ChatInputQuery(String requestId,
         this.metadata = metadata;
     }
 
-    public ChatInputQuery(String requestId, List<Double> embeddings) {
-        this(requestId, embeddings, 100, 10, 0.0, null);
+    public ChatInputQuery(String sessionId, List<Double> embeddings) {
+        this(sessionId, embeddings, 100, 10, 0.0, null);
     }
 }

@@ -1,17 +1,17 @@
-package io.confluent.pie.quickstart.gcp.mongodb.entities;
+package io.confluent.pie.quickstart.gcp.mongodb.entities.key;
 
 import io.confluent.kafka.schemaregistry.annotations.Schema;
 
 @Schema(value = """
         {
           "properties": {
-            "requestId": {
+            "sessionId": {
               "connect.index": 0,
               "type": "string"
             }
           },
           "required": [
-            "requestId"
+            "sessionId"
           ],
           "title": "Record",
           "type": "object"
@@ -19,5 +19,5 @@ import io.confluent.kafka.schemaregistry.annotations.Schema;
         """,
         refs = {}
 )
-public record ChatInputKey(String requestId) {
+public record ChatInputKey(String sessionId) {
 }

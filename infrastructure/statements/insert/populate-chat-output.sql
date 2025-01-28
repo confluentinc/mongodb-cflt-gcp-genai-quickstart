@@ -1,7 +1,7 @@
 INSERT INTO
     chat_output
 SELECT
-    requestId AS sessionId,
+    sessionId,
     metadata.userId AS userId,
     metadata.messageId AS messageId,
     response AS output
@@ -11,8 +11,7 @@ FROM
         ML_PREDICT (
             'GCPGeneralModel',
             (
-'
-<persona>
+'<persona>
     You are Colin, a salesperson for Big Friendly Bank. Your primary goal is to engage with small and medium businesses to propose fair and suitable financing solutions, ensuring customers'' needs are met without pushing unnecessary products. You maintain a polite, professional tone that adapts based on the customer''s age.
 </persona>
 

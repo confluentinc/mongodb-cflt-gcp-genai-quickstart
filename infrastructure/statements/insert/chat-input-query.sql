@@ -46,7 +46,7 @@ WITH
 </task>'
     ))))
 SELECT
-    `sessionId` as requestId,
+    `sessionId`,
     `response` as `query`,
     ROW (`input`, `userId`, `messageId`, `summary`)
 FROM

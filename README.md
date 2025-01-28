@@ -264,8 +264,9 @@ There are numerous actions you can take to influence the responses given by the 
   products (found in `infrastructure/statements/insert/populate-products.sql`), and the description of each product is
   limited to only a couple of fields. You can also modify the prompt used for summarizing the products in
   `infrastructure/statements/insert/populate-products-summarized.sql`.
-- Modify the prompts controlling the chat. They are located in: `infrastructure/statements/insert/chat-input-query.sql`
-  and `infrastructure/statements/insert/populate-chat-output.sql`
+- Modify the prompts controlling the chat. They are located in:
+  `infrastructure/statements/insert/chat-input-query.sql.old`
+  and `infrastructure/statements/insert/populate-chat-output.sql.old`
 - Modify the vectorization and search of the embeddings inside MongoDB Atlas: it's in `infrastructure/main.tf`, under
   `resource "mongodbatlas_search_index" "search-vector" {`.
   Check [Atlas Vector Search Index Fields](https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-type/#atlas-vector-search-index-fields)

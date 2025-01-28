@@ -1,6 +1,8 @@
-package io.confluent.pie.quickstart.gcp.mongodb.entities;
+package io.confluent.pie.quickstart.gcp.mongodb.entities.data;
 
 import io.confluent.kafka.schemaregistry.annotations.Schema;
+import io.confluent.pie.quickstart.gcp.mongodb.entities.Metadata;
+import io.confluent.pie.quickstart.gcp.mongodb.entities.Product;
 
 import java.util.List;
 
@@ -76,7 +78,7 @@ import java.util.List;
                 }
               ]
             },
-            "requestId": {
+            "sessionId": {
               "connect.index": 0,
               "type": "string"
             },
@@ -271,15 +273,15 @@ import java.util.List;
             }
           },
           "required": [
-            "requestId"
+            "sessionId"
           ],
           "title": "Record",
           "type": "object"
         }""", refs = {})
 public record ChatInputWithData(
-        String requestId,
+        String sessionId,
         List<Result> results,
-        String productSummaries,
+        String product_summaries,
         Metadata metadata) {
 
     public record Result(
