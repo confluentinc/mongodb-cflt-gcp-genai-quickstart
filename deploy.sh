@@ -55,6 +55,20 @@ prompt_for_input() {
     done
 }
 
+prompt_for_input_with_default() {
+    local var_name=$1
+    local prompt_message=$2
+    local default_value=$3
+
+    read -r -p "$prompt_message (default $default_value): " input_value
+
+    if [ -z "$input_value" ]; then
+        eval "$var_name='$default_value'"
+    else
+        eval "$var_name='$input_value'"
+    fi
+}
+
 # Function to prompt for a yes/no response. returns 1 for yes, 0 for no
 prompt_for_yes_no() {
     local prompt_message=$1
@@ -133,24 +147,34 @@ fi
 [ -z "$MONGODB_ORG_ID" ] && prompt_for_input MONGODB_ORG_ID "Enter your MongoDB Org ID" false
 [ -z "$MONGODB_PUBLIC_KEY" ] && prompt_for_input MONGODB_PUBLIC_KEY "Enter your MongoDB Public Key" false
 [ -z "$MONGODB_PRIVATE_KEY" ] && prompt_for_input MONGODB_PRIVATE_KEY "Enter your MongoDB Private Key" true
-[ -z "$MONGODB_GCP_REGION" ] && prompt_for_input MONGODB_GCP_REGION "Enter your MongoDB GCP Region" true
+[ -z "$MONGODB_GCP_REGION" ] && prompt_for_input MONGODB_GCP_REGION "Enter your MongoDB GCP Region" false
+[ -z "$MONGODB_CLUSTER" ] && prompt_for_input_with_default MONGODB_CLUSTER "Enter your MongoDB Cluster" "genai"
+[ -z "$MONGODB_DATABASE" ] && prompt_for_input_with_default MONGODB_DATABASE "Enter your MongoDB Database" "genai"
+[ -z "$MONGODB_COLLECTION" ] && prompt_for_input_with_default MONGODB_COLLECTION "Enter your MongoDB Collection" "products_summarized_with_embeddings"
+
 
 # Create .env file from variables set in this file
 echo "[+] Setting up .env file for docker-compose"
 cat << EOF > .env
 export IMAGE_ARCH="$IMAGE_ARCH"
+export UNIQUE_ID="$unique_id"
+export CLIENT_ID="$CLIENT_ID"
+
 export GCP_REGION="$GCP_REGION"
 export GCP_PROJECT_ID="$GCP_PROJECT_ID"
 export GCP_GEMINI_API_KEY="$GCP_GEMINI_API_KEY"
 export GCP_ACCOUNT="$GCP_ACCOUNT"
+
 export CONFLUENT_CLOUD_API_KEY="$CONFLUENT_CLOUD_API_KEY"
 export CONFLUENT_CLOUD_API_SECRET="$CONFLUENT_CLOUD_API_SECRET"
+
+export MONGODB_CLUSTER="$MONGODB_CLUSTER"
+export MONGODB_DATABASE="$MONGODB_DATABASE"
+export MONGODB_COLLECTION="$MONGODB_COLLECTION"
 export MONGODB_PUBLIC_KEY="$MONGODB_PUBLIC_KEY"
 export MONGODB_PRIVATE_KEY="$MONGODB_PRIVATE_KEY"
 export MONGODB_ORG_ID="$MONGODB_ORG_ID"
 export MONGODB_GCP_REGION="$MONGODB_GCP_REGION"
-export UNIQUE_ID="$unique_id"
-export CLIENT_ID="$CLIENT_ID"
 EOF
 
 echo "[+] Setting up infrastructure/variables.tfvars"
