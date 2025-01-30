@@ -1,9 +1,9 @@
 package io.confluent.pie.quickstart.gcp.mongodb.kafka;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.confluent.pie.quickstart.gcp.mongodb.entities.ChatInput;
-import io.confluent.pie.quickstart.gcp.mongodb.entities.ChatKey;
-import io.confluent.pie.quickstart.gcp.mongodb.entities.ChatOutput;
+import io.confluent.pie.quickstart.gcp.mongodb.entities.input.ChatInput;
+import io.confluent.pie.quickstart.gcp.mongodb.entities.key.ChatKey;
+import io.confluent.pie.quickstart.gcp.mongodb.entities.output.ChatOutput;
 import io.confluent.pie.quickstart.gcp.mongodb.entities.UserMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -26,11 +26,14 @@ public class ChatInputHandler {
     private final Map<String, WebSocketSession> sessions = new ConcurrentHashMap<>();
     private final KafkaTemplate<ChatKey, ChatInput> kafkaTemplate;
     private final KafkaTopicConfig kafkaTopicConfig;
+    private final HistoryManager historyManager;
 
     public ChatInputHandler(@Autowired KafkaTemplate<ChatKey, ChatInput> kafkaTemplate,
-                            @Autowired KafkaTopicConfig kafkaTopicConfig) {
+                            @Autowired KafkaTopicConfig kafkaTopicConfig,
+                            @Autowired HistoryManager historyManager) {
         this.kafkaTemplate = kafkaTemplate;
         this.kafkaTopicConfig = kafkaTopicConfig;
+        this.historyManager = historyManager;
     }
 
     /**
@@ -49,15 +52,18 @@ public class ChatInputHandler {
      */
     public void onSessionClose(WebSocketSession session) {
         sessions.remove(session.getId());
+        historyManager.onSessionClose(session.getId());
     }
 
     public void onNewMessage(WebSocketSession session, UserMessage userMessage) {
+        final String history = historyManager.getHistory(session.getId());
+
         final ChatInput chatInput = new ChatInput(
                 session.getId(),
                 userMessage.userId(),
                 userMessage.messageId(),
                 userMessage.message(),
-                "",
+                history,
                 String.valueOf(System.currentTimeMillis()));
         final ChatKey chatInputKey = new ChatKey(chatInput.sessionId());
 
@@ -67,6 +73,8 @@ public class ChatInputHandler {
         kafkaTemplate.send(producerRecord).whenComplete((recordMetadata, throwable) -> {
             if (throwable != null) {
                 log.error("Failed to send message to Confluent Cloud", throwable);
+            } else {
+                historyManager.onHumanActivity(chatInput.sessionId(), userMessage.message());
             }
         });
     }
@@ -83,10 +91,12 @@ public class ChatInputHandler {
             return;
         }
 
+        historyManager.onBotActivity(value.sessionId(), value.output());
+
         final UserMessage response = new UserMessage(
                 value.userId(),
                 value.messageId(),
-                "Hello " + value.output());
+                value.output());
 
         try {
             sessions.get(value.sessionId()).sendMessage(new TextMessage(OBJECT_MAPPER.writeValueAsString(response)));

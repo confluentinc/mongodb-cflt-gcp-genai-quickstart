@@ -1,4 +1,4 @@
-package io.confluent.pie.quickstart.gcp.mongodb.entities;
+package io.confluent.pie.quickstart.gcp.mongodb.entities.key;
 
 import io.confluent.kafka.schemaregistry.annotations.Schema;
 

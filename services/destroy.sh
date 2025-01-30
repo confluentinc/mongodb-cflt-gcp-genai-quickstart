@@ -87,6 +87,20 @@ if [ ! -d "$CONFIG_FOLDER" ]; then
 fi
 
 LOWER_UNIQUE_ID=$(to_lowercase "$UNIQUE_ID")
+
+SVC_NAME="quickstart-gcp-mongo-search-"$LOWER_UNIQUE_ID
+
+#Cehck is the service exists
+if check_service_exists "$SVC_NAME" "$GCP_REGION" "$GCP_PROJECT_ID"; then
+  echo "[+] Destroying Search service"
+  IMAGE_ARCH=$IMAGE_ARCH docker run -v "$CONFIG_FOLDER":/root/.config/ -ti --rm --name quickstart-destroy-backend gcr.io/google.com/cloudsdktool/google-cloud-cli:stable  gcloud run services delete "$SVC_NAME" --region "$GCP_REGION" --project "$GCP_PROJECT_ID" --quiet
+  if [ $? -ne 0 ]; then
+      echo "[-] Failed to destroy backend"
+      exit 1
+  fi
+  echo "[+] Search destroyed successfully"
+fi
+
 SVC_NAME="quickstart-gcp-mongo-"$LOWER_UNIQUE_ID
 
 #Cehck is the service exists

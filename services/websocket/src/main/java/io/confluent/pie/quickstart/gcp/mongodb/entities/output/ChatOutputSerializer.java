@@ -1,4 +1,4 @@
-package io.confluent.pie.quickstart.gcp.mongodb.entities;
+package io.confluent.pie.quickstart.gcp.mongodb.entities.output;
 
 import io.confluent.kafka.serializers.json.KafkaJsonSchemaSerializer;
 

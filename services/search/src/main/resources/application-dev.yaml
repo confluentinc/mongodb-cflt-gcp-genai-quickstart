@@ -2,7 +2,7 @@ spring:
   application:
     name: "QuickstartSearchService"
   config:
-    activate.on-profile: default
+    activate.on-profile: dev
   kafka:
     bootstrap-servers: ${BOOTSTRAP_SERVER}
     properties:
@@ -26,4 +26,4 @@ mongodb:
   field_path: "embeddings"
   index_name: "products_summarized_with_embeddings-vector"
 server:
-  port: ${PORT:8080}
+  port: ${PORT:8081}
