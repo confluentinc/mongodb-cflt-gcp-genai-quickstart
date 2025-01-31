@@ -66,8 +66,7 @@ public class ChatInputHandler {
                 history,
                 String.valueOf(System.currentTimeMillis()));
         final ChatKey chatInputKey = new ChatKey(chatInput.sessionId());
-
-
+        
         final ProducerRecord<ChatKey, ChatInput> producerRecord = new ProducerRecord<>(kafkaTopicConfig.chatInputTopic(), chatInputKey, chatInput);
 
         kafkaTemplate.send(producerRecord).whenComplete((recordMetadata, throwable) -> {

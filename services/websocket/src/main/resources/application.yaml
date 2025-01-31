@@ -19,7 +19,6 @@ spring:
       security.protocol: SASL_SSL
       sasl.mechanism: PLAIN
       sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${KAFKA_API_KEY}" password="${KAFKA_API_SECRET}";
-      max.poll.interval.ms: 1000
     consumer:
       client-id: ${CLIENT_ID}
       group-id: ${CLIENT_ID}_grp

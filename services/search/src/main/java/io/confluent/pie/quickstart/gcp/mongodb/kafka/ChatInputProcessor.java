@@ -13,6 +13,8 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -21,6 +23,7 @@ public class ChatInputProcessor {
     private final ProductRepo productRepo;
     private final KafkaTemplate<ChatInputKey, ChatInputWithData> kafkaTemplate;
     private final KafkaTopicConfig kafkaTopicConfig;
+    private final ExecutorService executorService = Executors.newFixedThreadPool(10);
 
     public ChatInputProcessor(@Autowired ProductRepo productRepo,
                               @Autowired KafkaTemplate<ChatInputKey, ChatInputWithData> kafkaTemplate,
@@ -30,36 +33,40 @@ public class ChatInputProcessor {
         this.kafkaTopicConfig = kafkaTopicConfig;
     }
 
-    @KafkaListener(topics = "#{kafkaTopicConfig.getInputTopic()}", containerFactory = "kafkaListenerContainerFactory", groupId = "${spring.kafka.consumer.group-id}")
+    @KafkaListener(topics = "#{kafkaTopicConfig.getInputTopic()}",
+            containerFactory = "kafkaListenerContainerFactory",
+            groupId = "${spring.kafka.consumer.group-id}",
+            clientIdPrefix = "${spring.kafka.consumer.client-id}")
     public void onEvent(ChatInputQuery query) {
         log.info("Processing record: {}", query.sessionId());
 
-        final List<Product> products = productRepo.findProductsByVector(
-                query.embeddings(),
-                query.numberOfCandidate(),
-                query.limit(),
-                query.minScore());
+        executorService.submit(() -> {
+            final List<Product> products = productRepo.findProductsByVector(
+                    query.embeddings(),
+                    query.numberOfCandidate(),
+                    query.limit(),
+                    query.minScore());
 
-        final ChatInputWithData chatInputWithData = new ChatInputWithData(
-                query.sessionId(),
-                products.stream().map(ChatInputWithData.Result::fromProduct).toList(),
-                products.stream().map(Product::getSummary).collect(Collectors.joining("\n")),
-                query.metadata()
-        );
+            final ChatInputWithData chatInputWithData = new ChatInputWithData(
+                    query.sessionId(),
+                    products.stream().map(ChatInputWithData.Result::fromProduct).toList(),
+                    products.stream().map(Product::getSummary).collect(Collectors.joining("\n")),
+                    query.metadata()
+            );
 
-        final ProducerRecord<ChatInputKey, ChatInputWithData> producerRecord = new ProducerRecord<>(
-                kafkaTopicConfig.getOutputTopic(),
-                new ChatInputKey(query.sessionId()),
-                chatInputWithData);
+            final ProducerRecord<ChatInputKey, ChatInputWithData> producerRecord = new ProducerRecord<>(
+                    kafkaTopicConfig.getOutputTopic(),
+                    new ChatInputKey(query.sessionId()),
+                    chatInputWithData);
 
 
-        kafkaTemplate.send(producerRecord).whenComplete((recordMetadata, throwable) -> {
-            if (throwable != null) {
-                log.error("Failed to forward record: {}", chatInputWithData.sessionId(), throwable);
-            } else {
-                log.info("Forwarded record: {}", chatInputWithData.sessionId());
-            }
+            kafkaTemplate.send(producerRecord).whenComplete((recordMetadata, throwable) -> {
+                if (throwable != null) {
+                    log.error("Failed to forward record: {}", chatInputWithData.sessionId(), throwable);
+                } else {
+                    log.info("Forwarded record: {}", chatInputWithData.sessionId());
+                }
+            });
         });
-
     }
 }

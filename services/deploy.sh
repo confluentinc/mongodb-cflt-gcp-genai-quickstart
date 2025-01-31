@@ -58,7 +58,7 @@ SERVICE_PATH="$SCRIPT_FOLDER/search"
 SVC_NAME="quickstart-gcp-mongo-search-"$LOWER_UNIQUE_ID
 
 echo "[+] Building and Deploying search"
-IMAGE_ARCH=$IMAGE_ARCH docker run -v "$CONFIG_FOLDER":/root/.config/  -v "$SERVICE_PATH":/root/source -ti --rm --name quickstart-deploy-search gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud run deploy "$SVC_NAME" --source "/root/source/" --region "$GCP_REGION" --allow-unauthenticated --project "$GCP_PROJECT_ID" \
+IMAGE_ARCH=$IMAGE_ARCH docker run -v "$CONFIG_FOLDER":/root/.config/  -v "$SERVICE_PATH":/root/source -ti --rm --name quickstart-deploy-search gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud run deploy "$SVC_NAME" --source "/root/source/" --no-cpu-throttling --region "$GCP_REGION" --allow-unauthenticated --project "$GCP_PROJECT_ID" --cpu 2 --memory 1Gi \
 --set-env-vars MONGODB_HOST="$MONGODB_HOST",MONGODB_CLUSTER="$MONGODB_CLUSTER",MONGODB_DATABASE="$MONGODB_DATABASE",MONGODB_COLLECTION="$MONGODB_COLLECTION",MONGODB_USER="$MONGODB_USER",MONGODB_PWD="$MONGODB_PASSWORD",BOOTSTRAP_SERVER="$BOOTSTRAP_SERVER",KAFKA_API_KEY="$KAFKA_API_KEY",KAFKA_API_SECRET="$KAFKA_API_SECRET",SR_API_KEY="$SR_API_KEY",SR_API_SECRET="$SR_API_SECRET",SR_URL="$SR_URL",CLIENT_ID="$CLIENT_ID"
 if [ $? -ne 0 ]; then
     echo "[-] Failed to deploy back end"
@@ -70,23 +70,23 @@ SEARCH_URL=$(IMAGE_ARCH=$IMAGE_ARCH docker run -v "$CONFIG_FOLDER":/root/.config
 SEARCH_URL=${SEARCH_URL//$'\r'/}
 echo "[+] Search URL: $SEARCH_URL"
 
-##Deploying Websocket
-#SERVICE_PATH="$SCRIPT_FOLDER/websocket"
-#SVC_NAME="quickstart-gcp-mongo-"$LOWER_UNIQUE_ID
-#
-#echo "[+] Building WebSocket Frontend"
-#IMAGE_ARCH=$IMAGE_ARCH docker run -v "$SERVICE_PATH":/root/source/ -ti --rm --name build-frontend node:current-alpine3.20 sh -c "cd /root/source/frontend && npm i && npm run build"
-#if [ $? -ne 0 ]; then
-#    echo "[-] Failed to build WebSocket ui"
-#    exit 1
-#fi
-#echo "[+] WebSocket Frontend built successfully"
-#
-#echo "[+] Building and Deploying WebSocket backend"
-#IMAGE_ARCH=$IMAGE_ARCH docker run -v "$CONFIG_FOLDER":/root/.config/  -v "$SERVICE_PATH":/root/source -ti --rm --name quickstart-deploy-websocket gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud run deploy "$SVC_NAME" --source "/root/source/" --region "$GCP_REGION" --allow-unauthenticated --project "$GCP_PROJECT_ID" \
-#--set-env-vars MONITOR_SERVICES="$SEARCH_URL",BOOTSTRAP_SERVER="$BOOTSTRAP_SERVER",KAFKA_API_KEY="$KAFKA_API_KEY",KAFKA_API_SECRET="$KAFKA_API_SECRET",SR_API_KEY="$SR_API_KEY",SR_API_SECRET="$SR_API_SECRET",SR_URL="$SR_URL",CLIENT_ID="$CLIENT_ID"
-#if [ $? -ne 0 ]; then
-#    echo "[-] Failed to deploy back end"
-#    exit 1
-#fi
-#echo "[+] WebSocket deployed successfully"
+#Deploying Websocket
+SERVICE_PATH="$SCRIPT_FOLDER/websocket"
+SVC_NAME="quickstart-gcp-mongo-"$LOWER_UNIQUE_ID
+
+echo "[+] Building WebSocket Frontend"
+IMAGE_ARCH=$IMAGE_ARCH docker run -v "$SERVICE_PATH":/root/source/ -ti --rm --name build-frontend node:current-alpine3.20 sh -c "cd /root/source/frontend && npm i && npm run build"
+if [ $? -ne 0 ]; then
+    echo "[-] Failed to build WebSocket ui"
+    exit 1
+fi
+echo "[+] WebSocket Frontend built successfully"
+
+echo "[+] Building and Deploying WebSocket backend"
+IMAGE_ARCH=$IMAGE_ARCH docker run -v "$CONFIG_FOLDER":/root/.config/  -v "$SERVICE_PATH":/root/source -ti --rm --name quickstart-deploy-websocket gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud run deploy "$SVC_NAME" --no-cpu-throttling --source "/root/source/" --region "$GCP_REGION" --allow-unauthenticated --cpu 2 --memory 1Gi --project "$GCP_PROJECT_ID" \
+--set-env-vars MONITOR_SERVICES="$SEARCH_URL",BOOTSTRAP_SERVER="$BOOTSTRAP_SERVER",KAFKA_API_KEY="$KAFKA_API_KEY",KAFKA_API_SECRET="$KAFKA_API_SECRET",SR_API_KEY="$SR_API_KEY",SR_API_SECRET="$SR_API_SECRET",SR_URL="$SR_URL",CLIENT_ID="$CLIENT_ID"
+if [ $? -ne 0 ]; then
+    echo "[-] Failed to deploy back end"
+    exit 1
+fi
+echo "[+] WebSocket deployed successfully"
