@@ -25,7 +25,6 @@ spring:
       group-id: ${CLIENT_ID}_grp
       key-deserializer: io.confluent.pie.quickstart.gcp.mongodb.entities.key.ChatKeyDeserializer
       value-deserializer: io.confluent.pie.quickstart.gcp.mongodb.entities.output.ChatOutputDeserializer
-
   data:
     mongodb:
       uri: mongodb+srv://${MONGODB_USER}:${MONGODB_PWD}}@${MONGODB_HOST}

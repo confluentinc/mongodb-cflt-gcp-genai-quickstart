@@ -13,14 +13,17 @@ spring:
       sasl.mechanism: PLAIN
       sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${KAFKA_API_KEY}" password="${KAFKA_API_SECRET}";
       max.poll.interval.ms: 1000
-    streams:
-      client-id: ${CLIENT_ID}|search
-      application-id: ${CLIENT_ID}_search_app
-      properties:
-        default-key-serde: io.confluent.pie.quickstart.gcp.mongodb.entities.ChatKeySerde
-        default-value-serde: io.confluent.pie.quickstart.gcp.mongodb.entities.ChatInputSerde
+    producer:
+      client-id: ${CLIENT_ID}|producer|search
+      key-serializer: io.confluent.pie.quickstart.gcp.mongodb.entities.key.ChatInputKeySerializer
+      value-serializer: io.confluent.pie.quickstart.gcp.mongodb.entities.data.ChatInputWithDataSerializer
+    consumer:
+      client-id: ${CLIENT_ID}|consumer|search
+      group-id: ${CLIENT_ID}_search_app
+      key-deserializer: io.confluent.pie.quickstart.gcp.mongodb.entities.key.ChatInputKeyDeserializer
+      value-deserializer: io.confluent.pie.quickstart.gcp.mongodb.entities.query.ChatInputQueryDeserializer
 mongodb:
-  uri: mongodb+srv://${MONGODB_USER}:${MONGODB_PWD}@${MONGODB_HOST}/?retryWrites=true&w=majority
+  uri: mongodb+srv://${MONGODB_USER}:${MONGODB_PWD}@${MONGODB_HOST}/?retryWrites=true&w=majority&maxIdleTimeMS=60000
   database: ${MONGODB_DATABASE}
   collection: ${MONGODB_COLLECTION}
   field_path: "embeddings"

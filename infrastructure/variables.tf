@@ -151,3 +151,9 @@ variable "connections_api_topics_info" {
     input_topic = "chat_output"
   }
 }
+
+variable "architecture" {
+  description = "The architecture of the deployment"
+  type        = string
+  default     = "x86_64"
+}

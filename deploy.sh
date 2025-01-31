@@ -195,6 +195,7 @@ mongodbatlas_private_key = "$MONGODB_PRIVATE_KEY"
 mongodbatlas_org_id = "$MONGODB_ORG_ID"
 mongodbatlas_cloud_region = "$MONGODB_GCP_REGION"
 unique_id = "$unique_id"
+architecture = "$IMAGE_ARCH"
 EOF
 
 # Check if .config folder exists

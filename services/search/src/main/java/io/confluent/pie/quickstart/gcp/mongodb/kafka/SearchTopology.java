@@ -16,23 +16,23 @@ import java.util.Map;
 @Component
 public class SearchTopology {
 
-    @Autowired
-    void buildPipeline(StreamsBuilder streamsBuilder, KafkaProperties kafkaProperties, ProductRepo productRepo) {
-        final Map<String, ?> properties = kafkaProperties.buildProducerProperties();
-        final ChatInputKeySerde chatInputKeySerde = new ChatInputKeySerde();
-        final ChatInputQuerySerde chatInputQuerySerde = new ChatInputQuerySerde();
-        final ChatInputWithDataSerde chatInputWithDataSerde = new ChatInputWithDataSerde();
-
-        chatInputKeySerde.configure(properties, true);
-        chatInputQuerySerde.configure(properties, false);
-        chatInputWithDataSerde.configure(properties, false);
-
-        streamsBuilder
-                .stream("chat_input_embeddings", Consumed.with(chatInputKeySerde, chatInputQuerySerde))
-                .process(() -> new ChatInputProcessor(productRepo))
-                .to("chat_input_with_products", Produced.with(chatInputKeySerde, chatInputWithDataSerde));
-
-
-    }
+//    @Autowired
+//    void buildPipeline(StreamsBuilder streamsBuilder, KafkaProperties kafkaProperties, ProductRepo productRepo) {
+//        final Map<String, ?> properties = kafkaProperties.buildProducerProperties();
+//        final ChatInputKeySerde chatInputKeySerde = new ChatInputKeySerde();
+//        final ChatInputQuerySerde chatInputQuerySerde = new ChatInputQuerySerde();
+//        final ChatInputWithDataSerde chatInputWithDataSerde = new ChatInputWithDataSerde();
+//
+//        chatInputKeySerde.configure(properties, true);
+//        chatInputQuerySerde.configure(properties, false);
+//        chatInputWithDataSerde.configure(properties, false);
+//
+//        streamsBuilder
+//                .stream("chat_input_embeddings", Consumed.with(chatInputKeySerde, chatInputQuerySerde))
+//                .process(() -> new ChatInputProcessor(productRepo))
+//                .to("chat_input_with_products", Produced.with(chatInputKeySerde, chatInputWithDataSerde));
+//
+//
+//    }
 
 }

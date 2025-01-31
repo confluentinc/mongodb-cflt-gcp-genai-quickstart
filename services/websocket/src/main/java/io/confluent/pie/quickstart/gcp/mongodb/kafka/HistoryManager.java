@@ -28,7 +28,7 @@ public class HistoryManager implements Closeable {
     public void onHumanActivity(String sessionId, String humanQuery) {
         ConversationHistory conversationHistory = cache.get(sessionId);
         if (conversationHistory == null) {
-            conversationHistory = new ConversationHistory();
+            conversationHistory = new ConversationHistory(sessionId);
         }
         conversationHistory.addHumanQuery(humanQuery);
         cache.put(sessionId, conversationHistory);
@@ -37,7 +37,7 @@ public class HistoryManager implements Closeable {
     public void onBotActivity(String sessionId, String botResponse) {
         ConversationHistory conversationHistory = cache.get(sessionId);
         if (conversationHistory == null) {
-            conversationHistory = new ConversationHistory();
+            conversationHistory = new ConversationHistory(sessionId);
         }
         conversationHistory.addBotMessage(botResponse);
         cache.put(sessionId, conversationHistory);

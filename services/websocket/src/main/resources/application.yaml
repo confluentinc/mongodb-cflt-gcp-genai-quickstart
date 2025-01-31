@@ -25,12 +25,6 @@ spring:
       group-id: ${CLIENT_ID}_grp
       key-deserializer: io.confluent.pie.quickstart.gcp.mongodb.entities.key.ChatKeyDeserializer
       value-deserializer: io.confluent.pie.quickstart.gcp.mongodb.entities.output.ChatOutputDeserializer
-    streams:
-      client-id: ${CLIENT_ID}|websocket
-      application-id: ${CLIENT_ID}_app
-      properties:
-        default-key-serde: io.confluent.pie.quickstart.gcp.mongodb.entities.ChatKeySerde
-        default-value-serde: io.confluent.pie.quickstart.gcp.mongodb.entities.ChatInputSerde
   data:
     mongodb:
       uri: mongodb+srv://${MONGODB_USER}:${MONGODB_PWD}}@${MONGODB_HOST}

@@ -6,32 +6,33 @@ import io.confluent.pie.quickstart.gcp.mongodb.entities.data.ChatInputWithData;
 import io.confluent.pie.quickstart.gcp.mongodb.entities.Product;
 import io.confluent.pie.quickstart.gcp.mongodb.repository.ProductRepo;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.kafka.streams.processor.api.Processor;
-import org.apache.kafka.streams.processor.api.ProcessorContext;
-import org.apache.kafka.streams.processor.api.Record;
+import org.apache.kafka.clients.producer.ProducerRecord;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Slf4j
-public class ChatInputProcessor implements Processor<ChatInputKey, ChatInputQuery, ChatInputKey, ChatInputWithData> {
-    private ProcessorContext<ChatInputKey, ChatInputWithData> context;
+@Component
+public class ChatInputProcessor {
     private final ProductRepo productRepo;
+    private final KafkaTemplate<ChatInputKey, ChatInputWithData> kafkaTemplate;
+    private final KafkaTopicConfig kafkaTopicConfig;
 
-    public ChatInputProcessor(ProductRepo productRepo) {
+    public ChatInputProcessor(@Autowired ProductRepo productRepo,
+                              @Autowired KafkaTemplate<ChatInputKey, ChatInputWithData> kafkaTemplate,
+                              @Autowired KafkaTopicConfig kafkaTopicConfig) {
         this.productRepo = productRepo;
+        this.kafkaTemplate = kafkaTemplate;
+        this.kafkaTopicConfig = kafkaTopicConfig;
     }
 
-    @Override
-    public void init(ProcessorContext<ChatInputKey, ChatInputWithData> context) {
-        this.context = context;
-    }
-
-    @Override
-    public void process(Record<ChatInputKey, ChatInputQuery> record) {
-        log.info("Processing record: {}", record.value().sessionId());
-
-        final ChatInputQuery query = record.value();
+    @KafkaListener(topics = "#{kafkaTopicConfig.getInputTopic()}", containerFactory = "kafkaListenerContainerFactory", groupId = "${spring.kafka.consumer.group-id}")
+    public void onEvent(ChatInputQuery query) {
+        log.info("Processing record: {}", query.sessionId());
 
         final List<Product> products = productRepo.findProductsByVector(
                 query.embeddings(),
@@ -46,12 +47,19 @@ public class ChatInputProcessor implements Processor<ChatInputKey, ChatInputQuer
                 query.metadata()
         );
 
-        context.forward(record.withValue(chatInputWithData));
+        final ProducerRecord<ChatInputKey, ChatInputWithData> producerRecord = new ProducerRecord<>(
+                kafkaTopicConfig.getOutputTopic(),
+                new ChatInputKey(query.sessionId()),
+                chatInputWithData);
 
-        log.info("Forwarded record: {}", chatInputWithData.sessionId());
-    }
 
-    @Override
-    public void close() {
+        kafkaTemplate.send(producerRecord).whenComplete((recordMetadata, throwable) -> {
+            if (throwable != null) {
+                log.error("Failed to forward record: {}", chatInputWithData.sessionId(), throwable);
+            } else {
+                log.info("Forwarded record: {}", chatInputWithData.sessionId());
+            }
+        });
+
     }
 }

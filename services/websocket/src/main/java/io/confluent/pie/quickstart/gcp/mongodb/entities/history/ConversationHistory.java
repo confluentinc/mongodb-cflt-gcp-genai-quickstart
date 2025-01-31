@@ -18,6 +18,10 @@ public class ConversationHistory {
     private String sessionId;
     private List<String> messages = new ArrayList<>();
 
+    public ConversationHistory(String sessionId) {
+        this.sessionId = sessionId;
+    }
+
     public void addHumanQuery(String message) {
         messages.add("Human: " + message);
     }
