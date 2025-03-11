@@ -1,0 +1,1854 @@
+[
+  {
+    "id": "67b96882",
+    "name": "Ibuprofen",
+    "generic_name": "IBUPROFEN",
+    "brand_names": [
+      "Ibuprofen Dye Free"
+    ],
+    "dosage_form": "Directions do not take more than directed the smallest effective dose should be used adults and children 12 years and over: take 1 tablet every 4 to 6 hours while symptoms persist if pain or fever does not respond to 1 tablet, 2 tablets may be used do not exceed 6 tablets in 24 hours, unless directed by a doctor children under 12 years: ask a doctor",
+    "strength": "500mg",
+    "route_of_administration": "ORAL",
+    "frequency_per_day": 2,
+    "duration_in_days": 30,
+    "side_effects": [
+      "Nausea",
+      "Heartburn",
+      "Dizziness",
+      "Stomach pain"
+    ],
+    "disclaimers": [
+      "Warnings Allergy alert: Ibuprofen may cause a severe allergic reaction, especially in people allergic to aspirin..."
+    ],
+    "illnesses_treated": [
+      "Uses temporarily relieves minor aches and pains due to: headache toothache backache menstrual cramps the common cold muscular aches minor pain of arthritis temporarily reduces fever"
+    ],
+    "drug_class": "NSAID",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store between 20°C-25°C (68°F-77°F)",
+    "manufacturers": [
+      "CVS Pharmacy"
+    ],
+    "cost_per_unit": 4.93,
+    "country_availability": [
+      "Canada",
+      "USA",
+      "France",
+      "Germany",
+      "India"
+    ],
+    "expiry_date": "2029-08-05"
+  },
+  {
+    "id": "e0d2aa09",
+    "name": "Paracetamol",
+    "generic_name": "Paracetamol",
+    "brand_names": [
+      "Paracetamol"
+    ],
+    "dosage_form": "DIRECTIONS: Take as directed by your doctor or according to the dosage chart provided.",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 14,
+    "side_effects": [
+      "Liver damage (in overdose)",
+      "Skin rash",
+      "Nausea",
+      "Low blood sugar (rare)"
+    ],
+    "disclaimers": [
+      "WARNINGS: Liver warning: This product contains acetaminophen. Severe liver damage may occur..."
+    ],
+    "illnesses_treated": [
+      "USES: Temporarily relieves minor aches and pains due to: The common cold Flu Headache Sore throat Toothache Temporarily reduces fever"
+    ],
+    "drug_class": "Analgesic",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store at 20°C - 25°C (68°F - 77°F)",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 4.5,
+    "country_availability": [
+      "France",
+      "USA",
+      "Canada"
+    ],
+    "expiry_date": "2029-03-11"
+  },
+  {
+    "id": "1e2be552",
+    "name": "Omeprazole",
+    "generic_name": "Omeprazole",
+    "brand_names": [
+      "Omeprazole"
+    ],
+    "dosage_form": "Directions: Take once daily before eating.",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 30,
+    "side_effects": [
+      "Headache",
+      "Diarrhea",
+      "Abdominal pain",
+      "Bloating"
+    ],
+    "disclaimers": [
+      "Warnings Allergy alert: Do not use if you are allergic to omeprazole..."
+    ],
+    "illnesses_treated": [
+      "Use treats frequent heartburn (occurs 2 or more days a week)..."
+    ],
+    "drug_class": "Proton Pump Inhibitor",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store at 20-25°C (68-77°F)",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 1.91,
+    "country_availability": [
+      "Australia",
+      "Canada",
+      "USA",
+      "India",
+      "UK"
+    ],
+    "expiry_date": "2028-07-19"
+  },
+  {
+    "id": "8742af93",
+    "name": "Cetirizine",
+    "generic_name": "Cetirizine",
+    "brand_names": [
+      "Cetirizine"
+    ],
+    "dosage_form": "Directions Adults and children 6 years and over: one 10mg tablet once daily; do not take more than one 10mg tablet in 24 hours. A 5mg product may be appropriate for less severe symptoms Adults 65 years and over: ask a doctor Children under 6 years of age: ask a doctor Consumers with liver or kidney disease: ask a doctor",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 1,
+    "duration_in_days": 7,
+    "side_effects": [
+      "Drowsiness",
+      "Dry mouth",
+      "Fatigue",
+      "Nausea"
+    ],
+    "disclaimers": [
+      "Warnings Do not use if you have ever had an allergic reaction to this product or any of its ingredients, or to an antihistamine containing hydroxyzine Ask a doctor before use if you have liver or kidney disease. Your doctor should determine if you need a different dose. Ask doctor or pharmacist before use if you are taking sedatives or tranquilizers When using this product drowsiness may occur avoid alcoholic drinks alcohol, sedatives, and tranquilizers may increase drowsiness be careful when drivinga motor vehicle or operating machinery Stop use and ask doctor if an allergic reaction to this product occurs. Seek medical help right away. If pregnant or breast-feeding If pregnant or breast-feeding, ask a health professional before use."
+    ],
+    "illnesses_treated": [
+      "Uses temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: runny nose sneezing itchy, watery eyes itching of the nose or throat"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 2.71,
+    "country_availability": [
+      "France",
+      "UK",
+      "Germany",
+      "Canada"
+    ],
+    "expiry_date": "2027-04-13"
+  },
+  {
+    "id": "5ad4e6a6",
+    "name": "Ranitidine",
+    "generic_name": "Ranitidine",
+    "brand_names": [
+      "Ranitidine"
+    ],
+    "dosage_form": "Directions \u2022 adults and children 12 years and over: \u2022 to relieve symptoms, swallow 1 tablet with a glass of water \u2022 to prevent symptoms, swallow 1 tablet with a glass of water 30 to 60 minutes before eating food or drinking beverages that cause heartburn \u2022 can be used up to twice daily (do not take more than 2 tablets in 24 hours) \u2022 children under 12 years: ask a doctor",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 14,
+    "side_effects": [
+      "Constipation",
+      "Diarrhea",
+      "Dizziness",
+      "Headache"
+    ],
+    "disclaimers": [
+      "Warnings Allergy alert: Do not use if you are allergic to ranitidine or other acid reducers Do not use \u2022 if you have trouble or pain swallowing food, vomiting with blood, or bloody or black stools. These may be signs of a serious condition. See your doctor. \u2022 with other acid reducers \u2022 if you have kidney disease, except under the advice and supervision of a doctor Ask a doctor before use if you have \u2022 frequent chest pain \u2022 frequent wheezing, particularly with heartburn \u2022 unexplained weight loss \u2022 nausea or vomiting \u2022 stomach pain \u2022 had heartburn over 3 months. This may be a sign of a more serious condition. \u2022 heartburn with lightheadedness, sweating, or dizziness \u2022 chest pain or shoulder pain with shortness of breath; sweating; pain spreading to arms, neck or shoulders; or lightheadedness Stop use and ask a doctor if \u2022 your heartburn continues or worsens \u2022 you need to take this product for more than 14 days If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. (1-800-222-1222)"
+    ],
+    "illnesses_treated": [
+      "Uses \u2022 relieves heartburn associated with acid indigestion and sour stomach \u2022 prevents heartburn associated with acid indigestion and sour stomach brought on by certain foods and beverages"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Other information \u2022 do not use if printed foil under cap is broken or missing \u2022 avoid excessive heat or humidity \u2022 store at 20\u00b0 - 25\u00b0C (68\u00b0 - 77\u00b0F) \u2022 this product is sugar free",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 0.17,
+    "country_availability": [
+      "France",
+      "USA",
+      "India"
+    ],
+    "expiry_date": "2028-04-16"
+  },
+  {
+    "id": "7048c7d8",
+    "name": "Loratadine",
+    "generic_name": "LORATADINE",
+    "brand_names": [
+      "Signature Care Allergy Relief"
+    ],
+    "dosage_form": "Directions adults and children 6 years and over 1 tablet daily; not more than 1 tablet in 24 hours children under 6 years of age ask a doctor consumers with liver or kidney disease ask a doctor",
+    "strength": "500mg",
+    "route_of_administration": "ORAL",
+    "frequency_per_day": 2,
+    "duration_in_days": 30,
+    "side_effects": [
+      "Drowsiness (rare)",
+      "Dry mouth",
+      "Fatigue",
+      "Headache"
+    ],
+    "disclaimers": [
+      "Warnings Do not use if you have ever had an allergic reaction to this product or any of its ingredients Ask a doctor before use if you have liver or kidney disease. Your doctor should determine if you need a different dose. When using this product do not take more than directed. Taking more than directed may cause drowsiness. Stop use and ask a doctor if an allergic reaction to this product occurs. Seek medical help right away. If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. (1-800-222-1222)"
+    ],
+    "illnesses_treated": [
+      "Uses temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: \u2022 runny nose \u2022 itchy, watery eyes \u2022 sneezing \u2022 itching of the nose or throat"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Other information \u2022 do not use if printed foil under cap is broken or missing \u2022 store between 20 \u00b0 to 25 \u00b0 C (68 \u00b0 to 77 \u00b0 F)",
+    "manufacturers": [
+      "Safeway"
+    ],
+    "cost_per_unit": 3.12,
+    "country_availability": [
+      "France",
+      "Germany",
+      "Australia"
+    ],
+    "expiry_date": "2029-09-11"
+  },
+  {
+    "id": "ccc86bf9",
+    "name": "Naproxen",
+    "generic_name": "Naproxen",
+    "brand_names": [
+      "Naproxen"
+    ],
+    "dosage_form": "Directions \u2022 do not take more than directed \u2022 the smallest effective dose should be used \u2022 drink a full glass of water with each dose \u2022 if taken with food, this product may take longer to work adults and children 12 years and older: \u2022 take 1 capsule every 8 to 12 hours while symptoms last \u2022 for the first dose you may take 2 capsules within the first hour \u2022 do not exceed 2 capsules in any 8- to 12-hour period \u2022 do not exceed 3 capsules in a 24-hour period children under 12 years: \u2022 ask a doctor",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 14,
+    "side_effects": [
+      "Stomach pain",
+      "Heartburn",
+      "Dizziness",
+      "Nausea"
+    ],
+    "disclaimers": [
+      "Warnings Allergy alert: Naproxen sodium may cause a severe allergic reaction, especially in people allergic to aspirin. Symptoms may include: \u2022 hives \u2022 facial swelling \u2022 asthma (wheezing) \u2022 shock \u2022 skin reddening \u2022 rash \u2022 blisters If an allergic reaction occurs, stop use and seek medical help right away. Stomach bleeding warning: This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you: \u2022 are age 60 or older \u2022 have had stomach ulcers or bleeding problems \u2022 take a blood thinning (anticoagulant) or steroid drug \u2022 take other drugs containing prescription or nonprescription NSAIDs (aspirin, ibuprofen, naproxen, or others) \u2022 have 3 or more alcoholic drinks every day while using this product \u2022 take more or for a longer time than directed Do not use \u2022 if you have ever had an allergic reaction to any other pain reliever/fever reducer \u2022 right before or after heart surgery Ask a doctor before use if \u2022 the stomach bleeding warning applies to you \u2022 you have a history of stomach problems, such as heartburn \u2022 you have high blood pressure, heart disease, liver cirrhosis, or kidney disease \u2022 you are taking a diuretic \u2022 you have problems or serious side effects from taking pain relievers or fever reducers \u2022 you have asthma Ask a doctor or pharmacist before use if you are \u2022 under a doctor\u2019s care for any serious condition \u2022 taking any other drug When using this product \u2022 take with food or milk if stomach upset occurs \u2022 the risk of heart attack or stroke may increase if you use more than directed or for longer than directed Stop use and ask a doctor if \u2022 you experience any of the following signs of stomach bleeding: \u2022 feel faint \u2022 vomit blood \u2022 have bloody or black stools \u2022 have stomach pain that does not get better \u2022 pain gets worse or lasts more than 10 days \u2022 fever gets worse or lasts more than 3 days \u2022 redness or swelling is present in the painful area \u2022 any new symptoms appear \u2022 you have difficulty swallowing \u2022 it feels like the capsule is stuck in your throat If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use naproxen sodium during the last 3 months of pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. (1-800-222-1222)"
+    ],
+    "illnesses_treated": [
+      "Uses \u2022 temporarily relieves minor aches and pains due to: \u2022 minor pain of arthritis \u2022 muscular aches \u2022 backache \u2022 menstrual cramps \u2022 headache \u2022 toothache \u2022 the common cold \u2022 temporarily reduces fever"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Other information \u2022 each capsule contains: sodium 20 mg \u2022 store at 20-25\u00b0C (68-77\u00b0F) avoid high humidity and excessive heat above 40\u00b0C (104\u00b0F) \u2022 do not use if printed foil under cap is broken or missing \u2022 read all directions and warnings before use. Keep carton.",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 3.99,
+    "country_availability": [
+      "Australia",
+      "India",
+      "USA",
+      "France"
+    ],
+    "expiry_date": "2029-03-09"
+  },
+  {
+    "id": "2361fedb",
+    "name": "Morphine",
+    "generic_name": "Morphine",
+    "brand_names": [
+      "Morphine"
+    ],
+    "dosage_form": "Directions \u2022 For adults and children 3 years and older. \u2022 Take orally by holding tablet in the mouth until completely dissolved, without food. \u2022 1 to 2 tablets 3 times daily. For severe symptoms, take 4 to 6 times daily for the first 3 days.",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 7,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings Stop use and ask a doctor if symptoms persist or worsen. If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. Allergic (hypersensitivity) reactions may occur in very rare cases. Do not use if known sensitivity to Brillia Health Cough Control or any of its ingredients exists."
+    ],
+    "illnesses_treated": [
+      "Uses \u2022 Suppresses wet and dry cough \u2022 Reduces severity and duration of symptoms, including nasal congestion, cough and sore/itchy throat \u2022 Antihistamine and decongestant/anti-inflammatory \u2022 Reduces sore throat pain"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Other Information \u2022 Store in original package below 25\u00b0C or 77\u00b0F. \u2022 Do not use if blister pack is torn or broken.",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 3.49,
+    "country_availability": [
+      "Australia",
+      "France",
+      "UK",
+      "India"
+    ],
+    "expiry_date": "2026-08-19"
+  },
+  {
+    "id": "2d858e3d",
+    "name": "Acetaminophen",
+    "generic_name": "ACETAMINOPHEN",
+    "brand_names": [
+      "Pain Reliever Extra Strength"
+    ],
+    "dosage_form": "Directions do not take more than directed adults and children 12 years and over take 2 gelcaps every 6 hours while symptoms last do not take more than 6 gelcaps in 24 hours, unless directed by a doctor do not take for more than 10 days unless directed by a doctor children under 12 years: ask a doctor",
+    "strength": "500mg",
+    "route_of_administration": "ORAL",
+    "frequency_per_day": 2,
+    "duration_in_days": 14,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings Liver warning: This product contains acetaminophen. Severe liver damage may occur if you take more than 4,000 mg of acetaminophen in 24 hours with other drugs containing acetaminophen 3 or more alcoholic drinks every day while using this product Allergy alert: Acetaminophen may cause severe skin reactions. Symptoms may include: skin reddening blisters rash If a skin reaction occurs, stop use and seek medical help right away. Do not use if you are allergic to acetaminophen or any of the inactive ingredients in this product with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. Ask a doctor before use if you have liver disease. Ask a doctor or pharmacist before use if you are taking the blood thinning drug warfarin. Stop use and ask a doctor if new symptoms occur pain gets worse or lasts more than 10 days fever gets worse or lasts more than 3 days redness or swelling is present These could be signs of a serious condition. If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. Prompt medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+    ],
+    "illnesses_treated": [
+      "Uses temporarily relieves minor aches and pains due to: headache the common cold backache minor pain of arthritis toothache muscular aches premenstrual and menstrual cramps temporarily reduces fever"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Other information store at 25\u00b0C (77\u00b0F); excursions permitted between 15\u00b0-30\u00b0C (59\u00b0-86\u00b0F) avoid high humidity see end flap for expiration date and lot number",
+    "manufacturers": [
+      "Valu Merchandisers Company"
+    ],
+    "cost_per_unit": 0.58,
+    "country_availability": [
+      "USA",
+      "UK",
+      "Germany"
+    ],
+    "expiry_date": "2028-02-05"
+  },
+  {
+    "id": "dae7459f",
+    "name": "Dextromethorphan",
+    "generic_name": "Dextromethorphan",
+    "brand_names": [
+      "Dextromethorphan"
+    ],
+    "dosage_form": "Directions do not take more than 6 doses in any 24-hour period measure only with dosing cup provided. Do not use any other dosing device. keep dosing cup with product mL = milliliter this adults product is not intended for use in children under 12 years of age adult and children 12 years and over: 10 mL every 4 hours children under 12 years : do not use",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 7,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings Do not use if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric or emotional conditions, or Parkinson\u2019s disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before taking this product. Ask a doctor before use if you have heart disease diabetes high blood pressure thyroid disease trouble urinating due to an enlarged prostate gland cough that occurs with too much phlegm (mucus) cough that lasts or is chronic such as occurs with smoking, asthma, chronic bronchitis or emphysema Ask a doctor or pharmacist before use if you are taking any other oral nasal decongestant or stimulant. When using this product, do not use more than directed. Stop use and ask a doctor if nervousness, dizziness, or sleeplessness occur symptoms do not get better within 7 days or are accompanied by fever cough lasts more than 7 days, comes back, or is accompanied by fever, rash, or persistent headache. These could be signs of a serious condition. If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center (1800-222-122) right away."
+    ],
+    "illnesses_treated": [
+      "Uses helps loosen phlegm (mucus) and thin bronchial secretions to drain bronchial tubes temporarily relieves these symptoms occurring with a cold: nasal congestion cough due to minor throat and bronchial irritation"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Other information store between 20-25\u00b0C (68-77\u00b0F). Do not refrigerate.",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 2.79,
+    "country_availability": [
+      "France",
+      "Australia",
+      "Germany",
+      "Canada",
+      "India"
+    ],
+    "expiry_date": "2026-08-28"
+  },
+  {
+    "id": "e90864a6",
+    "name": "Esomeprazole",
+    "generic_name": "ESOMEPRAZOLE MAGNESIUM",
+    "brand_names": [
+      "Acid Reducer"
+    ],
+    "dosage_form": "Directions adults 18 years of age and older this product is to be used once a day (every 24 hours), every day for 14 days may take 1 to 4 days for full effect 14-Day Course of Treatment \u2022 swallow 1 tablet with a glass of water before eating in the morning \u2022 take every day for 14 days \u2022 do not take more than 1 tablet a day \u2022 swallow whole. Do not crush or chew capsules. \u2022 do not use for more than 14 days unless directed by your doctor Repeated 14-Day Courses (if needed) \u2022 you may repeat a 14-day course every 4 months \u2022 do not take for more than 14 days or more often than every 4 months unless directed by a doctor children under 18 years of age: ask a doctor before use. Heartburn in children may sometimes be caused by a serious condition .",
+    "strength": "500mg",
+    "route_of_administration": "ORAL",
+    "frequency_per_day": 2,
+    "duration_in_days": 7,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings Allergy alert : Do not use if you are allergic to esomeprazole. Esomeprazole may cause severe skin reactions. Symptoms may include: skin reddening blisters rash If an allergic reaction occurs, stop use and seek medical help right away."
+    ],
+    "illnesses_treated": [
+      "Uses treats frequent heartburn (occurs 2 or more days a week) not intended for immediate relief of heartburn; this drug may take 1 to 4 days for full effect"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "CVS Pharmacy"
+    ],
+    "cost_per_unit": 4.68,
+    "country_availability": [
+      "Germany",
+      "France",
+      "USA"
+    ],
+    "expiry_date": "2027-05-29"
+  },
+  {
+    "id": "37da3039",
+    "name": "Levothyroxine",
+    "generic_name": "LEVOTHYROXINE",
+    "brand_names": [
+      "Levothyroxine"
+    ],
+    "dosage_form": "DIRECTIONS: 1-10 drops under the tongue, 3 times a day or as directed by a health professional. Consult a physician for use in children under 12 years of age.",
+    "strength": "500mg",
+    "route_of_administration": "ORAL",
+    "frequency_per_day": 2,
+    "duration_in_days": 30,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "WARNINGS: Keep out of reach of children. In case of overdose, contact physician or a Poison Control Center right away. If pregnant or breast-feeding, ask a health professional before use. Tamper seal: \"Sealed for Your Protection.\" Do not use if seal is broken or missing."
+    ],
+    "illnesses_treated": [
+      "HOMEOPATHIC INDICATIONS: For the temporary relief of symptoms such as backache, constipation, and vomiting.** **These statements are based upon traditional homeopathic principles. They have not been reviewed by the Food and Drug Administration."
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Deseret Biologicals, Inc."
+    ],
+    "cost_per_unit": 4.54,
+    "country_availability": [
+      "France",
+      "Canada",
+      "Germany"
+    ],
+    "expiry_date": "2027-02-01"
+  },
+  {
+    "id": "04433ef5",
+    "name": "Budesonide",
+    "generic_name": "BUDESONIDE",
+    "brand_names": [
+      "Budesonide"
+    ],
+    "dosage_form": "Directions Read insert (inside package) on how to: get a new bottle ready (primed) before first use prime bottle again if not used for two days use the spray clean the spray nozzle ADULTS AND CHILDREN 12 YEARS OF AGE AND OLDER adults and children 12 years of age and older once daily, spray 2 times into each nostril while sniffing gently once your allergy symptoms improve, reduce to 1 spray in each nostril per day CHILDREN 6 TO UNDER 12 YEARS OF AGE the growth rate of some children may be slower while using this product. Talk to your child\u2019s doctor if your child needs to use the spray for longer than two months a year children 6 to under 12 years of age an adult should supervise use once daily, spray 1 time into each nostril while sniffing gently if allergy symptoms do not improve, increase to 2 sprays in each nostril per day. Once allergy symptoms improve, reduce to 1 spray in each nostril per day children under 6 years of age do not use do not use more than directed if you forget a dose, do not double the next dose do not spray into eyes or mouth if allergy symptoms do not improve after two weeks, stop using and talk to a doctor do not use for the common cold shake well before each use",
+    "strength": "500mg",
+    "route_of_administration": "NASAL",
+    "frequency_per_day": 1,
+    "duration_in_days": 14,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings Do not use in children under 6 years of age if you have ever had an allergic reaction to any of the ingredients Ask a doctor before use if you have had recent nose ulcers or nose surgery have had a nose injury that has not healed are using a steroid medicine for asthma, allergies or skin rash have an eye infection have or had glaucoma or cataracts When using this product the growth rate of some children may be slower some symptoms may get better on the first day of treatment. It may take up to two weeks of daily use to feel the most symptom relief. do not share this bottle with anyone else as this may spread germs remember to tell your doctor about all the medicines you take, including this one Stop use and ask a doctor if you have, or come into contact with someone who has, chickenpox, measles or tuberculosis you have or develop symptoms of an infection such as persistent fever you have any change in vision you have severe or frequent nosebleeds If pregnant or breast-feeding , ask a health professional before use. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away (1-800-222-1222)."
+    ],
+    "illnesses_treated": [
+      "Use s Temporarily relieves these symptoms of hay fever or other upper respiratory allergies: \u2022 nasal congestion \u2022 runny nose \u2022 itchy nose \u2022 sneezing"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Rugby Laboratories"
+    ],
+    "cost_per_unit": 0.12,
+    "country_availability": [
+      "USA",
+      "India",
+      "France"
+    ],
+    "expiry_date": "2026-08-01"
+  },
+  {
+    "id": "ced8f4fd",
+    "name": "Famotidine",
+    "generic_name": "Famotidine",
+    "brand_names": [
+      "Famotidine"
+    ],
+    "dosage_form": "Directions \u2022 adults and children 12 years and over: \u2022 do not swallow tablet whole: chew completely \u2022 to relieve symptoms, chew 1 tablet before swallowing \u2022 do not use more than 2 chewable tablets in 24 hours \u2022 children under 12 years: ask a doctor",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 30,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings Allergy alert : Do not use if you are allergic to famotidine or other acid reducers Do not use \u2022 if you have trouble or pain swallowing food, vomiting with blood, or bloody or black stools. These may be signs of a serious condition. See your doctor. \u2022 with other acid reducers Ask a doctor before use if you have \u2022 had heartburn over 3 months. This may be a sign of a more serious condition. \u2022 heartburn with lightheadedness, sweating, or dizziness \u2022 chest pain or shoulder pain with shortness of breath; sweating; pain spreading to arms, neck or shoulders; or lightheadedness \u2022 frequent chest pain \u2022 frequent wheezing, particularly with heartburn \u2022 unexplained weight loss \u2022 nausea or vomiting \u2022 stomach pain Ask a doctor or pharmacist before use if you are presently taking a prescription drug. Antacids may interact with certain prescription drugs. Stop use and ask a doctor if \u2022 your heartburn continues or worsens \u2022 you need to take this product for more than 14 days If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away (1-800-222-1222)."
+    ],
+    "illnesses_treated": [
+      "Use relieves heartburn associated with acid indigestion and sour stomach"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Other information \u2022 each tablet contains: calcium 335 mg; magnesium 80 mg \u2022 read the directions and warnings before use \u2022 read the bottle label. It contains important information. \u2022 store at 20-25\u00b0C (68-77\u00b0F) \u2022 protect from moisture",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 3.9,
+    "country_availability": [
+      "Germany",
+      "USA",
+      "UK"
+    ],
+    "expiry_date": "2026-07-03"
+  },
+  {
+    "id": "d916fc8e",
+    "name": "Clindamycin",
+    "generic_name": "ACNIL CLINDAMYCIN HYDROCHLORIDE AND METRONIDAZOLE LINIMENT",
+    "brand_names": [
+      "Acnil"
+    ],
+    "dosage_form": "DOSAGE AND ADMINISTRATION For external use only. Drip 1~2 drops of Acnil to affected area, or dip some Acnil in cotton bud and apply to the affected area. It should be applied three times daily. Two weeks\u2019 treatment constitutes a single therapeutic course. Repeat another therapeutic course if it is necessary.",
+    "strength": "500mg",
+    "route_of_administration": "TOPICAL",
+    "frequency_per_day": 2,
+    "duration_in_days": 7,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      ""
+    ],
+    "illnesses_treated": [
+      "PHARMACOLOGY AND TOXICOLOGY Clindamycin Hydrochloride is a bacteriostatic antibiotic, which is 4 to 8 times more potent than Lincomycin. It has potent antibacterial activity to aerobic gram-positive bacterium, such as Staphylococcus, Streptococcus, Bacillus diphtheriae and Bacillus anthracis. It also has good antibacterial activity to anaerobic gram-negative bacterium. Bacteroides (including bacteroides fragilis) and Clostridium are morbidly susceptible to it. It binds exclusively to the 50'S subunit of sensitive bacterial ribosome and suppresses protein synthesis. Clindamycin is a bacteriostat, but can kill high sensitive bacterium at high concentration. Metronidazole is an anti-anaerobic bacterial, anti-trichomonal and anti-amebic agent. Combination of Clindamycin Hydrochloride and Metronidazole can kill Propionibacterium acnes, Pityrosporum ovale, and some other sensitive bacterium and vermiform mite, and can inhibit them from growing. As a result, it can reduce the creation of lipase, and prevent triacylglycerol from hydrolyzing into free fatty acid. INDICATIONS It is indicated for the treatment of acne (especially for the acne pustulosa, cystic acne), tympanitis, nasosinusitis, folliculitis, and other bacterial infection on skin. It is also indicated for the supportive treatment of seborrheic dermatitis and brandy nose."
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Jiangsu Chenpai Bond Pharmaceutical Co.,Ltd."
+    ],
+    "cost_per_unit": 0.52,
+    "country_availability": [
+      "Germany",
+      "Canada",
+      "India"
+    ],
+    "expiry_date": "2030-01-19"
+  },
+  {
+    "id": "a9439eee",
+    "name": "Chlorpheniramine",
+    "generic_name": "Chlorpheniramine",
+    "brand_names": [
+      "Chlorpheniramine"
+    ],
+    "dosage_form": "Directions fully dissolve 2 tablets in 4 ounces of water before taking adults and children 12 years and over: 2 tablets every 4 hours, or as directed by a doctor do not exceed 8 tablets in 24 hours adults 60 years and over 2 tablets every 4 hours, or as directed by a doctor do not exceed 4 tablets in 24 hours children under 12 years consult a doctor Other information each tablet contains: sodium 567 mg store at room temperature. Avoid excessive heat. Tabcin 500 in water contains principally the antacid sodium citrate and the analgesic sodium acetylsalicylate",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 7,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings Reye's syndrome: Children and teenagers should not use this medicine for chicken pox or flu symptoms before a doctor is consulted about Reye's syndrome, a rare but serious illness reported to be associated with aspirin. Allergy alert: Aspirin may cause a severe allergic reaction which may include: hives asthma (wheezing) Alcohol warning: If you consume 3 or more alcoholic drinks every day, ask your doctor whether you should take aspirin or other pain relievers/fever reducers. Aspirin may cause stomach bleeding."
+    ],
+    "illnesses_treated": [
+      "Uses for the relief of: heartburn, acid indigestion, and sour stomach when accompanied with headache or body aches and pains upset stomach with headache from overindulgence in food or drink headache, body aches, and pain alone"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 0.63,
+    "country_availability": [
+      "Germany",
+      "Canada",
+      "USA",
+      "Australia"
+    ],
+    "expiry_date": "2029-01-06"
+  },
+  {
+    "id": "81c2a8fc",
+    "name": "Dornase alfa",
+    "generic_name": "LAMIVUDINE AND ZIDOVUDINE",
+    "brand_names": [
+      "LAMIVUDINE and ZIDOVUDINE"
+    ],
+    "dosage_form": "2 DOSAGE & ADMINISTRATION \u2022 Adults and Adolescents weighing greater than or equal to 30 kg: 1 tablet orally twice daily. (2.1) \u2022 Pediatrics weighing greater than or equal to 30 kg: 1 tablet orally twice daily. (2.2) \u2022 Because lamivudine and zidovudine tablet is a fixed-dose tablet and cannot be dose adjusted, lamivudine and zidovudine tablet is not recommended in patients requiring dosage adjustment or with hepatic impairment or experiencing dose-limiting adverse reactions. (2.3, 4) 2.1 Recommended Dosage for Adults and Adolescents The recommended dosage of lamivudine and zidovudine tablet in HIV-1-infected adults and adolescents weighing greater than or equal to 30 kg is 1 tablet (containing 150 mg of lamivudine and 300 mg of zidovudine) taken orally twice daily. 2.2 Recommended Dosage for Pediatric Patients The recommended dosage of scored lamivudine and zidovudine tablets for pediatric patients who weigh greater than or equal to 30 kg and for whom a solid oral dosage form is appropriate is 1 tablet administered orally twice daily. Before prescribing lamivudine and zidovudine tablets, children should be assessed for the ability to swallow tablets. If a child is unable to reliably swallow a lamivudine and zidovudine tablet, the liquid oral formulations should be prescribed: EPIVIR (lamivudine) oral solution and RETROVIR (zidovudine) syrup. 2.3 Not Recommended Due to Lack of Dosage Adjustment Because lamivudine and zidovudine is a fixed-dose tablet and cannot be dose adjusted, lamivudine and zidovudine tablets are not recommended for: \u2022 pediatric patients weighing less than 30 kg [see Use in Specific Populations (8.4)]. \u2022 patients with creatinine clearance less than 50 mL per minute [see Use in Specific Populations (8.6)]. \u2022 patients with hepatic impairment [see Use in Specific Populations (8.7)]. \u2022 patients experiencing dose-limiting adverse reactions. Liquid and solid oral formulations of the individual components of lamivudine and zidovudine tablets are available for these populations .",
+    "strength": "500mg",
+    "route_of_administration": "ORAL",
+    "frequency_per_day": 2,
+    "duration_in_days": 30,
+    "side_effects": [
+      "6 ADVERSE REACTIONS The following adverse reactions are discussed in other sections of the labeling: \u2022 Hematologic toxicity, including neutropenia and anemia [see Boxed Warning, Warnings and Precautions (5.1)]. \u2022 Symptomatic myopathy [see Boxed Warning, Warnings and Precautions (5.2)]. \u2022 Lactic acidosis and severe hepatomegaly with steatosis [see Boxed Warning, Warnings and Precautions (5.3)]. \u2022 Exacerbations of hepatitis B [see Boxed Warning, Warnings and Precautions (5.4)]. \u2022 Hepatic decompensation in patients co-infected with HIV-1 and hepatitis C [see Warnings and Precautions (5.5)]. \u2022 Exacerbation of anemia in HIV-1/HCV co-infected patients receiving ribavirin and zidovudine [see Warnings and Precautions (5.5)]. \u2022 Pancreatitis [see Warnings and Precautions (5.6)]. \u2022 Immune reconstitution syndrome [see Warnings and Precautions (5.7)]. \u2022 Lipoatrophy [see Warnings and Precautions (5.8)]. \u2022 Most commonly reported adverse reactions (incidence greater than or equal to 15%) in clinical trials of combination lamivudine and zidovudine were headache, nausea, malaise and fatigue, nasal signs and symptoms, diarrhea, and cough. (6.1) To report SUSPECTED ADVERSE REACTIONS, contact Hetero Labs Limited at 1-866-495-1995 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch . 6.1 Clinical Trials Experience Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compared with rates in the clinical trials of another drug and may not reflect the rates observed in clinical practice. Lamivudine plus Zidovudine Administered as Separate Formulations In 4 randomized, controlled trials of EPIVIR 300 mg per day plus RETROVIR 600 mg per day, the following selected adverse reactions and laboratory abnormalities were observed (Tables 1 and 2). Table 1. Selected Clinical Adverse Reactions (Greater than or Equal to 5% Frequency) in 4 Controlled Clinical Trials with EPIVIR 300 mg per day and RETROVIR 600 mg per day Adverse Reaction EPIVIR plus RETROVIR (n = 251) Body as a whole Headache 35% Malaise & fatigue 27% Fever or chills 10% Digestive Nausea Diarrhea 33% 18% Nausea & vomiting 13% Anorexia and/or decreased appetite 10% Abdominal pain 9% Abdominal cramps 6% Dyspepsia 5% Nervous system Neuropathy 12% Insomnia & other sleep disorders 11% Dizziness 10% Depressive disorders 9% Respiratory Nasal signs & symptoms 20% Cough 18% Skin Skin rashes 9% Musculoskeletal Musculoskeletal pain 12% Myalgia 8% Arthralgia 5% Pancreatitis was observed in 9 of the 2,613 adult subjects (0.3%) who received EPIVIR in controlled clinical trials [see Warnings and Precautions (5.6)]. Selected laboratory abnormalities observed during therapy are listed in Table 2. Table 2. Frequencies of Selected Laboratory Abnormalities among Adults in 4 Controlled Clinical Trials of EPIVIR 300 mg per day plus RETROVIR 600 mg per day a Test (Abnormal Level) EPIVIR plus RETROVIR % (n) Neutropenia (ANC <750/mm 3 ) 7.2% (237) Anemia (Hgb <8 g/dL) 2.9% (241) Thrombocytopenia (platelets <50,000/mm 3 ) 0.4% (240) ALT (>5.0 x ULN) 3.7% (241) AST (>5.0 x ULN) 1.7% (241) Bilirubin (>2.5x ULN) 0.8% (241) Amylase (>2.0 x ULN) 4.2% (72) ULN = Upper limit of normal. ANC = Absolute neutrophil count. n = Number of subjects assessed. a Frequencies of these laboratory abnormalities were higher in subjects with mild laboratory abnormalities at baseline. 6.2 Postmarketing Experience The following adverse reactions have been identified during postmarketing use. Because these reactions are reported voluntarily from a population of unknown size, it is not always possible to reliably estimate their frequency or establish a causal relationship to drug exposure. Body as a Whole Redistribution/accumulation of body fat [see Warnings and Precautions (5.8)]. Cardiovascular Cardiomyopathy. Endocrine and Metabolic Gynecomastia, hyperglycemia. Gastrointestinal Oral mucosal pigmentation, stomatitis. General Vasculitis, weakness. Hemic and Lymphatic Anemia, (including pure red cell aplasia and anemias progressing on therapy), lymphadenopathy, splenomegaly. Hepatic and Pancreatic Lactic acidosis and hepatic steatosis, pancreatitis, posttreatment exacerbations of hepatitis B [see Boxed Warning, Warnings and Precautions (5.3), (5.4), (5.6)]. Hypersensitivity Sensitization reactions (including anaphylaxis), urticaria. Musculoskeletal Muscle weakness, CPK elevation, rhabdomyolysis. Nervous Paresthesia, peripheral neuropathy, seizures. Respiratory Abnormal breath sounds/wheezing. Skin Alopecia, erythema multiforme, Stevens-Johnson syndrome."
+    ],
+    "disclaimers": [
+      "None"
+    ],
+    "illnesses_treated": [
+      "1 INDICATIONS & USAGE Lamivudine and zidovudine tablets a combination of 2 nucleoside analogues, are indicated in combination with other antiretrovirals for the treatment of human immunodeficiency virus type 1 (HIV-1) infection. Lamivudine and zidovudine tablets, a combination of 2 nucleoside analogue reverse transcriptase inibitors, are indicated in combination with other antiretroviral agents for the treatment of HIV-1 infection. (1)"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "8",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "4 CONTRAINDICATIONS Lamivudine and zidovudine tablets are contraindicated in patients with a previous hypersensitivity reaction to lamivudine or zidovudine. Lamivudine and zidovudine tablets are contraindicated in patients with a previous hypersensitivity reaction to lamivudine or zidovudine. (4)"
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Bryant Ranch Prepack"
+    ],
+    "cost_per_unit": 3.84,
+    "country_availability": [
+      "Canada",
+      "India",
+      "Germany"
+    ],
+    "expiry_date": "2026-09-25"
+  },
+  {
+    "id": "6466c266",
+    "name": "Terbinafine",
+    "generic_name": "Terbinafine",
+    "brand_names": [
+      "Terbinafine"
+    ],
+    "dosage_form": "Directions \u2022 adults and children 12 years and over: \u2022 wash the affected area with soap and water and dry completely before applying \u2022 to open remove clear cap \u2022 hold can 4\" to 6\" from skin. Press and hold to spray a thin layer over affected area \u2022 spray affected area once a day (morning or night) for 1 week or as directed by a doctor \u2022 release to stop spray \u2022 wipe excess from spray opening after each use \u2022 return cap to can \u2022 for athlete\u2019s foot between the toes spray twice a day (morning and night) for 1 week or as directed by a doctor. Wear well-fitting, ventilated shoes. Change shoes and socks at least once daily. \u2022 for jock itch and ringworm spray affected area once a day (morning or night) for 1 week or as directed by a doctor \u2022 wash hands after each use \u2022 children under 12 years: ask a doctor Image 1",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 1,
+    "duration_in_days": 7,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings For external use only Do Not Use \u2022 on nails or scalp \u2022 in or near the mouth or the eyes \u2022 for vaginal yeast infections When using this product \u2022 do not get into eyes. If contact occurs, rinse eyes thoroughly with water. \u2022 do not puncture or incinerate; contents under pressure. Do not expose to heat or store at temperatures above 120\u00baF (49\u00baC). Stop use and ask a doctor if too much irritation occurs or gets worse Keep out of reach of children. If swallowed, get medical help or contact a Poison Control Center right away."
+    ],
+    "illnesses_treated": [
+      "Uses \u2022 cures most athlete\u2019s foot (tinea pedis) between the toes. Effectiveness on the bottom or sides of foot is unknown. \u2022 cures most jock itch (tinea cruris) and ringworm (tinea corporis) \u2022 relieves itching, burning, cracking, and scaling which accompany these conditions"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Other information store at 20 to 25\u00b0C (68 to 77\u00b0F)",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 0.81,
+    "country_availability": [
+      "Canada",
+      "Australia",
+      "France",
+      "UK"
+    ],
+    "expiry_date": "2027-10-01"
+  },
+  {
+    "id": "63724249",
+    "name": "Topical Clotrimazole",
+    "generic_name": "LIDOCAINE, MENTHOL",
+    "brand_names": [
+      "Lidozen"
+    ],
+    "dosage_form": "DIRECTIONS (Adults and Children Over 12 Years): Clean and dry affected area. Remove patch from backing and apply to affected area. Use only one patch at a time, and maximum of four patches / day. Leave patch on affected area for up to 8 hours Do not use patches for longer than five consecutive days, Children under 12 should consult physician prior to use.",
+    "strength": "500mg",
+    "route_of_administration": "TOPICAL",
+    "frequency_per_day": 2,
+    "duration_in_days": 14,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "WARNINGS: For external use only. Avoid contact with eyes. If condition worsens, or if symptoms persist for more than 7 days or clear up and occur again within a few days, discontinue use of this product and consult a physician. Do not use in large quantities, particularly over raw surfaces or blistered areas. If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. If swallowed, get medical help or contact a Poison Control Center right away."
+    ],
+    "illnesses_treated": [
+      "USES: For temporary relief of pain"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Village Pharma, LLC"
+    ],
+    "cost_per_unit": 1.81,
+    "country_availability": [
+      "Germany",
+      "India",
+      "UK"
+    ],
+    "expiry_date": "2028-09-25"
+  },
+  {
+    "id": "424b9a0a",
+    "name": "Fexofenadine",
+    "generic_name": "Fexofenadine",
+    "brand_names": [
+      "Fexofenadine"
+    ],
+    "dosage_form": "Directions adults and children 12 years of age and over take one 180 mg tablet with water once a day; do not take more than 1 tablet in 24 hours children under 12 years of age do not use adults 65 years of age and older ask a doctor consumers with kidney disease ask a doctor",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 30,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings Do not use if you have ever had an allergic reaction to this product or any of its ingredients. Ask a doctor before use if you have kidney disease. Your doctor should determine if you need a different dose. When using this product \u2022 do not take more than directed \u2022 do not take at the same time as aluminum or magnesium antacids \u2022 do not take with fruit juices (see Directions) Stop use and ask a doctor if an allergic reaction to this product occurs. Seek medical help right away. If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away (1-800-222-1222)."
+    ],
+    "illnesses_treated": [
+      "Uses temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: \u2022 runny nose \u2022 itchy, watery eyes \u2022 sneezing \u2022 itching of the nose or throat"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Other information \u2022 do not use if carton is opened or printed foil under cap is broken or missing \u2022 store between 20\u00b0-25\u00b0C (68\u00b0-77\u00b0F) \u2022 protect from excessive moisture \u2022 this product meets the requirements of USP Dissolution Test 3",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 4.53,
+    "country_availability": [
+      "France",
+      "UK",
+      "Canada"
+    ],
+    "expiry_date": "2028-03-20"
+  },
+  {
+    "id": "df116757",
+    "name": "Ketoconazole",
+    "generic_name": "Ketoconazole",
+    "brand_names": [
+      "Ketoconazole"
+    ],
+    "dosage_form": "Directions apply a small amount to the problem areas withcircular motions for 3 minutes till the skin absorbs the cream.apply it 2-3 times a day for the best result continue to use for 3-5 days after symptoms resolve to preventa recurrence Do not use it on children under 2 years of age unless directedby a doctor.",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 30,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings For external use only"
+    ],
+    "illnesses_treated": [
+      "Use Relieves and helps prevent recurrence of skin and/orscalp: itching, flaking, scaling, redness, and irritation associatedwith psoriasis and seborrheic dermatitis."
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Other information Store at room temperature and out of direct sunlight",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 4.54,
+    "country_availability": [
+      "Australia",
+      "France",
+      "UK"
+    ],
+    "expiry_date": "2029-04-17"
+  },
+  {
+    "id": "6dfaa36c",
+    "name": "Diphenhydramine",
+    "generic_name": "DIPHENHYDRAMINE HCL",
+    "brand_names": [
+      "Childrens Allergy Relief"
+    ],
+    "dosage_form": "Directions \u25a0 if needed, take every 4-6 hours \u25a0 do not take more than 6 doses in 24-hours children under 4 years of age Do not use children 4 to under 6 years of age Do not use unless directed by a doctor children 6 to under 12 years of age 1 to 2 teaspoonfuls (5 ml to 10 ml)",
+    "strength": "500mg",
+    "route_of_administration": "ORAL",
+    "frequency_per_day": 2,
+    "duration_in_days": 7,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings Do not use \u25a0 with any other product containing diphenhydramine, even one used on skin \u25a0 to make a child sleepy Ask a doctor before use if the child has \u25a0 glaucoma \u25a0 a breathing problem such as chronic bronchitis"
+    ],
+    "illnesses_treated": [
+      "Uses temporarily relieves these symptoms due to hay fever or other respiratory allergies: \u25a0 sneezing \u25a0 itching of the nose or throat \u25a0 runny nose \u25a0 itchy watery eyes \u25a0temporarily relieves these symptoms due to the common cold: \u25a0 sneezing \u25a0 runny nose"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Best Choice"
+    ],
+    "cost_per_unit": 0.36,
+    "country_availability": [
+      "Canada",
+      "India",
+      "Germany",
+      "UK"
+    ],
+    "expiry_date": "2029-08-04"
+  },
+  {
+    "id": "59c787ca",
+    "name": "Insulin Aspart",
+    "generic_name": "INSULIN LISPRO",
+    "brand_names": [
+      "ADMELOG"
+    ],
+    "dosage_form": "2 DOSAGE AND ADMINISTRATION See Full Prescribing Information for important preparation and administration instructions. ( 2.1 , 2.2 , 2.3 , 2.4 ) Rotate injection sites to reduce risk of lipodystrophy and localized cutaneous amyloidosis. ( 2.2 ) Subcutaneous injection ( 2.2 ): Administer ADMELOG by subcutaneous injection into the abdominal wall, thigh, upper arm, or buttocks within 15 minutes before a meal or immediately after a meal. Rotate injection sites to reduce risk of lipodystrophy and localized cutaneous amyloidosis. Continuous subcutaneous infusion (Insulin Pump) ( 2.2 ): Refer to the insulin infusion pump user manual to see if ADMELOG can be used. Use in accordance with the insulin pump instructions for use. Administer ADMELOG by continuous subcutaneous infusion using an insulin pump in a region recommended in the instructions from the pump manufacturer. Rotate infusion sites to reduce risk of lipodystrophy and localized cutaneous amyloidosis. Do not mix with other insulins or diluents in the pump. Intravenous Infusion: Administer ADMELOG by intravenous infusion ONLY after dilution and under medical supervision. ( 2.2 ) The dosage of ADMELOG must be individualized based on the route of administration and the patient's metabolic needs, blood glucose monitoring results and glycemic control goal. ( 2.3 ) 2.1 Important Preparation and Administration Instructions Always check insulin labels before administration [see Warnings and Precautions (5.4) ] . Inspect ADMELOG visually before use. It should appear clear and colorless. Do not use ADMELOG if particulate matter or coloration is seen. Use ADMELOG SoloStar prefilled pen with caution in patients with visual impairment who may rely on audible clicks to dial their dose. Do NOT mix ADMELOG with other insulins when administering using a continuous subcutaneous infusion pump. 2.2 Preparation and Administration Instructions for the Approved Routes of Administration Subcutaneous Injection Administer the dose of ADMELOG subcutaneously within fifteen minutes before a meal or immediately after a meal into the abdominal wall, thigh, upper arm, or buttocks. Rotate injection site within the same region from one injection to the next to reduce the risk of lipodystrophy and localized cutaneous amyloidosis. Do not inject into areas of lipodystrophy or localized cutaneous amyloidosis [see Warnings and Precautions (5.2) , Adverse Reactions (6) ] . During changes to a patient's insulin regimen, increase the frequency of blood glucose monitoring [see Warnings and Precautions (5.2) ] . ADMELOG administered by subcutaneous injection should generally be used in regimens with intermediate or long-acting insulin. The ADMELOG SoloStar prefilled pen dials in 1-unit increments. Prior to subcutaneous use, ADMELOG may be diluted with sterile 0.9% Sodium Chloride Injection. Dilute one-part ADMELOG to one-part 0.9% Sodium Chloride Injection to yield a concentration one-half that of ADMELOG (equivalent to U-50). If diluted ADMELOG is not used immediately, refrigerate at 2\u00b0C to 8\u00b0C (36\u00b0F to 46\u00b0F) for no more than 24 hours or store at room temperature up to 30\u00b0C (86\u00b0F) for 4 hours. Discard the unused diluted ADEMLOG after 24 hours if refrigerated or after 4 hours if stored at room temperature. Continuous Subcutaneous Infusion (Insulin Pump) Refer to the continuous subcutaneous insulin infusion pump user manual to see if ADMELOG can be used with the insulin pump. Use ADMELOG in accordance with the insulin pump system's instructions for use. Administer ADMELOG by continuous subcutaneous infusion in a region recommended in the instructions from the pump manufacturer. Rotate infusion sites within the same region to reduce the risk of lipodystrophy and localized cutaneous amyloidosis. Do not inject into areas of lipodystrophy or localized cutaneous amyloidosis [see Warnings and Precautions (5.2) , Adverse Reactions (6) ] . Train patients using continuous subcutaneous insulin infusion therapy to administer insulin by injection and have alternate insulin therapy available in case of insulin pump failure [see Warnings and Precautions (5.8) ]. During changes to a patient's insulin regimen, increase the frequency of blood glucose monitoring [see Warnings and Precautions (5.2) ] . Change ADMELOG in the pump reservoir at least every 7 days or according to the pump user manual, whichever is shorter. Change the infusion sets and the infusion set insertion site according to the manufacturer's user manual. Do NOT dilute or mix ADMELOG when administering by continuous subcutaneous infusion. Do NOT expose ADMELOG in the pump reservoir to temperatures greater than 98.6\u00b0F (37\u00b0C). Intravenous Administration Administer ADMELOG intravenously ONLY under medical supervision [see Warnings and Precautions (5.3 , 5.6) ] . Dilute ADMELOG to concentrations from 0.1 unit/mL to 1 unit/mL using 0.9% Sodium Chloride Injection, USP [see How Supplied/Storage and Handling (16.2) ] . Closely monitor of blood glucose and potassium levels to avoid hypoglycemia and hypokalemia [see Warnings and Precautions (5.3 , 5.6) ]. 2.3 Dosage Recommendations Individualize and adjust the dosage of ADMELOG based on the route of administration, the patient's metabolic needs, blood glucose monitoring results, and glycemic control goal. Dosage modifications may be needed with changes in physical activity, changes in meal patterns (i.e., macronutrient content or timing of food intake), changes in renal or hepatic function, or during acute illness [see Warnings and Precautions (5.2 , 5.3) and Use in Specific Populations (8.6 , 8.7) ] . When switching from another insulin lispro product to ADMELOG, the dose of ADMELOG should be the same as the other insulin lispro product [see Warnings and Precautions (5.2) ]. When switching from other insulins to ADMELOG, the ADMELOG dosage may need to be adjusted [see Warnings and Precautions (5.2) ] . 2.4 Dosage Adjustment for Drug Interactions Dosage modification may be needed when ADMELOG is coadministered with certain drugs [see Drug Interactions (7) ]. Do NOT mix ADMELOG with any other insulin.",
+    "strength": "500mg",
+    "route_of_administration": "INTRAVENOUS",
+    "frequency_per_day": 2,
+    "duration_in_days": 14,
+    "side_effects": [
+      "6 ADVERSE REACTIONS The following adverse reactions are discussed elsewhere: Hypoglycemia [see Warnings and Precautions (5.3) ] Hypoglycemia Due to Medication Errors [see Warnings and Precautions (5.4) ] Hypersensitivity Reactions [see Warnings and Precautions (5.5) ] Hypokalemia [see Warnings and Precautions (5.6) ] Adverse reactions associated with ADMELOG include hypoglycemia, allergic reactions, injection site reactions, lipodystrophy, pruritus, and rash. ( 6.1 ) To report SUSPECTED ADVERSE REACTIONS, contact sanofi-aventis at 1-800-633-1610 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch. 6.1 Clinical Trials Experience Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compared to rates in the clinical trials of another drug and may not reflect the rates observed in practice. Adverse Reactions with Subcutaneous Injections of ADMELOG Two clinical trials with ADMELOG were conducted: one in patients with type 1 diabetes and one in patients with type 2 diabetes [see Clinical Studies (14) ] . The data in Table 1 reflect the exposure of 252 patients with type 1 diabetes to ADMELOG with mean exposure duration of 49 weeks. The type 1 diabetes population had the following characteristics: Mean age was 43 years and mean duration of diabetes was 20 years. Fifty-nine percent were male, 80% were White, 6% were Black or African American and 7% were Hispanic. At baseline, the mean eGFR was 90 mL/min/1.73 m 2 and 49% of patients had eGFR \u226590 mL/min/1.73 m 2 . The mean BMI was 26 kg/m 2 . The mean HbA1c at baseline was 8.07%. Two hundred fifty-three patients with type 2 diabetes were exposed to ADMELOG with mean exposure duration of 25 weeks. The type 2 diabetes population had the following characteristics: Mean age was 62 years and mean duration of diabetes was 17 years. Fifty-four percent were male, 90% were White, 6% were Black or African American and 17% were Hispanic. At baseline, the mean eGFR was 77 mL/min/1.73 m 2 and 27% of patients had eGFR \u226590 mL/min/1.73 m 2 . The mean BMI was 32 kg/m 2 . The mean HbA1c at baseline was 7.99%. Common adverse reactions were defined as reactions that occurred in \u22655% of the population studied. Common adverse reactions (other than hypoglycemia) during a clinical trial in patients with type 1 diabetes mellitus are listed in Table 1. In a 26-week clinical trial in patients with type 2 diabetes mellitus, no adverse reactions (other than hypoglycemia) occurred in \u22655% of ADMELOG-treated patients (n=253) were observed. Table 1: Adverse Reactions that Occurred in \u22655% of ADMELOG-Treated Patients with Type 1 Diabetes in a 52-Week Trial ADMELOG + Insulin Glargine (100 units/mL), % (n=252) Nasopharyngitis 13% Upper respiratory tract infection 6% Severe Hypoglycemia Hypoglycemia is the most commonly observed adverse reaction in patients using insulin, including ADMELOG [see Warnings and Precautions (5.3) ] . The rates of reported hypoglycemia depend on the definition of hypoglycemia used, diabetes type, insulin dose, intensity of glucose control, background therapies, and other intrinsic and extrinsic patient factors. For these reasons, comparing rates of hypoglycemia in clinical trials for ADMELOG with the incidence of hypoglycemia for other products may be misleading and also, may not be representative of hypoglycemia rates that will occur in clinical practice. In the ADMELOG trials, severe hypoglycemia was defined as an event requiring assistance of another person to actively administer carbohydrate, glucagon, or other resuscitative actions. The incidence of severe hypoglycemia in patients receiving ADMELOG with type 1 diabetes mellitus and type 2 diabetes mellitus was 13.5% at 52 weeks and 2.4% at 26 weeks, respectively [see Clinical Studies (14) ] . Adverse Reactions Associated with Insulin Initiation and Intensification of Glucose Control Intensification or rapid improvement in glucose control has been associated with a transitory, reversible ophthalmologic refraction disorder, worsening of diabetic retinopathy, and acute painful peripheral neuropathy. However, long-term glycemic control decreases the risk of diabetic retinopathy and neuropathy. Lipodystrophy Long-term use of insulin, including ADMELOG, can cause lipodystrophy at the site of repeated insulin injections or infusion. Lipodystrophy includes lipohypertrophy (thickening of adipose tissue) and lipoatrophy (thinning of adipose tissue) and may affect insulin absorption [see Dosage and Administration (2.2) ] . Weight Gain Weight gain can occur with insulins, including ADMELOG, and has been attributed to the anabolic effects of insulin and the decrease in glucosuria. Peripheral Edema Insulins, including ADMELOG, may cause sodium retention and edema, particularly if previously poor metabolic control is improved by intensified insulin therapy. Adverse Reactions with Continuous Subcutaneous Insulin Infusion (CSII) of ADMELOG In a randomized, open-label crossover study in adult patients with type 1 diabetes treated over two 4-week periods, the incidence of infusion set occlusions (defined as failure to correct hyperglycemia [plasma glucose \u2265300 mg/dL] by insulin bolus via insulin pump) in ADMELOG-treated patients (n=25) was evaluated. Infusion set occlusions were reported by 24% of patients. In a randomized, 16-week, open-label, parallel design study of pediatric patients with type 1 diabetes, adverse reactions related to infusion site-related reactions for another insulin lispro product, 100 units/mL, occurred in 21% of patients. The most frequently reported infusion site-related reactions were infusion site erythema and infusion site reaction. Allergic Reactions Local Allergy As with any insulin therapy, patients taking ADMELOG may experience redness, swelling, or itching at the site of the injection. These minor reactions usually resolve in a few days to a few weeks, but in some occasions may require discontinuation of ADMELOG. In some instances, these reactions may be related to factors other than insulin, such as irritants in a skin cleansing agent or poor injection technique. Systemic Allergy Severe, life-threatening, generalized allergy, including anaphylaxis, may occur with any insulin, including ADMELOG. Generalized allergy to insulin may cause whole body rash (including pruritus), dyspnea, wheezing, hypotension, tachycardia, or diaphoresis. Localized reactions and generalized myalgias have been reported with injected metacresol, which is an excipient in ADMELOG [see Contraindications (4) ] . 6.2 Immunogenicity As with all therapeutic proteins, there is potential for immunogenicity. The detection of antibody formation is highly dependent on the sensitivity and specificity of the assay. Additionally, the observed incidence of antibody (including neutralizing antibody) positivity in an assay may be influenced by several factors including assay methodology, sample handling, timing of sample collection, concomitant medication, and underlying disease. For these reasons, comparison of the incidence of antibodies to ADMELOG in the studies described below with the incidence of antibodies in other studies or to other insulin products may be misleading. In a 52-week study of ADMELOG in type 1 diabetes patients, 49.4% were positive at baseline and 22.6% had treatment-emergent ADA (i.e., either new ADA, or increase in titer of at least 4-fold). In a 26-week study of ADMELOG in type 2 diabetes patients, 26.4% were positive at baseline and 18.8% had treatment-emergent ADA (i.e., either new ADA, or increase in titer of at least 4-fold). 6.3 Postmarketing Experience The following additional adverse reactions have been identified during post approval use of another insulin lispro product, 100 units/mL. Because these reactions are reported voluntarily from a population of uncertain size, it is not always possible to reliably estimate their frequency or establish a causal relationship to drug exposure. Medication errors in which other insulins have been accidentally substituted for another insulin lispro product, 100 units/mL, have been identified during post approval use. Localized cutaneous amyloidosis at the injection site has occurred. Hyperglycemia has been reported with repeated insulin injections into areas of localized cutaneous amyloidosis; hypoglycemia has been reported with a sudden change to an unaffected injection site."
+    ],
+    "disclaimers": [
+      "None"
+    ],
+    "illnesses_treated": [
+      "1 INDICATIONS AND USAGE ADMELOG is indicated to improve glycemic control in adult and pediatric patients with diabetes mellitus. ADMELOG is a rapid-acting human insulin analog indicated to improve glycemic control in adult and pediatric patients with diabetes mellitus. ( 1 )"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "8",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "4 CONTRAINDICATIONS ADMELOG is contraindicated: during episodes of hypoglycemia [see Warnings and Precautions (5.3) ] . in patients who are hypersensitive to insulin lispro or to any of the excipients in ADMELOG [see Warnings and Precautions (5.5) ]. Do not use during episodes of hypoglycemia. ( 4 ) Do not use in patients with hypersensitivity to insulin lispro or any of the excipients in ADMELOG. ( 4 )"
+    ],
+    "storage_instructions": "16.2 Storage and Handling Dispense in the original sealed carton with the enclosed Instructions for Use. Store ADMELOG according to the table below. Do not freeze and do not use ADMELOG if it has been frozen. Protect from direct heat and light. In-use (opened) ADMELOG vials and ADMELOG SoloStar pens must be used within 28 days or be discarded, even if they still contain ADMELOG. ADMELOG Not In-Use (Unopened) Room Temperature (Up to 86\u00b0F [30\u00b0C]) Not In-Use (Unopened) Refrigerated (36\u00b0F\u201346\u00b0F [2\u00b0C\u20138\u00b0C]) In-Use (Opened) Room Temperature (Up to 86\u00b0F [30\u00b0C]) 10 mL multiple-dose vial 28 days Until expiration date 28 days refrigerated/room temperature 3 mL multiple-dose vial 28 days Until expiration date 28 days refrigerated/room temperature 3 mL single-patient-use SoloStar prefilled pen 28 days Until expiration date 28 days Do not refrigerate. Use in an External Insulin Pump Change the ADMELOG in the pump reservoir at least every 7 days or according to the pump user manual, whichever is shorter, or after exposure to temperatures that exceed 98.6\u00b0F (37\u00b0C). Diluted ADMELOG for Subcutaneous Injection Diluted ADMELOG may remain in patient use for up to 24 hours when stored in a refrigerator (36\u00b0F\u201346\u00b0F [2\u00b0C\u20138\u00b0C]) or for up to 4 hours when stored at room temperature (86\u00b0F [30\u00b0C]). Do not dilute ADMELOG used in an external insulin pump. Admixture for Intravenous Administration Infusion bags prepared with ADMELOG are stable when stored in a refrigerator (36\u00b0F\u201346\u00b0F [2\u00b0C\u20138\u00b0C]) for 24 hours or may be used at room temperature for up to 4 hours [see Dosage and Administration (2.2) ] .",
+    "manufacturers": [
+      "Sanofi-Aventis U.S. LLC"
+    ],
+    "cost_per_unit": 4.68,
+    "country_availability": [
+      "Canada",
+      "France",
+      "Germany",
+      "India",
+      "Australia"
+    ],
+    "expiry_date": "2029-05-17"
+  },
+  {
+    "id": "704a850f",
+    "name": "Insulin Glargine",
+    "generic_name": "SITAGLIPTIN AND METFORMIN HYDROCHLORIDE",
+    "brand_names": [
+      "ZITUVIMET"
+    ],
+    "dosage_form": "2 DOSAGE AND ADMINISTRATION Take ZITUVIMET orally twice daily with meals. ( 2.1 ) Individualize the dosage of ZITUVIMET on the basis of the patient's current regimen, effectiveness, and tolerability. ( 2.1 ) The maximum recommended daily dose is 100 mg of sitagliptin and 2,000 mg of metformin HCl. ( 2.1 ) The recommended starting dose in patients not currently treated with metformin is 50 mg sitagliptin and 500 mg metformin HCl twice daily, with gradual dose escalation recommended to reduce gastrointestinal side effects associated with metformin. ( 2.1 ) The starting dose in patients already treated with metformin should provide sitagliptin dosed as 50 mg twice daily (100 mg total daily dose) and the dose of metformin already being taken. For patients taking metformin HCl 850 mg twice daily, the recommended starting dose of ZITUVIMET is 50 mg sitagliptin and 1,000 mg metformin HCl twice daily. ( 2.1 ) Prior to initiation, assess renal function with estimated glomerular filtration rate (eGFR) ( 2.2 ) \u25cb Do not use in patients with eGFR below 30 mL/min/1.73 m 2 \u25cb ZITUVIMET is not recommended in patients with eGFR between 30 and less than 45 mL/min/1.73 m 2 . ZITUVIMET may need to be discontinued at time of, or prior to, iodinated contrast imaging procedures. ( 2.3 ) 2.1 Recommended Dosage Take ZITUVIMET orally twice daily with meals. Individualize the dosage of ZITUVIMET on the basis of the patient's current regimen, effectiveness, and tolerability. The maximum recommended daily dose is 100 mg of sitagliptin and 2,000 mg of metformin hydrochloride (HCl). Do not split or divide ZITUVIMET tablets. The recommended starting dose in patients not currently treated with metformin is 50 mg sitagliptin and 500 mg metformin HCl twice daily, with gradual dose escalation recommended to reduce gastrointestinal side effects associated with metformin. The starting dose in patients already treated with metformin should provide sitagliptin dosed as 50 mg twice daily (100 mg total daily dose) and the dose of metformin already being taken. For patients taking metformin HCl 850 mg twice daily, the recommended starting dose of ZITUVIMET is 50 mg sitagliptin and 1,000 mg metformin HCl twice daily. 2.2 Recommendations for Use in Renal Impairment Assess renal function prior to initiation of ZITUVIMET and periodically thereafter. ZITUVIMET is contraindicated in patients with an estimated glomerular filtration rate (eGFR) below 30 mL/min/1.73 m 2 [see Contraindications ( 4 ) and Warnings and Precautions ( 5.1 )]. ZITUVIMET is not recommended in patients with an eGFR between 30 and less than 45 mL/min/1.73 m 2 because these patients require a lower dosage of sitagliptin than what is available in the fixed combination ZITUVIMET product. 2.3 Discontinuation for Iodinated Contrast Imaging Procedures Discontinue ZITUVIMET at the time of, or prior to, an iodinated contrast imaging procedure in patients with an eGFR between 30 and 60 mL/min/1.73 m 2 ; in patients with a history of liver disease, alcoholism, or heart failure; or in patients who will be administered intra-arterial iodinated contrast. Re-evaluate eGFR 48 hours after the imaging procedure; restart ZITUVIMET if renal function is stable [see Warnings and Precautions ( 5.1 )].",
+    "strength": "500mg",
+    "route_of_administration": "ORAL",
+    "frequency_per_day": 2,
+    "duration_in_days": 14,
+    "side_effects": [
+      "6 ADVERSE REACTIONS The following adverse reactions are also discussed elsewhere in the prescribing information: Lactic Acidosis [see Warnings and Precautions ( 5.1 )] Pancreatitis [see Warnings and Precautions ( 5.2 )] Heart Failure [see Warnings and Precautions ( 5.3 )] Acute Renal Failure [see Warnings and Precautions ( 5.4 )] Vitamin B12 Deficiency [see Warnings and Precautions ( 5.5 )] Hypoglycemia with Concomitant Use with Insulin or Insulin Secretagogues [see Warnings and Precautions ( 5.6 )] Hypersensitivity Reactions [see Warnings and Precautions ( 5.7 )] Severe and Disabling Arthralgia [see Warnings and Precautions ( 5.8 )] Bullous Pemphigoid [see Warnings and Precautions ( 5.9 )] Most common adverse reactions (incidence \u22655% of patients simultaneously started on sitagliptin and metformin and more commonly than in patients treated with placebo were diarrhea, upper respiratory tract infection, and headache. ( 6.1 ) To report SUSPECTED ADVERSE REACTIONS, contact Zydus Pharmaceuticals (USA) Inc. at 1-877-993-8779 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch. 6.1 Clinical Trials Experience Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compared to rates in the clinical trials of another drug and may not reflect the rates observed in practice. Common Adverse Reactions Sitagliptin and Metformin Coadministration in Patients with Type 2 Diabetes Mellitus Inadequately Controlled on Diet and Exercise Table 1 summarizes the most common (\u22655% of patients) adverse reactions reported in a 24-week placebo-controlled factorial trial in which sitagliptin and metformin were coadministered to patients with type 2 diabetes mellitus inadequately controlled on diet and exercise. Table 1: Sitagliptin and Metformin Coadministered to Patients with Type 2 Diabetes Mellitus Inadequately Controlled on Diet and Exercise: Adverse Reactions Reported in \u22655% of Patients Receiving Combination Therapy (and Greater than in Patients Receiving Placebo) Intent-to-treat population. Number of Patients (%) Placebo Sitagliptin 100 mg once daily Metformin HCl 500 mg/ Metformin HCl 1,000 mg twice daily Data pooled for the patients given the lower and higher doses of metformin. Sitagliptin 50 mg twice daily + Metformin HCl 500 mg/ Metformin HCl 1,000 mg twice daily N = 176 N = 179 N = 364 N = 372 Diarrhea 7 (4) 5 (2.8) 28 (7.7) 28 (7.5) Upper Respiratory Tract Infection 9 (5.1) 8 (4.5) 19 (5.2) 23 (6.2) Headache 5 (2.8) 2 (1.1) 14 (3.8) 22 (5.9) Sitagliptin Add-on Therapy in Patients with Type 2 Diabetes Mellitus Inadequately Controlled on Metformin Alone In a 24-week placebo-controlled trial of sitagliptin 100 mg administered once daily added to a twice daily metformin regimen, there were no adverse reactions in \u22655% of patients and more commonly than in patients given placebo. Discontinuation of therapy due to clinical adverse reactions was similar to the placebo treatment group (sitagliptin and metformin, 1.9%; placebo and metformin, 2.5%). Gastrointestinal Adverse Reactions The incidences of pre-selected gastrointestinal adverse experiences in patients treated with sitagliptin and metformin were similar to those reported for patients treated with metformin alone. See Table 2. Table 2: Pre-selected Gastrointestinal Adverse Reactions Reported in Patients with Type 2 Diabetes Mellitus Receiving Sitagliptin and Metformin Number of Patients (%) Trial of Sitagliptin and Metformin in Patients Inadequately Controlled on Diet and Exercise Trial of Sitagliptin Add-on in Patients Inadequately Controlled on Metformin Alone Placebo Sitagliptin 100 mg once daily Metformin HCl 500 mg/ Metformin HCl 1,000 mg twice daily Data pooled for the patients given the lower and higher doses of metformin. Sitagliptin 50 mg twice daily + Metformin HCl 500 mg/ Metformin HCl 1,000 mg twice daily Placebo and Metformin HCl \u22651,500 mg daily Sitagliptin 100 mg once daily and Metformin HCl \u22651,500 mg daily N = 176 N = 179 N = 364 N = 372 N = 237 N = 464 Diarrhea 7 (4) 5 (2.8) 28 (7.7) 28 (7.5) 6 (2.5) 11 (2.4) Nausea 2 (1.1) 2 (1.1) 20 (5.5) 18 (4.8) 2 (0.8) 6 (1.3) Vomiting 1 (0.6) 0 (0) 2 (0.5) 8 (2.2) 2 (0.8) 5 (1.1) Abdominal Pain Abdominal discomfort was included in the analysis of abdominal pain in the trial of initial therapy. 4 (2.3) 6 (3.4) 14 (3.8) 11 (3) 9 (3.8) 10 (2.2) Sitagliptin in Combination with Metformin and Glimepiride In a 24-week placebo-controlled trial of sitagliptin 100 mg as add-on therapy in patients with type 2 diabetes mellitus inadequately controlled on metformin and glimepiride (sitagliptin, N=116; placebo, N=113), the adverse reactions reported in \u22655% of patients treated with sitagliptin and more commonly than in patients treated with placebo were: hypoglycemia ( see Table 3) and headache (6.9%, 2.7%). Sitagliptin in Combination with Metformin and Rosiglitazone In a placebo-controlled trial of sitagliptin 100 mg as add-on therapy in patients with type 2 diabetes mellitus inadequately controlled on metformin and rosiglitazone (sitagliptin, N=181; placebo, N=97), the adverse reactions reported through Week 18 in \u22655% of patients treated with sitagliptin and more commonly than in patients treated with placebo were: upper respiratory tract infection (sitagliptin, 5.5%; placebo, 5.2%) and nasopharyngitis (6.1%, 4.1%). Through Week 54, the adverse reactions reported in \u22655% of patients treated with sitagliptin and more commonly than in patients treated with placebo were: upper respiratory tract infection (sitagliptin, 15.5%; placebo, 6.2%), nasopharyngitis (11%, 9.3%), peripheral edema (8.3%, 5.2%), and headache (5.5%, 4.1%). Sitagliptin in Combination with Metformin and Insulin In a 24-week placebo-controlled trial of sitagliptin 100 mg as add-on therapy in patients with type 2 diabetes mellitus inadequately controlled on metformin and insulin (sitagliptin, N=229; placebo, N=233), the only adverse reaction reported in \u22655% of patients treated with sitagliptin and more commonly than in patients treated with placebo was hypoglycemia (Table 3). Hypoglycemia In the above trials (N=5), adverse reactions of hypoglycemia were based on all reports of symptomatic hypoglycemia; a concurrent glucose measurement was not required although most (77%) reports of hypoglycemia were accompanied by a blood glucose measurement \u226470 mg/dL. When the combination of sitagliptin and metformin was coadministered with a sulfonylurea or with insulin, the percentage of patients reporting at least one adverse reaction of hypoglycemia was higher than that observed with placebo and metformin coadministered with a sulfonylurea or with insulin (Table 3). Table 3: Incidence and Rate of Hypoglycemia Adverse reactions of hypoglycemia were based on all reports of symptomatic hypoglycemia; a concurrent glucose measurement was not required: Intent-to-treat population. in Placebo-Controlled Clinical Trials of Sitagliptin in Combination with Metformin Coadministered with Glimepiride or Insulin Add-On to Glimepiride + Metformin (24 weeks) Sitagliptin 100 mg + Metformin + Glimepiride Placebo + Metformin + Glimepiride N = 116 N = 113 Overall (%) 19 (16.4) 1 (0.9) Rate (episodes/patient-year) Based on total number of events (i.e., a single patient may have had multiple events). 0.82 0.02 Severe (%) Severe events of hypoglycemia were defined as those events requiring medical assistance or exhibiting depressed level/loss of consciousness or seizure. 0 (0) 0 (0) Add-On to Insulin + Metformin (24 weeks) Sitagliptin 100 mg + Metformin + Insulin Placebo + Metformin + Insulin N = 229 N = 233 Overall (%) 35 (15.3) 19 (8.2) Rate (episodes/patient-year) 0.98 0.61 Severe (%) 1 (0.4) 1 (0.4) The overall incidence of reported adverse reactions of hypoglycemia in patients with type 2 diabetes mellitus inadequately controlled on diet and exercise was 0.6% in patients given placebo, 0.6% in patients given sitagliptin alone, 0.8% in patients given metformin alone, and 1.6% in patients given sitagliptin in combination with metformin. In patients with type 2 diabetes mellitus inadequately controlled on metformin alone, the overall incidence of adverse reactions of hypoglycemia was 1.3% in patients given add-on sitagliptin and 2.1% in patients given add-on placebo. In the trial of sitagliptin and add-on combination therapy with metformin and rosiglitazone, the overall incidence of hypoglycemia was 2.2% in patients given add-on sitagliptin and 0% in patients given add-on placebo through Week 18. Through Week 54, the overall incidence of hypoglycemia was 3.9% in patients given add-on sitagliptin and 1% in patients given add-on placebo. In an additional, 30-week placebo-controlled, trial of patients with type 2 diabetes mellitus inadequately controlled with metformin comparing the maintenance of sitagliptin 100 mg versus withdrawal of sitagliptin when initiating basal insulin therapy, the event rate and incidence of documented symptomatic hypoglycemia (blood glucose measurement \u226470 mg/dL) did not differ between the sitagliptin and placebo groups. Vital Signs and Electrocardiograms With the combination of sitagliptin and metformin, no clinically meaningful changes in vital signs or in ECG (including in QTc interval) were observed. Pancreatitis In a pooled analysis of 19 double-blind clinical trials that included data from 10,246 patients randomized to receive sitagliptin 100 mg/day (N=5,429) or corresponding (active or placebo) control (N=4,817), the incidence of acute pancreatitis was 0.1 per 100 patient-years in each group (4 patients with an event in 4,708 patient-years for sitagliptin and 4 patients with an event in 3,942 patient-years for control). Sitagliptin The most common adverse experience in sitagliptin monotherapy reported in \u22655% of patients and more commonly than in patients given placebo was nasopharyngitis. Metformin The most common (>5%) established adverse reactions due to initiation of metformin therapy are diarrhea, nausea/vomiting, flatulence, abdominal discomfort, indigestion, asthenia, and headache. Laboratory Tests Sitagliptin The incidence of laboratory adverse reactions was similar in patients treated with sitagliptin and metformin (7.6%) compared to patients treated with placebo and metformin (8.7%). In most but not all trials, a small increase in white blood cell count (approximately 200 cells/microL difference in WBC vs placebo; mean baseline WBC approximately 6,600 cells/microL) was observed due to a small increase in neutrophils. This change in laboratory parameters is not considered to be clinically relevant. Metformin In controlled clinical trials of metformin of 29 weeks duration, a decrease to subnormal levels of previously normal serum vitamin B 12 levels, without clinical manifestations, was observed in approximately 7% of patients. Such decrease, possibly due to interference with B 12 absorption from the B 12 -intrinsic factor complex, is, however, very rarely associated with anemia and appears to be rapidly reversible with discontinuation of metformin or vitamin B 12 supplementation. 6.2 Postmarketing Experience Additional adverse reactions have been identified during postapproval use of ZITUVIMET, sitagliptin, or metformin. Because these reactions are reported voluntarily from a population of uncertain size, it is generally not possible to reliably estimate their frequency or establish a causal relationship to drug exposure. Skin and subcutaneous tissue disorders: hypersensitivity reactions including anaphylaxis, angioedema, rash, urticaria, cutaneous vasculitis, and exfoliative skin conditions including Stevens-Johnson syndrome; bullous pemphigoid; Respiratory, thoracic and mediastinal disorders: upper respiratory tract infection; Hepatobiliary disorders: hepatic enzyme elevations; cholestatic, hepatocellular, and mixed hepatocellular liver injury; Gastrointestinal disorders: acute pancreatitis, including fatal and non-fatal hemorrhagic and necrotizing pancreatitis [see Indications and Usage (1)]; constipation; vomiting; mouth ulceration; stomatitis; Renal and urinary disorders: worsening renal function, including acute renal failure (sometimes requiring dialysis) and tubulointerstitial nephritis; Musculoskeletal and connective tissue disorders: severe and disabling arthralgia; myalgia; pain in extremity; back pain; pruritus; rhabdomyolysis; Nervous system disorders : headache."
+    ],
+    "disclaimers": [
+      "None"
+    ],
+    "illnesses_treated": [
+      "1 INDICATIONS AND USAGE ZITUVIMET is a combination of sitagliptin, a dipeptidyl peptidase-4 (DPP-4) inhibitor, and metformin hydrochloride (HCl), a biguanide, indicated as an adjunct to diet and exercise to improve glycemic control in adults with type 2 diabetes mellitus. ( 1 ) Limitations of Use: ZITUVIMET is not recommended in patients with type 1 diabetes mellitus. ( 1 ) ZITUVIMET has not been studied in patients with a history of pancreatitis. ( 1 ) ZITUVIMET is indicated as an adjunct to diet and exercise to improve glycemic control in adults with type 2 diabetes mellitus. Limitations of Use ZITUVIMET is not recommended in patients with type 1 diabetes mellitus. ZITUVIMET has not been studied in patients with a history of pancreatitis. It is unknown whether patients with a history of pancreatitis are at increased risk for the development of pancreatitis while using ZITUVIMET. [see Warnings and Precautions ( 5.2 )]."
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "8",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "4 CONTRAINDICATIONS Severe renal impairment: (eGFR below 30 mL/min/1.73 m 2 ) ( 4) Metabolic acidosis, including diabetic ketoacidosis. ( 4 ) History of a serious hypersensitivity reaction to ZITUVIMET, sitagliptin, or metformin, such as anaphylaxis or angioedema. (4) ZITUVIMET is contraindicated in patients with: Severe renal impairment (eGFR below 30 mL/min/1.73 m 2 ) [see Warnings and Precautions ( 5.1 )]. Acute or chronic metabolic acidosis, including diabetic ketoacidosis. History of a serious hypersensitivity reaction to sitagliptin, metformin, or any of the excipients in ZITUVIMET. Serious hypersensitivity reactions including anaphylaxis or angioedema have been reported. [see Warnings and Precautions ( 5.7 ) and Adverse Reactions ( 6.2 )]."
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Zydus Lifesciences Limited"
+    ],
+    "cost_per_unit": 1.81,
+    "country_availability": [
+      "UK",
+      "Germany",
+      "Australia",
+      "Canada"
+    ],
+    "expiry_date": "2027-07-29"
+  },
+  {
+    "id": "fdb967dc",
+    "name": "Mefenamic Acid",
+    "generic_name": "Mefenamic Acid",
+    "brand_names": [
+      "Mefenamic Acid"
+    ],
+    "dosage_form": "DOSAGE AND ADMINISTRATION The recommended dosage regimen for the treatment of bacterial conjunctivitis is: Days 1 and 2 Instill one to two drops every two to four hours in the affected eye(s). Days 3 through 7 Instill one to two drops four times daily. The recommended dosage regimen for the treatment of bacterial corneal ulcer is: Days 1 and 2 Instill one to two drops into the affected eye every 30 minutes, while awake. Awaken at approximately four and six hours after retiring and instill one to two drops. Days 3 through 7 to 9 Instill one to two drops hourly, while awake. Days 7 to 9 through treatment completion Instill one to two drops, four times daily.",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 30,
+    "side_effects": [
+      "ADVERSE REACTIONS Ophthalmic use: The most frequently reported drug-related adverse reaction was transient ocular burning or discomfort. Other reported reactions include stinging, redness, itching, chemical conjunctivitis/keratitis, ocular/periocular/facial edema, foreign body sensation, photophobia, blurred vision, tearing, dryness, and eye pain. Rare reports of dizziness and nausea have been received. Refer to WARNINGS for additional adverse reactions."
+    ],
+    "disclaimers": [
+      "WARNINGS NOT FOR INJECTION. Ofloxacin ophthalmic solution should not be injected subconjunctivally, nor should it be introduced directly into the anterior chamber of the eye. There are rare reports of anaphylactic reaction/shock and fatal hypersensitivity reactions in patients receiving systemic quinolones, some following the first dose, including ofloxacin. Some reactions were accompanied by cardiovascular collapse, loss of consciousness, angioedema (including laryngeal, pharyngeal or facial edema), airway obstruction, dyspnea, urticaria, and itching. A rare occurrence of Stevens-Johnson syndrome, which progressed to toxic epidermal necrolysis, has been reported in a patient who was receiving topical ophthalmic ofloxacin. If an allergic reaction to ofloxacin occurs, discontinue the drug. Serious acute hypersensitivity reactions may require immediate emergency treatment. Oxygen and airway management, including intubation should be administered as clinically indicated."
+    ],
+    "illnesses_treated": [
+      "INDICATIONS AND USAGE Ofloxacin ophthalmic solution is indicated for the treatment of infections caused by susceptible strains of the following bacteria in the conditions listed below:"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "P",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "CONTRAINDICATIONS Ofloxacin ophthalmic solution is contraindicated in patients with a history of hypersensitivity to ofloxacin, to other quinolones, or to any of the components in this medication (see WARNINGS )."
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 4.79,
+    "country_availability": [
+      "UK",
+      "India",
+      "France"
+    ],
+    "expiry_date": "2028-07-17"
+  },
+  {
+    "id": "873118d3",
+    "name": "Prednisolone",
+    "generic_name": "Prednisolone",
+    "brand_names": [
+      "Prednisolone"
+    ],
+    "dosage_form": "For external use only",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 30,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "For external use only. Do not use in the eyes by putting this product into the rectum by using fingers or any mechanical device or applicator. Ask a doctor before use if you have a vaginal discharge, rectal bleeding, diaper rash. When using this product consult a doctor before exceeding recommended dosage. Stop use and ask a doctor if condition gets worse, condition persists for more than 7 days, condition clears up and occurs again with within a few days. Do not begin to use any other hydrocortisone product unless you have consulted a doctor. Keep out of reach of children. If swallowed, get medical help or contact a Poison Control Center right away."
+    ],
+    "illnesses_treated": [
+      "\u25a0 Adults and children 2 years of age and older: apply to the affected area no more than 3 to 4 times daily"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 3.84,
+    "country_availability": [
+      "India",
+      "France",
+      "UK",
+      "Germany",
+      "Canada"
+    ],
+    "expiry_date": "2026-11-27"
+  },
+  {
+    "id": "376db2ef",
+    "name": "Valproic Acid",
+    "generic_name": "Valproic Acid",
+    "brand_names": [
+      "Valproic Acid"
+    ],
+    "dosage_form": "DOSAGE AND ADMINISTRATION The recommended dosage regimen for the treatment of bacterial conjunctivitis is: Days 1 and 2 Instill one to two drops every two to four hours in the affected eye(s). Days 3 through 7 Instill one to two drops four times daily. The recommended dosage regimen for the treatment of bacterial corneal ulcer is: Days 1 and 2 Instill one to two drops into the affected eye every 30 minutes, while awake. Awaken at approximately four and six hours after retiring and instill one to two drops. Days 3 through 7 to 9 Instill one to two drops hourly, while awake. Days 7 to 9 through treatment completion Instill one to two drops, four times daily.",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 7,
+    "side_effects": [
+      "ADVERSE REACTIONS Ophthalmic use: The most frequently reported drug-related adverse reaction was transient ocular burning or discomfort. Other reported reactions include stinging, redness, itching, chemical conjunctivitis/keratitis, ocular/periocular/facial edema, foreign body sensation, photophobia, blurred vision, tearing, dryness, and eye pain. Rare reports of dizziness and nausea have been received. Refer to WARNINGS for additional adverse reactions."
+    ],
+    "disclaimers": [
+      "WARNINGS NOT FOR INJECTION. Ofloxacin ophthalmic solution should not be injected subconjunctivally, nor should it be introduced directly into the anterior chamber of the eye. There are rare reports of anaphylactic reaction/shock and fatal hypersensitivity reactions in patients receiving systemic quinolones, some following the first dose, including ofloxacin. Some reactions were accompanied by cardiovascular collapse, loss of consciousness, angioedema (including laryngeal, pharyngeal or facial edema), airway obstruction, dyspnea, urticaria, and itching. A rare occurrence of Stevens-Johnson syndrome, which progressed to toxic epidermal necrolysis, has been reported in a patient who was receiving topical ophthalmic ofloxacin. If an allergic reaction to ofloxacin occurs, discontinue the drug. Serious acute hypersensitivity reactions may require immediate emergency treatment. Oxygen and airway management, including intubation should be administered as clinically indicated."
+    ],
+    "illnesses_treated": [
+      "INDICATIONS AND USAGE Ofloxacin ophthalmic solution is indicated for the treatment of infections caused by susceptible strains of the following bacteria in the conditions listed below:"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "P",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "CONTRAINDICATIONS Ofloxacin ophthalmic solution is contraindicated in patients with a history of hypersensitivity to ofloxacin, to other quinolones, or to any of the components in this medication (see WARNINGS )."
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 3.24,
+    "country_availability": [
+      "USA",
+      "France",
+      "Germany"
+    ],
+    "expiry_date": "2026-06-15"
+  },
+  {
+    "id": "84b4cae3",
+    "name": "Lidocaine",
+    "generic_name": "Lidocaine",
+    "brand_names": [
+      "Lidocaine"
+    ],
+    "dosage_form": "Directions Adults and children 2 years old and older Clean the affected area Apply to affected area not more than 3 to 4 times daily Remove residue if desired Children under 2 years old: Consult a doctor",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 14,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings For external use only. Avoid contact with eyes. Not for prolonged use. Do not use in large quantities, particularly over raw surfaces or blistered areas."
+    ],
+    "illnesses_treated": [
+      "Use For the temporary relief of pain"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Other information Store at 15 to 30\u00b0C (59 to 86\u00b0F) Tamper Evident: DO NOT USE IF SEAL ON TUBE IS PUNCTURED OR MISSING",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 0.87,
+    "country_availability": [
+      "UK",
+      "India",
+      "Germany",
+      "Canada",
+      "USA"
+    ],
+    "expiry_date": "2028-09-16"
+  },
+  {
+    "id": "f6bd936a",
+    "name": "Nicotine",
+    "generic_name": "NICOTINE POLACRILEX",
+    "brand_names": [
+      "Nicotine"
+    ],
+    "dosage_form": "Directions if you are under 18 years of age, ask a doctor before use. No studies have been done to show if this product will work for you. before using this product, read the enclosed User\u2019s Guide for complete directions and other important information begin using the lozenge on your quit day if you smoke your first cigarette more than 30 minutes after waking up, use 2 mg nicotine lozenge if you smoke your first cigarette within 30 minutes of waking up, use 4 mg nicotine lozenge according to the following 12 week schedule: Weeks 1 to 6 Weeks 7 to 9 Weeks 10 to 12 1 lozenge every 1 to 2 hours 1 lozenge every 2 to 4 hours 1 lozenge every 4 to 8 hours nicotine lozenge is a medicine and must be used a certain way to get the best results place the lozenge in your mouth and allow the lozenge to slowly dissolve (about 20 to 30 minutes). Minimize swallowing. Do not chew or swallow lozenge. you may feel a warm or tingling sensation occasionally move the lozenge from one side of your mouth to the other until completely dissolved (about 20 to 30 minutes) do not eat or drink 15 minutes before using or while the lozenge is in your mouth to improve your chances of quitting, use at least 9 lozenges per day for the first 6 weeks do not use more than one lozenge at a time or continuously use one lozenge after another since this may cause you hiccups, heartburn, nausea or other side effects do not use more than 5 lozenges in 6 hours. Do not use more than 20 lozenges per day. It is important to complete treatment. If you feel you need to use the lozenge for a longer period to keep from smoking, talk to your health care provider.",
+    "strength": "500mg",
+    "route_of_administration": "ORAL",
+    "frequency_per_day": 2,
+    "duration_in_days": 7,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings If you are pregnant or breast-feeding, only use this medicine on the advice of your health care provider. Smoking can seriously harm your child. Try to stop smoking without using any nicotine replacement medicine. This medicine is believed to be safer than smoking. However, the risks to your child from this medicine are not fully known. Ask a doctor before use if you have a sodium-restricted diet heart disease, recent heart attack, or irregular heartbeat. Nicotine can increase your heart rate. high blood pressure not controlled with medication. Nicotine can increase your blood pressure. stomach ulcer or diabetes history of seizures Ask a doctor or pharmacist before use if you are using a non-nicotine stop smoking drug taking prescription medicine for depression or asthma. Your prescription dose may need to be adjusted. Stop use and ask a doctor if mouth problems occur persistent indigestion or severe sore throat occurs irregular heartbeat or palpitations occur you get symptoms of nicotine overdose such as nausea, vomiting, dizziness, diarrhea, weakness and rapid heartbeat you have symptoms of an allergic reaction (such as difficulty breathing or rash) Keep out of reach of children and pets. Nicotine lozenges may have enough nicotine to make children and pets sick. If you need to remove the lozenge, wrap it in paper and throw away in the trash. In case of overdose, get medical help or contact a Poison Control Center (1-800-222-1222) right away"
+    ],
+    "illnesses_treated": [
+      "Use reduces withdrawal symptoms, including nicotine craving, associated with quitting smoking"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Rite Aid Corporation"
+    ],
+    "cost_per_unit": 0.88,
+    "country_availability": [
+      "Australia",
+      "France",
+      "USA"
+    ],
+    "expiry_date": "2028-06-20"
+  },
+  {
+    "id": "e87e3c31",
+    "name": "Ivermectin",
+    "generic_name": "IVERMECTIN",
+    "brand_names": [
+      "Ivermectin"
+    ],
+    "dosage_form": "Directions Important: Read warnings on carton before use. children 6 months of age to under 12 years of age: an adult should supervise use. adults and children 6 months of age and over: Inspect all household members should be checked by another person for lice and/or nits (eggs) use a magnifying glass in bright light to help you see the lice and/or nits (eggs) use a tool, such as a comb or two unsharpened pencils, to lift and part the hair look for tiny nits near the scalp, beginning at the back of the neck and behind the ears examine small sections of the hair (1-2 inches wide) at a time unlike dandruff, nits stick to the hair. Dandruff should move when lightly touched. If either lice or nits (eggs) are found, treat with product. Treat your hair and scalp must be DRY before applying product use the top of cap to break the tamper seal on the tube apply product directly to dry hair and scalp completely cover your scalp and hair closest to the scalp first, and then apply outwards towards the ends of your hair use only amount needed to completely cover hair and scalp, up to 1 entire tube, and discard the remaining rub product throughout your hair it is important to completely cover your entire head so that all lice and eggs are exposed to the lotion. Be sure that each hair is coated from the scalp to the tip. Wait and rinse allow product to stay on your hair and scalp for 10 minutes after it has been applied. Use a timer or clock. Start timing after you have completely covered your hair and scalp with product. After 10 minutes, rinse product completely from your hair and scalp using only water after rinsing, dry and style as usual. Wait 24 hours before applying shampoo. After treatment wash your hands after applying product nit combing is not necessary when treating with product for it to work, but if desired, a fine-tooth comb or special nit comb may be used to remove dead lice and nits this is a single use product. Discard tube after use. Do not use again on the same person and same lice infestation without talking to a healthcare provider first if infestation continues, see a doctor for other treatments machine wash any bedding and clothing used by anyone having lice. Machine wash at high temperatures (150\u00b0F) and tumble in a hot dryer for 20 minutes. After finishing treatment with lice medicine, check everyone in your family for lice after one week. Consider treatment for those who have lice.",
+    "strength": "500mg",
+    "route_of_administration": "TOPICAL",
+    "frequency_per_day": 2,
+    "duration_in_days": 30,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings For external use only. Use only on the scalp. Do not use on children under 6 months of age near the eyes inside the nose, ear, mouth, or vagina on lice in eyebrows or eyelashes. See a doctor if lice are present in these areas. Ask a doctor before use if you have any skin conditions or sensitivities are pregnant or plan to become pregnant. It is not known if product can harm your unborn baby are currently or planning to breastfeed. Avoid getting product on your breast to help prevent contact by your baby. When using this product keep eyes tightly closed and protect eyes with a washcloth or towel if product gets into eyes, gently flush with water eye redness, soreness, or irritation can occur dandruff, dry skin, or burning sensation of the skin can occur. Stop use and ask a doctor if breathing difficulty occurs eye irritation occurs skin or scalp irritation continues or infection occurs rash develops. If pregnant or breastfeeding , ask a health professional before use. Keep out of reach of children. If swallowed, get medical help or contact a Poison Control Center (1-800-222-1222) right away."
+    ],
+    "illnesses_treated": [
+      "Use treats head lice"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Other information TAMPER EVIDENT: DO NOT USE IF THE TAMPER SEAL ON THE TUBE HAS BEEN BROKEN. store at room temperature 68\u00b0-77\u00b0F (20\u00b0-25\u00b0C) do not freeze keep carton and see Consumer Information Leaflet and warnings before use.",
+    "manufacturers": [
+      "Belmora LLC"
+    ],
+    "cost_per_unit": 2.43,
+    "country_availability": [
+      "USA",
+      "Canada",
+      "India",
+      "France",
+      "Australia"
+    ],
+    "expiry_date": "2026-06-30"
+  },
+  {
+    "id": "fc9032c2",
+    "name": "Chloroquine",
+    "generic_name": "Chloroquine",
+    "brand_names": [
+      "Chloroquine"
+    ],
+    "dosage_form": "DIRECTIONS Place drops under tongue 30 minutes before/after meals. Adults and children 12 years and over: Take 10 drops up to 3 times per day. Consult a physician for use in children under 12 years of age.",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 7,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "WARNINGS Consult a doctor if condition worsens or symptoms persist. Keep out of the reach of children. In case of overdose, get medical help or contact a poison control center right away. If pregnant or breastfeeding, ask a healthcare professional before use. Keep out of the reach of children. If pregnant or breastfeeding, ask a healthcare professional before use."
+    ],
+    "illnesses_treated": [
+      "INDICATIONS Temporarily relieves occasional blurred or distorted vision, seeing floaters or spots, sensitivity to light, or red, painful eyes or eyelids*"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 0.7,
+    "country_availability": [
+      "Canada",
+      "USA",
+      "France"
+    ],
+    "expiry_date": "2027-10-15"
+  },
+  {
+    "id": "a44a5476",
+    "name": "Zoledronic Acid",
+    "generic_name": "Zoledronic Acid",
+    "brand_names": [
+      "Zoledronic Acid"
+    ],
+    "dosage_form": "DOSAGE AND ADMINISTRATION The recommended dosage regimen for the treatment of bacterial conjunctivitis is: Days 1 and 2 Instill one to two drops every two to four hours in the affected eye(s). Days 3 through 7 Instill one to two drops four times daily. The recommended dosage regimen for the treatment of bacterial corneal ulcer is: Days 1 and 2 Instill one to two drops into the affected eye every 30 minutes, while awake. Awaken at approximately four and six hours after retiring and instill one to two drops. Days 3 through 7 to 9 Instill one to two drops hourly, while awake. Days 7 to 9 through treatment completion Instill one to two drops, four times daily.",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 30,
+    "side_effects": [
+      "ADVERSE REACTIONS Ophthalmic use: The most frequently reported drug-related adverse reaction was transient ocular burning or discomfort. Other reported reactions include stinging, redness, itching, chemical conjunctivitis/keratitis, ocular/periocular/facial edema, foreign body sensation, photophobia, blurred vision, tearing, dryness, and eye pain. Rare reports of dizziness and nausea have been received. Refer to WARNINGS for additional adverse reactions."
+    ],
+    "disclaimers": [
+      "WARNINGS NOT FOR INJECTION. Ofloxacin ophthalmic solution should not be injected subconjunctivally, nor should it be introduced directly into the anterior chamber of the eye. There are rare reports of anaphylactic reaction/shock and fatal hypersensitivity reactions in patients receiving systemic quinolones, some following the first dose, including ofloxacin. Some reactions were accompanied by cardiovascular collapse, loss of consciousness, angioedema (including laryngeal, pharyngeal or facial edema), airway obstruction, dyspnea, urticaria, and itching. A rare occurrence of Stevens-Johnson syndrome, which progressed to toxic epidermal necrolysis, has been reported in a patient who was receiving topical ophthalmic ofloxacin. If an allergic reaction to ofloxacin occurs, discontinue the drug. Serious acute hypersensitivity reactions may require immediate emergency treatment. Oxygen and airway management, including intubation should be administered as clinically indicated."
+    ],
+    "illnesses_treated": [
+      "INDICATIONS AND USAGE Ofloxacin ophthalmic solution is indicated for the treatment of infections caused by susceptible strains of the following bacteria in the conditions listed below:"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "P",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "CONTRAINDICATIONS Ofloxacin ophthalmic solution is contraindicated in patients with a history of hypersensitivity to ofloxacin, to other quinolones, or to any of the components in this medication (see WARNINGS )."
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 4.51,
+    "country_availability": [
+      "France",
+      "UK",
+      "Canada",
+      "Australia",
+      "USA"
+    ],
+    "expiry_date": "2028-03-16"
+  },
+  {
+    "id": "7adc6c2a",
+    "name": "Apomorphine",
+    "generic_name": "Apomorphine",
+    "brand_names": [
+      "Apomorphine"
+    ],
+    "dosage_form": "Dosage 1-3 spray(s); 1-3 time(s) per day or as recommended by your health care practitioner.",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 30,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings Stop use and ask a health care practitioner if symptoms persist for more than five days or worsen. If pregnant or breastfeeding, ask a health care practitioner before use."
+    ],
+    "illnesses_treated": [
+      "Uses For the relief of arthritic symptoms"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Other Information Normal storage use. Do not use if tamper-evident seal is broken or removed.",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 2.31,
+    "country_availability": [
+      "Germany",
+      "India",
+      "France",
+      "Australia"
+    ],
+    "expiry_date": "2028-03-05"
+  },
+  {
+    "id": "fb06fe56",
+    "name": "Brimonidine",
+    "generic_name": "BRIMONIDINE TARTRATE",
+    "brand_names": [
+      "LUMIFY Redness Reliever Eye Drops"
+    ],
+    "dosage_form": "Directions adults and children 5 years of age and over: instill 1 drop in the affected eye(s) every 6-8 hours do not use more than 4 times daily remove contact lenses before use wait at least 10 minutes before re-inserting contact lenses after use if using other ophthalmic products while using this product, wait at least 5 minutes between each product to avoid contamination, do not touch tip of container to any surface replace cap after each use children under 5 years of age: consult a doctor",
+    "strength": "500mg",
+    "route_of_administration": "OPHTHALMIC",
+    "frequency_per_day": 2,
+    "duration_in_days": 30,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings For external use only Do not use if solution changes color or becomes cloudy Stop use and ask a doctor if you experience eye pain, changes in vision, continued redness or irritation of the eye condition worsens or persists for more than 3 days If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. If swallowed, get medical help or contact a Poison Control Center right away."
+    ],
+    "illnesses_treated": [
+      "Use relieves redness of the eye due to minor eye irritations"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Bausch & Lomb Incorporated"
+    ],
+    "cost_per_unit": 0.88,
+    "country_availability": [
+      "Germany",
+      "France",
+      "India",
+      "Canada",
+      "USA"
+    ],
+    "expiry_date": "2026-10-22"
+  },
+  {
+    "id": "b16cf0ef",
+    "name": "Radium-223",
+    "generic_name": "Radium-223",
+    "brand_names": [
+      "Radium-223"
+    ],
+    "dosage_form": "Dosage and Administration Directions Initially, depress pump until primed. Hold close to mouth and spray one dose directly into mouth. Use 3 times daily. Use additionally as needed. Adult Dose 3 pump sprays Children 2-12 years 2 pump sprays Reference image skin irritations.jpg",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 30,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings If symptoms persist or worsen, or if pregnant or nursing, take only on advice of a healthcare professional. Other Information: Tamper resistant for your protection. Use only if safety seal is intact. Reference image skin irritations.jpg"
+    ],
+    "illnesses_treated": [
+      "Indications and Usage Uses for temporary relief of irritations and itching from: rashes, hives, eczema, psoriasis, unhealthy, lusterless looking skin, irritated, red burning, sensitive, dry rough, or chapped skin Reference image skin irritations.jpg"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 0.73,
+    "country_availability": [
+      "France",
+      "UK",
+      "USA",
+      "Germany"
+    ],
+    "expiry_date": "2028-06-15"
+  },
+  {
+    "id": "53c7fe2d",
+    "name": "Sipuleucel-T",
+    "generic_name": "STAR OF BETHLEHEM, GORSE, SWEET CHESTNUT",
+    "brand_names": [
+      "Bach Hope and Joy Comfort Kit"
+    ],
+    "dosage_form": "Directions \u25a0 single remedies: take 2 drops directly on the tongue or add to a beverage & sip. Repeat as needed throughout the day. \u25a0 children under 2: ask a doctor before use",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 7,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings Consult a doctor if symptoms last for more than 7 days or worsen. If pregnant or breast-feeding , ask a health professional before use. Keep out of reach of children ."
+    ],
+    "illnesses_treated": [
+      "Use For relief of naturally occurring simple nervous tension"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Nelson Bach USA Limited"
+    ],
+    "cost_per_unit": 0.89,
+    "country_availability": [
+      "Canada",
+      "France",
+      "Australia"
+    ],
+    "expiry_date": "2030-02-24"
+  },
+  {
+    "id": "a4231d4a",
+    "name": "Somatropin",
+    "generic_name": "Somatropin",
+    "brand_names": [
+      "Somatropin"
+    ],
+    "dosage_form": "DIRECTIONS: Apply one full pump in the morning and one full pump in the evening: five days on, two days off. For intensive use, apply two full pumps in the morning, two full pumps in the evening. Gel should always be applied to the thin areas of skin, wherever veins are visible. You may apply the gel to your underarms, forearms, wrists and behind the knees. Applied locations should be rotated. Store between 48-78 degrees, in a cool dry place away from sunlight.",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 7,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "WARNINGS: WARNING: KEEP OUT OF REACH OF CHILDREN If swallowed, get medical help or contact a Poison Control Center right away. If pregnant or breast-feeding, ask a health professional before use. FOR EXTERNAL USE ONLY Sealed for your protection. Do not use if seal has been broken or tampered with."
+    ],
+    "illnesses_treated": [
+      "INDICATIONS: May Improve Bone and Joint Health* May Increase Muscle and Reduce Fat* May Improve Sleep* *These statements have not been evaluated by the FDA"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 2.48,
+    "country_availability": [
+      "USA",
+      "Australia",
+      "UK",
+      "India"
+    ],
+    "expiry_date": "2030-01-01"
+  },
+  {
+    "id": "36811dd4",
+    "name": "Levocetirizine",
+    "generic_name": "LEVOCETIRIZINE DIHYDROCHLORIDE",
+    "brand_names": [
+      "levocetirizine dihydrochloride"
+    ],
+    "dosage_form": "Directions adults 65 years of age and older ask a doctor adults and children 12-64 years of age take 1 tablet (5 mg) once daily in the evening do not take more than 1 tablet (5 mg) in 24 hours 1/2 tablet (2.5 mg) once daily in the evening may be appropriate for less severe symptoms children 6-11 years of age take 1/2 tablet (2.5 mg) once daily in the evening do not take more than 1/2 tablet (2.5 mg) in 24 hours children under 6 years of age do not use consumers with kidney disease do not use",
+    "strength": "500mg",
+    "route_of_administration": "ORAL",
+    "frequency_per_day": 1,
+    "duration_in_days": 30,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings Do not use if you have kidney disease if you have ever had an allergic reaction to this product or any of its ingredients or to an antihistamine containing cetirizine Ask a doctor before use if you have ever had trouble urinating or emptying your bladder When using this product drowsiness may occur avoid alcoholic drinks alcohol, sedatives, and tranquilizers may increase drowsiness be careful when driving a motor vehicle or operating machinery Stop use and ask doctor if you have trouble urinating or emptying your bladder an allergic reaction to this product occurs. Seek medical help right away. If pregnant or breast-feeding: if breast-feeding: not recommended if pregnant: ask a health professional before use Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away (1-800-222-1222)."
+    ],
+    "illnesses_treated": [
+      "Uses temporarily relieves these symptoms due to hay fever or other respiratory allergies: runny nose sneezing itchy, watery eyes itching of the nose or throat"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "BJWC (Berkley & Jensen / BJ'S)"
+    ],
+    "cost_per_unit": 2.45,
+    "country_availability": [
+      "Canada",
+      "Australia",
+      "USA"
+    ],
+    "expiry_date": "2027-08-04"
+  },
+  {
+    "id": "ad1f78ca",
+    "name": "Olopatadine",
+    "generic_name": "OLOPATADINE HYDROCHLORIDE OPHTHALMIC SOLUTION",
+    "brand_names": [
+      "Equate Olopatadine Hydrochloride Ophthalmic Solution"
+    ],
+    "dosage_form": "Directions adults and children 2 years of age and older: put 1 drop in the affected eye(s) twice daily, every 6 to 8 hours, no more than twice per day if using other ophthalmic products while using this product, wait at least 5 minutes between each product replace cap after each use children under 2 years of age: consult a doctor",
+    "strength": "500mg",
+    "route_of_administration": "OPHTHALMIC",
+    "frequency_per_day": 2,
+    "duration_in_days": 14,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings For external use only"
+    ],
+    "illnesses_treated": [
+      "Uses temporarily relieves itchy and red eyes due to pollen, ragweed, grass, animal hair and dander"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "WAL-MART STORES, INC.,"
+    ],
+    "cost_per_unit": 0.8,
+    "country_availability": [
+      "France",
+      "India",
+      "Germany"
+    ],
+    "expiry_date": "2026-12-11"
+  },
+  {
+    "id": "e36d00b7",
+    "name": "Azelastine",
+    "generic_name": "AZELASTINE HYDROCHLORIDE",
+    "brand_names": [
+      "AZELASTINE HYDROCHLORIDE"
+    ],
+    "dosage_form": "Directions \u25a0 Read the User Guide for how to: \u25a0 prime the bottle before first use \u25a0 use the spray \u25a0 prime bottle again if not used for 3 or more days \u25a0 clean the spray nozzle if it gets clogged adults and children 12 years and older This product may be used either once or twice a day: \u25a0 once daily: use 2 sprays in each nostril; OR \u25a0 twice daily: use 1 or 2 sprays in each nostril every 12 hours \u25a0 do not use more than 4 sprays in each nostril in a 24 hour period children 6 years to 11 years \u25a0 an adult should supervise use \u25a0 1 spray in each nostril every 12 hours \u25a0 do not use more than 2 sprays in each nostril in a 24 hour period children under 6 years do not use",
+    "strength": "500mg",
+    "route_of_administration": "NASAL",
+    "frequency_per_day": 1,
+    "duration_in_days": 7,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings Only for use in the nose. Do not spray in eyes or mouth."
+    ],
+    "illnesses_treated": [
+      "Uses temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: \u25a0 nasal congestion \u25a0 runny nose \u25a0 sneezing \u25a0 itchy nose"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Other information store between 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F). Protect from freezing. keep this carton and the enclosed User Guide for important information do not use if seal printed with \u201csealed for your protection\u201d on top and bottom carton flaps is not intact.",
+    "manufacturers": [
+      "Aurohealth LLC"
+    ],
+    "cost_per_unit": 1.18,
+    "country_availability": [
+      "India",
+      "USA",
+      "Australia",
+      "Germany"
+    ],
+    "expiry_date": "2026-09-18"
+  },
+  {
+    "id": "d17f749f",
+    "name": "Ketotifen",
+    "generic_name": "Ketotifen",
+    "brand_names": [
+      "Ketotifen"
+    ],
+    "dosage_form": "Directions \u2022 Adults and children 3 years of age and older: Put 1 drop in the affected eye(s) twice daily, every 8-12 hours, no more than twice per day. \u2022 Children under 3 years of age: Consult a doctor.",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 14,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings Do not use \u2022 if solution changes color or becomes cloudy \u2022 if you are sensitive to any ingredient in this product \u2022 to treat contact lens related irritation When using this product \u2022 do not touch tip of container to any surface to avoid contamination \u2022 remove contact lenses before use \u2022 wait at least 10 minutes before reinserting contact lenses after use \u2022 replace cap after each use Stop use and ask a doctor if you experience any of the following: \u2022 eye pain \u2022 changes in vision \u2022 redness of the eye \u2022 itching worsens or lasts for more than 72 hours Keep out of reach of children. If swallowed, get medical help or contact a Poison Control Center right away. (1-800-222-1222)"
+    ],
+    "illnesses_treated": [
+      "Uses Temporarily relieves itchy eyes due to pollen, ragweed, grass, animal hair and dander."
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Other information \u2022 only for use in the eye \u2022 store at 20-25\u00b0C (68-77\u00b0F) [see USP Controlled Room Temperature]",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 4.85,
+    "country_availability": [
+      "Australia",
+      "France",
+      "Germany"
+    ],
+    "expiry_date": "2027-04-10"
+  },
+  {
+    "id": "597de451",
+    "name": "Lanthanum",
+    "generic_name": "Lanthanum",
+    "brand_names": [
+      "Lanthanum"
+    ],
+    "dosage_form": "DIRECTIONS: 10 drops orally, 3 times a day. Consult a physician for use in children under 12 years of age.",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 30,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "WARNINGS: If pregnant or breast-feeding , ask a health care professional before use. Keep out of reach of children . In case of overdose, get medical help or contact a Poison Control Center right away. Do not use if tamper evident seal is broken or missing. Store in cool, dry place."
+    ],
+    "illnesses_treated": [
+      "INDICATIONS: For temporary relief of exhaustion, vomiting, prostration, and metallic taste."
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 3.16,
+    "country_availability": [
+      "India",
+      "France",
+      "Canada",
+      "UK",
+      "Australia"
+    ],
+    "expiry_date": "2027-08-26"
+  },
+  {
+    "id": "9255c3cc",
+    "name": "Ferric Citrate",
+    "generic_name": "Ferric Citrate",
+    "brand_names": [
+      "Ferric Citrate"
+    ],
+    "dosage_form": "Adults and children 12 years of age and older: 1 bottle every 4-6 hours. Do not exceed 4 bottles in 24 hours. Children under 12: Do not use",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 14,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Do not exceed recommended dosage. If dizziness or sleeplessness occur, symptoms do not improve or are accompanied by a fever-consult a doctor. Do not exceed recommended dosage. If dizziness or sleeplessness occur, consult a doctor. Drug interaction Precaution: Do not use this product if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (Certain drugs for depression, psychiatric, or emotional conditions, or Parkinson's disease), or for 2 weeks after stopping the MAOI drug. If you are uncertain whether your prescription drug contains an MAOI, consult a health professional before using this product."
+    ],
+    "illnesses_treated": [
+      "For the temporary relief of nasal decongestiom due to the commomn cold, hay fever or other upper respiratpry allergies. Temporarily relieves nasal stuffiness. Decongests nasal passages: shrinks swollen membranes. Temporarily restores freer breathing through the nose. Helps decongest sinus openings and passages; temporarily relieves sinus congestion and pressure. Promotes nasal and/or sinus drainage. temporarily relieves sinus congestion and pressure."
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Store in a cool, dry place",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 2.2,
+    "country_availability": [
+      "France",
+      "Germany",
+      "UK"
+    ],
+    "expiry_date": "2029-05-26"
+  },
+  {
+    "id": "827d812b",
+    "name": "Sucroferric Oxyhydroxide",
+    "generic_name": "SUCROFERRIC OXYHYDROXIDE",
+    "brand_names": [
+      "Velphoro"
+    ],
+    "dosage_form": "2 DOSAGE AND ADMINISTRATION Chew or crush Velphoro tablets, do not swallow whole. ( 2.2 ) The recommended starting dose for adults and pediatric patients 12 years of age and older is one 500 mg tablet three times daily with meals. ( 2.1 ) The recommended starting dose for pediatric patients 9 to <12 years of age is one 500 mg tablet two times daily with meals. ( 2.1 ) Adjust dosage by one 500 mg tablet per day as needed until an acceptable serum phosphorus level is reached, with regular monitoring afterwards. Titrate as often as weekly. ( 2.1 ) 2.1 General Dosing Information The recommended starting dose of Velphoro in adults and pediatric patients 12 years of age and older is one 500 mg tablet three times daily with meals. The recommended starting dose of Velphoro in pediatric patients 9 to <12 years of age is one 500 mg tablet two times daily with meals. Monitor serum phosphorus levels and titrate the dose of Velphoro in decrements or increments of one 500 mg tablet per day as needed until an acceptable serum phosphorus level is reached, with regular monitoring afterwards. Titrate as often as weekly. If the recommended daily dose cannot be divided equally among meals, administer the larger dose with the largest meal of the day. In clinical studies, on average, adult patients and pediatric patients 12 years of age and older required 1,500 mg to 2,000 mg (3 to 4 tablets) a day to control serum phosphorus levels; pediatric patients 9 to <12 years of age required on average 1,500 mg (3 tablets) to control serum phosphorus levels. Daily doses as high as 3,000 mg per day have been studied in adults and pediatric patients 9 years of age and older. 2.2 Administration Velphoro chewable tablets should be chewed or crushed. Do not swallow whole. Velphoro chewable tablets must be administered with meals. If one or more doses of Velphoro are missed, the medication should be resumed with the next food intake.",
+    "strength": "500mg",
+    "route_of_administration": "ORAL",
+    "frequency_per_day": 2,
+    "duration_in_days": 30,
+    "side_effects": [
+      "6 ADVERSE REACTIONS The most common adverse drug reactions to Velphoro chewable tablets in clinical trials were discolored feces (12%) and diarrhea (6%). ( 6.1 ) To report SUSPECTED ADVERSE REACTIONS, contact Fresenius Medical Care North America at 1-800-323-5188 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch . 6.1 Clinical Trial Experience Adult Patients Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compared to rates in the clinical trials of another drug and may not reflect the rates observed in practice. The safety data derived from Velphoro clinical trials reflect exposure to Velphoro in 2 active-controlled clinical studies involving a total of 778 adult patients on hemodialysis and 57 adult patients on peritoneal dialysis exposed for up to 55 weeks. Dosage regimens ranged from 250 mg to 3,000 mg per day. In a parallel design, dose-finding study of Velphoro with a treatment duration of 6 weeks in hemodialysis patients, adverse reactions for Velphoro (N=128) were similar to those reported for the active-control group (sevelamer hydrochloride) (N=26), with the exception of discolored feces (12%) which did not occur in the active-control group. Diarrhea was reported in 6% of patients treated with Velphoro. In a 55-week, open-label, active-controlled, parallel design, safety and efficacy study involving 968 hemodialysis patients and 86 peritoneal dialysis patients treated with either Velphoro (N=707 including 57 peritoneal dialysis patients) or the active-control (sevelamer carbonate) (N=348 including 29 peritoneal dialysis patients), adverse reactions occurring in more than 5% in the Velphoro group were diarrhea (24%), discolored feces (16%), and nausea (10%). The majority of diarrhea events in the Velphoro group were mild and transient, occurring soon after initiation of treatment, and resolving with continued treatment. Adverse reactions occurred at similar rates in hemodialysis and peritoneal dialysis patients. The most common adverse reactions (>1%) leading to withdrawal were diarrhea (4%), product taste abnormal (2%), and nausea (2%). Pediatric Patients In an open-label, randomized study, with a 10-week dose titration period and 24-week safety extension, 60 patients 6 to 18 years of age received at least one dose of Velphoro, including 30 patients (50%) exposed for at least 19 weeks [see Clinical Studies ( 14.3 )] . The safety profile of Velphoro in pediatric patients was similar to that observed in adult patients. Velphoro is not approved in pediatric patients 6 years to less than 9 years of age because of the lack of an appropriate dosage strength. 6.2 Postmarketing Experience The following adverse reactions have been identified during post-approval use of Velphoro that are not included in other sections of labeling. Because these reactions are reported voluntarily from a population of uncertain size, it is not always possible to reliably estimate their frequency or establish a causal relationship to drug exposure. Gastrointestinal Disorders: tooth discoloration Skin and Subcutaneous Tissue Disorders: rash"
+    ],
+    "disclaimers": [
+      "None"
+    ],
+    "illnesses_treated": [
+      "1 INDICATIONS AND USAGE Velphoro is indicated for the control of serum phosphorus levels in adults and pediatric patients 9 years of age and older with chronic kidney disease (CKD) on dialysis. Velphoro is a phosphate binder indicated for the control of serum phosphorus levels in adult and pediatric patients 9 years of age and older with chronic kidney disease on dialysis. ( 1 )"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "8",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "4 CONTRAINDICATIONS None. None ( 4 )"
+    ],
+    "storage_instructions": "16.2 Storage Keep the bottle tightly closed in order to protect from moisture. Store at 25\u00b0C (77\u00b0F) with excursions permitted to 15\u00b0C to 30\u00b0C (59\u00b0F to 86\u00b0F). [ See USP Controlled Room Temperature]",
+    "manufacturers": [
+      "Fresenius Medical Care North America"
+    ],
+    "cost_per_unit": 2.46,
+    "country_availability": [
+      "France",
+      "USA",
+      "India"
+    ],
+    "expiry_date": "2028-11-17"
+  },
+  {
+    "id": "12b2fff2",
+    "name": "Sodium Zirconium Cyclosilicate",
+    "generic_name": "Sodium Zirconium Cyclosilicate",
+    "brand_names": [
+      "Sodium Zirconium Cyclosilicate"
+    ],
+    "dosage_form": "Directions \u2022 do not take more than directed \u2022 the smallest effective dose should be used \u2022 drink a full glass of water with each dose \u2022 if taken with food, this product may take longer to work adults and children 12 years and older: \u2022 take 1 capsule every 8 to 12 hours while symptoms last \u2022 for the first dose you may take 2 capsules within the first hour \u2022 do not exceed 2 capsules in any 8- to 12-hour period \u2022 do not exceed 3 capsules in a 24-hour period children under 12 years: \u2022 ask a doctor",
+    "strength": "500mg",
+    "route_of_administration": "Oral",
+    "frequency_per_day": 2,
+    "duration_in_days": 7,
+    "side_effects": [
+      "None listed"
+    ],
+    "disclaimers": [
+      "Warnings Allergy alert: Naproxen sodium may cause a severe allergic reaction, especially in people allergic to aspirin. Symptoms may include: \u2022 hives \u2022 facial swelling \u2022 asthma (wheezing) \u2022 shock \u2022 skin reddening \u2022 rash \u2022 blisters If an allergic reaction occurs, stop use and seek medical help right away. Stomach bleeding warning: This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you: \u2022 are age 60 or older \u2022 have had stomach ulcers or bleeding problems \u2022 take a blood thinning (anticoagulant) or steroid drug \u2022 take other drugs containing prescription or nonprescription NSAIDs (aspirin, ibuprofen, naproxen, or others) \u2022 have 3 or more alcoholic drinks every day while using this product \u2022 take more or for a longer time than directed Do not use \u2022 if you have ever had an allergic reaction to any other pain reliever/fever reducer \u2022 right before or after heart surgery Ask a doctor before use if \u2022 the stomach bleeding warning applies to you \u2022 you have a history of stomach problems, such as heartburn \u2022 you have high blood pressure, heart disease, liver cirrhosis, or kidney disease \u2022 you are taking a diuretic \u2022 you have problems or serious side effects from taking pain relievers or fever reducers \u2022 you have asthma Ask a doctor or pharmacist before use if you are \u2022 under a doctor\u2019s care for any serious condition \u2022 taking any other drug When using this product \u2022 take with food or milk if stomach upset occurs \u2022 the risk of heart attack or stroke may increase if you use more than directed or for longer than directed Stop use and ask a doctor if \u2022 you experience any of the following signs of stomach bleeding: \u2022 feel faint \u2022 vomit blood \u2022 have bloody or black stools \u2022 have stomach pain that does not get better \u2022 pain gets worse or lasts more than 10 days \u2022 fever gets worse or lasts more than 3 days \u2022 redness or swelling is present in the painful area \u2022 any new symptoms appear \u2022 you have difficulty swallowing \u2022 it feels like the capsule is stuck in your throat If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use naproxen sodium during the last 3 months of pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. (1-800-222-1222)"
+    ],
+    "illnesses_treated": [
+      "Uses \u2022 temporarily relieves minor aches and pains due to: \u2022 minor pain of arthritis \u2022 muscular aches \u2022 backache \u2022 menstrual cramps \u2022 headache \u2022 toothache \u2022 the common cold \u2022 temporarily reduces fever"
+    ],
+    "drug_class": "Unknown",
+    "prescription_required": true,
+    "pregnancy_category": "C",
+    "alcohol_interaction": "Moderate",
+    "contraindications": [
+      "None listed"
+    ],
+    "storage_instructions": "Other information \u2022 each capsule contains: sodium 20 mg \u2022 store at 20-25\u00b0C (68-77\u00b0F) avoid high humidity and excessive heat above 40\u00b0C (104\u00b0F) \u2022 do not use if printed foil under cap is broken or missing \u2022 read all directions and warnings before use. Keep carton.",
+    "manufacturers": [
+      "Unknown"
+    ],
+    "cost_per_unit": 4.82,
+    "country_availability": [
+      "USA",
+      "France",
+      "Australia"
+    ],
+    "expiry_date": "2028-03-22"
+  }
+]

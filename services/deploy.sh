@@ -90,3 +90,17 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 echo "[+] WebSocket deployed successfully"
+
+
+#Loading Base Dataset
+SERVICE_PATH="$SCRIPT_FOLDER/load_data"
+echo "[+] Loading Data"
+IMAGE_ARCH=$IMAGE_ARCH docker run -v "$SERVICE_PATH":/root/source/ -v "$SERVICE_PATH/infrastructure/data":/root/source/infrastructure/data -w /root/source/ -ti --rm --name load_data python:3.12 sh -c "pip install -r requirements.txt && \
+MONGODB_CLUSTER='cluster0.h3fpo.mongodb.net' MONGODB_DATABASE='medical_drugs' MONGODB_COLLECTION='TUESDAY' MONGODB_USER='jbyrne' MONGODB_PWD='xo43Zb9zuxdwEq0m' python3 load_db_embeddings_index.py"
+
+if [ $? -ne 0 ]; then
+    echo "[-] Failed to load data"
+    exit 1
+fi
+echo "[+] Data loaded successfully"
+

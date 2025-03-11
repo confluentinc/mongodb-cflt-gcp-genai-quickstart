@@ -231,6 +231,7 @@ export MONGODB_HOST=$(IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans
 export MONGODB_USER=$(IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans --rm terraform output -raw mongodb_db_user)
 export MONGODB_PASSWORD=$(IMAGE_ARCH=$IMAGE_ARCH docker compose run --remove-orphans --rm terraform output -raw mongodb_db_password)
 
+
 ./services/deploy.sh
 
 echo "[+] Done"
