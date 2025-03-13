@@ -26,6 +26,6 @@ mongodb:
   database: ${MONGODB_DATABASE}
   collection: ${MONGODB_COLLECTION}
   field_path: "embeddings"
-  index_name: "products_summarized_with_embeddings-vector"
+  index_name: "medications_summarized_with_embeddings-vector"
 server:
   port: ${PORT:8081}

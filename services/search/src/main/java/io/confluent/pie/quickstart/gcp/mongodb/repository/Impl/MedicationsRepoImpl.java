@@ -4,8 +4,8 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.search.FieldSearchPath;
 import com.mongodb.client.model.search.VectorSearchOptions;
-import io.confluent.pie.quickstart.gcp.mongodb.entities.Product;
-import io.confluent.pie.quickstart.gcp.mongodb.repository.ProductRepo;
+import io.confluent.pie.quickstart.gcp.mongodb.entities.data.Medication;
+import io.confluent.pie.quickstart.gcp.mongodb.repository.MedicationRepo;
 import io.confluent.pie.quickstart.gcp.mongodb.utils.Lazy;
 import org.bson.conversions.Bson;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,27 +22,27 @@ import static com.mongodb.client.model.search.SearchPath.fieldPath;
 import static java.util.Arrays.asList;
 
 @Service
-public class ProductRepoImpl implements ProductRepo {
+public class MedicationsRepoImpl implements MedicationRepo {
 
     private final String embeddingsFieldName;
     private final FieldSearchPath fieldSearchPath;
     private final String indexName;
-    private final Lazy<MongoCollection<Product>> collection;
+    private final Lazy<MongoCollection<MongoMedication>> collection;
 
-    public ProductRepoImpl(@Autowired MongoDatabase mongoDatabase,
-                           @Value("${mongodb.field_path}") String embeddingsFieldName,
-                           @Value("${mongodb.index_name}") String indexName,
-                           @Value("${mongodb.collection}") String collection) {
+    public MedicationsRepoImpl(@Autowired MongoDatabase mongoDatabase,
+                               @Value("${mongodb.field_path}") String embeddingsFieldName,
+                               @Value("${mongodb.index_name}") String indexName,
+                               @Value("${mongodb.collection}") String collection) {
         this.embeddingsFieldName = embeddingsFieldName;
         this.fieldSearchPath = fieldPath(embeddingsFieldName);
         this.indexName = indexName;
-        this.collection = new Lazy<>(() -> mongoDatabase.getCollection(collection, Product.class));
+        this.collection = new Lazy<>(() -> mongoDatabase.getCollection(collection, MongoMedication.class));
     }
 
     @Override
-    public List<Product> findProductsByVector(List<Double> embedding, int numberOfCandidate, long limit, double minScore) {
+    public List<Medication> findMedicationsByVector(List<Double> embedding, int numberOfCandidate, long limit, double minScore) {
         final boolean hasScoreFilter = minScore > 0;
-        final List<Product> products = new ArrayList<>();
+        final List<Medication> medications = new ArrayList<>();
 
         final List<Bson> pipeline = asList(vectorSearch(
                         this.fieldSearchPath,
@@ -59,9 +59,9 @@ public class ProductRepoImpl implements ProductRepo {
                 return;
             }
 
-            products.add(document);
+            medications.add(document);
         });
 
-        return products;
+        return medications;
     }
 }

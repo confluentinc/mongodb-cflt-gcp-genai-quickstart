@@ -1,10 +1,10 @@
 package io.confluent.pie.quickstart.gcp.mongodb.kafka;
 
+import io.confluent.pie.quickstart.gcp.mongodb.entities.data.Medication;
 import io.confluent.pie.quickstart.gcp.mongodb.entities.key.ChatInputKey;
 import io.confluent.pie.quickstart.gcp.mongodb.entities.query.ChatInputQuery;
 import io.confluent.pie.quickstart.gcp.mongodb.entities.data.ChatInputWithData;
-import io.confluent.pie.quickstart.gcp.mongodb.entities.Product;
-import io.confluent.pie.quickstart.gcp.mongodb.repository.ProductRepo;
+import io.confluent.pie.quickstart.gcp.mongodb.repository.MedicationRepo;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,15 +20,15 @@ import java.util.stream.Collectors;
 @Slf4j
 @Component
 public class ChatInputProcessor {
-    private final ProductRepo productRepo;
+    private final MedicationRepo medicationRepo;
     private final KafkaTemplate<ChatInputKey, ChatInputWithData> kafkaTemplate;
     private final KafkaTopicConfig kafkaTopicConfig;
     private final ExecutorService executorService = Executors.newFixedThreadPool(10);
 
-    public ChatInputProcessor(@Autowired ProductRepo productRepo,
+    public ChatInputProcessor(@Autowired MedicationRepo medicationRepo,
                               @Autowired KafkaTemplate<ChatInputKey, ChatInputWithData> kafkaTemplate,
                               @Autowired KafkaTopicConfig kafkaTopicConfig) {
-        this.productRepo = productRepo;
+        this.medicationRepo = medicationRepo;
         this.kafkaTemplate = kafkaTemplate;
         this.kafkaTopicConfig = kafkaTopicConfig;
     }
@@ -41,7 +41,7 @@ public class ChatInputProcessor {
         log.info("Processing record: {}", query.sessionId());
 
         executorService.submit(() -> {
-            final List<Product> products = productRepo.findProductsByVector(
+            final List<Medication> products = medicationRepo.findMedicationsByVector(
                     query.embeddings(),
                     query.numberOfCandidate(),
                     query.limit(),
@@ -49,8 +49,8 @@ public class ChatInputProcessor {
 
             final ChatInputWithData chatInputWithData = new ChatInputWithData(
                     query.sessionId(),
-                    products.stream().map(ChatInputWithData.Result::fromProduct).toList(),
-                    products.stream().map(Product::getSummary).collect(Collectors.joining("\n")),
+                    products.stream().toList(),
+                    products.stream().map(Medication::getSummary).collect(Collectors.joining("\n")),
                     query.metadata()
             );
 
@@ -58,7 +58,6 @@ public class ChatInputProcessor {
                     kafkaTopicConfig.getOutputTopic(),
                     new ChatInputKey(query.sessionId()),
                     chatInputWithData);
-
 
             kafkaTemplate.send(producerRecord).whenComplete((recordMetadata, throwable) -> {
                 if (throwable != null) {

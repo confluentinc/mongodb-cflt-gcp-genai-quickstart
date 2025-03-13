@@ -16,22 +16,6 @@ import java.io.InputStream;
 public class WebsocketApplication {
 
     public static void main(String[] args) throws IOException {
-
-//        InputStream is = new FileInputStream("/Users/pascal/projects/quickstarts/mongodb-cflt-gcp-genai-quickstart/infrastructure/modules/gcp/data/Ibuprofen.json");
-//
-//        MappingIterator<JsonNode> reader = new ObjectMapper().readerFor(JsonNode.class)
-//                .with(JsonReadFeature.ALLOW_NON_NUMERIC_NUMBERS)
-//                .readValues(is);
-//        while (reader.hasNext()) {
-//            JsonNode record = reader.next();
-//            if (record == null) {
-//                break;
-//            }
-//
-//            System.out.println(record);
-//        }
-
-
         SpringApplication.run(WebsocketApplication.class, args);
     }
 

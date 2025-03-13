@@ -9,6 +9,17 @@ import java.util.List;
 @Schema(value = """
         {
           "properties": {
+            "medication_summaries": {
+              "connect.index": 2,
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
             "metadata": {
               "connect.index": 3,
               "oneOf": [
@@ -67,21 +78,6 @@ import java.util.List;
                 }
               ]
             },
-            "product_summaries": {
-              "connect.index": 2,
-              "oneOf": [
-                {
-                  "type": "null"
-                },
-                {
-                  "type": "string"
-                }
-              ]
-            },
-            "sessionId": {
-              "connect.index": 0,
-              "type": "string"
-            },
             "results": {
               "connect.index": 1,
               "oneOf": [
@@ -96,8 +92,8 @@ import java.util.List;
                       },
                       {
                         "properties": {
-                          "createdAt": {
-                            "connect.index": 12,
+                          "alcohol_interaction": {
+                            "connect.index": 15,
                             "oneOf": [
                               {
                                 "type": "null"
@@ -107,29 +103,75 @@ import java.util.List;
                               }
                             ]
                           },
-                          "currency": {
-                            "connect.index": 5,
+                          "brand_names": {
+                            "connect.index": 3,
                             "oneOf": [
                               {
                                 "type": "null"
                               },
                               {
-                                "type": "string"
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
                               }
                             ]
                           },
-                          "description": {
-                            "connect.index": 2,
+                          "contraindications": {
+                            "connect.index": 16,
                             "oneOf": [
                               {
                                 "type": "null"
                               },
                               {
-                                "type": "string"
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
                               }
                             ]
                           },
-                          "name": {
+                          "cost_per_unit": {
+                            "connect.index": 19,
+                            "oneOf": [
+                              {
+                                "type": "null"
+                              },
+                              {
+                                "connect.type": "float64",
+                                "type": "number"
+                              }
+                            ]
+                          },
+                          "country_availability": {
+                            "connect.index": 20,
+                            "oneOf": [
+                              {
+                                "type": "null"
+                              },
+                              {
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              }
+                            ]
+                          },
+                          "disclaimers": {
+                            "connect.index": 10,
+                            "oneOf": [
+                              {
+                                "type": "null"
+                              },
+                              {
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              }
+                            ]
+                          },
+                          "dosage_form": {
                             "connect.index": 4,
                             "oneOf": [
                               {
@@ -140,7 +182,64 @@ import java.util.List;
                               }
                             ]
                           },
-                          "product_id": {
+                          "drug_class": {
+                            "connect.index": 12,
+                            "oneOf": [
+                              {
+                                "type": "null"
+                              },
+                              {
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          "duration_in_days": {
+                            "connect.index": 8,
+                            "oneOf": [
+                              {
+                                "type": "null"
+                              },
+                              {
+                                "connect.type": "int64",
+                                "type": "number"
+                              }
+                            ]
+                          },
+                          "expiry_date": {
+                            "connect.index": 21,
+                            "oneOf": [
+                              {
+                                "type": "null"
+                              },
+                              {
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          "frequency_per_day": {
+                            "connect.index": 7,
+                            "oneOf": [
+                              {
+                                "type": "null"
+                              },
+                              {
+                                "connect.type": "int64",
+                                "type": "number"
+                              }
+                            ]
+                          },
+                          "generic_name": {
+                            "connect.index": 2,
+                            "oneOf": [
+                              {
+                                "type": "null"
+                              },
+                              {
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          "id": {
                             "connect.index": 0,
                             "oneOf": [
                               {
@@ -151,62 +250,35 @@ import java.util.List;
                               }
                             ]
                           },
-                          "rate_table": {
+                          "illnesses_treated": {
                             "connect.index": 11,
                             "oneOf": [
                               {
                                 "type": "null"
                               },
                               {
-                                "type": "string"
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
                               }
                             ]
                           },
-                          "ref_link": {
-                            "connect.index": 14,
+                          "manufacturers": {
+                            "connect.index": 18,
                             "oneOf": [
                               {
                                 "type": "null"
                               },
                               {
-                                "type": "string"
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
                               }
                             ]
                           },
-                          "repayment_frequency": {
-                            "connect.index": 8,
-                            "oneOf": [
-                              {
-                                "type": "null"
-                              },
-                              {
-                                "type": "string"
-                              }
-                            ]
-                          },
-                          "risk_level": {
-                            "connect.index": 9,
-                            "oneOf": [
-                              {
-                                "type": "null"
-                              },
-                              {
-                                "type": "string"
-                              }
-                            ]
-                          },
-                          "status": {
-                            "connect.index": 10,
-                            "oneOf": [
-                              {
-                                "type": "null"
-                              },
-                              {
-                                "type": "string"
-                              }
-                            ]
-                          },
-                          "summary": {
+                          "name": {
                             "connect.index": 1,
                             "oneOf": [
                               {
@@ -217,8 +289,8 @@ import java.util.List;
                               }
                             ]
                           },
-                          "term_max_length": {
-                            "connect.index": 7,
+                          "pregnancy_category": {
+                            "connect.index": 14,
                             "oneOf": [
                               {
                                 "type": "null"
@@ -228,7 +300,18 @@ import java.util.List;
                               }
                             ]
                           },
-                          "term_min_length": {
+                          "prescription_required": {
+                            "connect.index": 13,
+                            "oneOf": [
+                              {
+                                "type": "null"
+                              },
+                              {
+                                "type": "boolean"
+                              }
+                            ]
+                          },
+                          "route_of_administration": {
                             "connect.index": 6,
                             "oneOf": [
                               {
@@ -239,8 +322,22 @@ import java.util.List;
                               }
                             ]
                           },
-                          "type": {
-                            "connect.index": 3,
+                          "side_effects": {
+                            "connect.index": 9,
+                            "oneOf": [
+                              {
+                                "type": "null"
+                              },
+                              {
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              }
+                            ]
+                          },
+                          "storage_instructions": {
+                            "connect.index": 17,
                             "oneOf": [
                               {
                                 "type": "null"
@@ -250,8 +347,19 @@ import java.util.List;
                               }
                             ]
                           },
-                          "updatedAt": {
-                            "connect.index": 13,
+                          "strength": {
+                            "connect.index": 5,
+                            "oneOf": [
+                              {
+                                "type": "null"
+                              },
+                              {
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          "summary": {
+                            "connect.index": 22,
                             "oneOf": [
                               {
                                 "type": "null"
@@ -270,6 +378,10 @@ import java.util.List;
                   "type": "array"
                 }
               ]
+            },
+            "sessionId": {
+              "connect.index": 0,
+              "type": "string"
             }
           },
           "required": [
@@ -277,46 +389,11 @@ import java.util.List;
           ],
           "title": "Record",
           "type": "object"
-        }""", refs = {})
+        }
+        """, refs = {})
 public record ChatInputWithData(
         String sessionId,
-        List<Result> results,
-        String product_summaries,
+        List<Medication> results,
+        String medication_summaries,
         Metadata metadata) {
-
-    public record Result(
-            String productId,
-            String name,
-            String description,
-            String currency,
-            String termMinLength,
-            String termMaxLength,
-            String repaymentFrequency,
-            String riskLevel,
-            String status,
-            String rateTable,
-            String createdAt,
-            String updatedAt,
-            String refLink,
-            String summary) {
-
-        public static Result fromProduct(Product product) {
-            return new Result(
-                    product.getProductId(),
-                    product.getName(),
-                    product.getDescription(),
-                    product.getCurrency(),
-                    product.getTermMinLength(),
-                    product.getTermMaxLength(),
-                    product.getRepaymentFrequency(),
-                    product.getRiskLevel(),
-                    product.getStatus(),
-                    product.getRateTable(),
-                    product.getCreatedAt(),
-                    product.getUpdatedAt(),
-                    product.getRefLink(),
-                    product.getSummary()
-            );
-        }
-    }
 }
