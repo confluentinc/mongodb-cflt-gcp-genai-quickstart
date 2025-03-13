@@ -6,7 +6,7 @@ terraform {
     }
     gcp = {
       source  = "hashicorp/google"
-      version = "~> 6.16.0"
+      version = "~> 6.25.0"
     }
     mongodbatlas = {
       source  = "mongodb/mongodbatlas"
@@ -21,7 +21,7 @@ provider "confluent" {
 }
 
 provider "gcp" {
-  region = var.gcp_region
+  region  = var.gcp_region
   project = var.gcp_project_id
 }
 

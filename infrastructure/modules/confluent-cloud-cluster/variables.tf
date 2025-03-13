@@ -81,3 +81,18 @@ variable "gcp_project_id" {
   description = "GCP project ID"
   type        = string
 }
+
+variable "gcp_service_account_email" {
+  description = "GCP service account email"
+  type        = string
+}
+
+variable "gcp_bucket_name" {
+  description = "GCS bucket name"
+  type        = string
+}
+
+variable "gcs_bucket_d" {
+  description = "GCS Bucket Id"
+  type        = string
+}

@@ -127,7 +127,7 @@ variable "mongodbatlas_database" {
 variable "mongodbatlas_collection" {
   description = "Atlas collection"
   type        = string
-  default     = "products_summarized_with_embeddings"
+  default     = "medications_summarized_with_embeddings"
 }
 
 variable "vectorsearch_topics_info" {

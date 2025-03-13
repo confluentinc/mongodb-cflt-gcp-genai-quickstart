@@ -51,6 +51,9 @@ module "confluent_cloud_cluster" {
   gcp_region                   = var.gcp_region
   gcp_service_account_key_file = module.gcp.gcp_service_account_key_file
   gcp_gemini_api_key           = var.gcp_gemini_api_key
+  gcp_service_account_email    = module.gcp.gcp_service_account_email
+  gcp_bucket_name              = module.gcp.gcs_bucket_name
+  gcs_bucket_d                 = module.gcp.gcs_bucket_id
 
   depends_on = [
     module.mongodb, module.gcp
