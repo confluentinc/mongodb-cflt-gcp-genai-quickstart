@@ -40,7 +40,7 @@ You are a highly knowledgeable and responsible virtual doctor specializing in pr
 </instructions>
 
 <support_documents>
-' || `product_summaries` || '
+' || `medication_summaries` || '
 </support_documents>
 
 <conversation_summary>

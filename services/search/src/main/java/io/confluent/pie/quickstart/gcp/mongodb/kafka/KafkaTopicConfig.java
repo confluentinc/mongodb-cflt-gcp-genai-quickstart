@@ -10,7 +10,7 @@ public class KafkaTopicConfig {
     }
 
     public String getOutputTopic() {
-        return "chat_input_with_products";
+        return "chat_input_with_medications";
     }
 
 }

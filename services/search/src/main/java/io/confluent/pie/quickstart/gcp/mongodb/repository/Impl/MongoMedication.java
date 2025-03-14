@@ -1,5 +1,6 @@
 package io.confluent.pie.quickstart.gcp.mongodb.repository.Impl;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.confluent.pie.quickstart.gcp.mongodb.entities.data.Medication;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,38 +15,84 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class MongoMedication extends Medication {
+public class MongoMedication {
     @BsonProperty("_id")
     private ObjectId _Id;
     private Double score;
 
-//    public MongoMedication(String alcoholInteraction,
-//                           List<String> brandNames,
-//                           List<String> contraindications,
-//                           Double costPerUnit,
-//                           List<String> countryAvailability,
-//                           List<String> disclaimers,
-//                           String dosageForm,
-//                           String drugClass,
-//                           Integer durationInDays,
-//                           String expiryDate,
-//                           Integer frequencyPerDay,
-//                           String genericName,
-//                           String id,
-//                           List<String> illnessesTreated,
-//                           List<String> manufacturers,
-//                           String name,
-//                           String pregnancyCategory,
-//                           Boolean prescriptionRequired,
-//                           String routeOfAdministration,
-//                           List<String> sideEffects,
-//                           String storageInstructions,
-//                           String strength,
-//                           String summary,
-//                           ObjectId id1,
-//                           Double score) {
-//        super(alcoholInteraction, brandNames, contraindications, costPerUnit, countryAvailability, disclaimers, dosageForm, drugClass, durationInDays, expiryDate, frequencyPerDay, genericName, id, illnessesTreated, manufacturers, name, pregnancyCategory, prescriptionRequired, routeOfAdministration, sideEffects, storageInstructions, strength, summary);
-//        Id = id1;
-//        this.score = score;
-//    }
+
+    @BsonProperty("alcohol_interaction")
+    private String alcoholInteraction;
+    @BsonProperty("brand_names")
+    private List<String> brandNames;
+    @BsonProperty("contraindications")
+    private List<String> contraindications;
+    @BsonProperty("cost_per_unit")
+    private Double costPerUnit;
+    @BsonProperty("country_availability")
+    private List<String> countryAvailability;
+    @BsonProperty("disclaimers")
+    private List<String> disclaimers;
+    @BsonProperty("dosage_form")
+    private String dosageForm;
+    @BsonProperty("drug_class")
+    private String drugClass;
+    @BsonProperty("duration_in_days")
+    private Integer durationInDays;
+    @BsonProperty("expiry_date")
+    private String expiryDate;
+    @BsonProperty("frequency_per_day")
+    private Integer frequencyPerDay;
+    @BsonProperty("generic_name")
+    private String genericName;
+    @BsonProperty("id")
+    private String id;
+    @BsonProperty("illnesses_treated")
+    private List<String> illnessesTreated;
+    @BsonProperty("manufacturers")
+    private List<String> manufacturers;
+    @BsonProperty("name")
+    private String name;
+    @BsonProperty("pregnancy_category")
+    private String pregnancyCategory;
+    @BsonProperty("prescription_required")
+    private Boolean prescriptionRequired;
+    @BsonProperty("route_of_administration")
+    private String routeOfAdministration;
+    @BsonProperty("side_effects")
+    private List<String> sideEffects;
+    @BsonProperty("storage_instructions")
+    private String storageInstructions;
+    @BsonProperty("strength")
+    private String strength;
+    @BsonProperty("summary")
+    private String summary;
+
+    public Medication toMedication() {
+        return new Medication(
+                this.alcoholInteraction,
+                this.brandNames,
+                this.contraindications,
+                this.costPerUnit,
+                this.countryAvailability,
+                this.disclaimers,
+                this.dosageForm,
+                this.drugClass,
+                this.durationInDays,
+                this.expiryDate,
+                this.frequencyPerDay,
+                this.genericName,
+                this.id,
+                this.illnessesTreated,
+                this.manufacturers,
+                this.name,
+                this.pregnancyCategory,
+                this.prescriptionRequired,
+                this.routeOfAdministration,
+                this.sideEffects,
+                this.storageInstructions,
+                this.strength,
+                this.summary
+        );
+    }
 }

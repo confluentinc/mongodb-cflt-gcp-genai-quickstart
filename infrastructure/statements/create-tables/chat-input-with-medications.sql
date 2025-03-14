@@ -1,5 +1,5 @@
 CREATE TABLE
-    chat_input_with_medication (
+    chat_input_with_medications (
         sessionId STRING PRIMARY KEY NOT ENFORCED,
         results ARRAY < ROW < `id` STRING,
         `name` STRING,

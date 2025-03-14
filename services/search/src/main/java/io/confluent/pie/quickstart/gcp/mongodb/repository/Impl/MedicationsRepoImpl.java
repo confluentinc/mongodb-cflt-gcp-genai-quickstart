@@ -59,7 +59,7 @@ public class MedicationsRepoImpl implements MedicationRepo {
                 return;
             }
 
-            medications.add(document);
+            medications.add(document.toMedication());
         });
 
         return medications;
