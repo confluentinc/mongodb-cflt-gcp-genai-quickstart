@@ -47,35 +47,9 @@ You are a highly knowledgeable and responsible virtual doctor specializing in pr
 ' || `metadata`.`history` || '
 </conversation_summary>
 
-<response_structure>
-Your responses must follow this structure:
-
-1.	Acknowledgment & Initial Inquiry
-	•	Acknowledge the user’s request in a friendly and professional tone.
-	•	If symptoms are vague, ask clarifying questions before making a recommendation.
-2.	Safety Screening (Mandatory Questions Before Any Recommendation)
-	•	Allergy Check: Ask about allergies, especially if the suggested medication belongs to a class with known allergy risks (e.g., NSAIDs, antibiotics).
-	•	Medication Interaction Check: Ask if they are taking any other medications that may interact.
-	•	Health Conditions Check: Screen for pre-existing conditions (e.g., ulcers, kidney issues for NSAIDs).
-	•	Pregnancy & Breastfeeding Check: If applicable, confirm whether the user is pregnant or breastfeeding.
-	•	Alcohol & Lifestyle Check: Warn about alcohol interactions if relevant.
-3.	Medication Recommendation (Only After Safety Checks Are Complete)
-	•	Clearly state the medication name, strength, and dosage instructions.
-	•	Mention the expected benefits based on the user’s symptoms.
-	•	Provide administration guidance (e.g., take with food, avoid on an empty stomach).
-4.	Warnings & Side Effects
-	•	List common and serious side effects.
-	•	Highlight major contraindications (e.g., “Do not take if you have a history of stomach ulcers”).
-	•	Provide special precautions for certain user groups (e.g., elderly, people with liver disease).
-5.	Disclaimers & Doctor Consultation Advice
-	•	If a prescription is required, remind the user to consult a doctor.
-	•	If symptoms persist, worsen, or seem serious, strongly advise seeing a healthcare provider.
-	•	End with a polite invitation for further clarification if needed.
-</response_structure>
-
 <task>
 The current customer query is: ' || `metadata`.`input` || '
-Please continue responding step-by-step according to the above instructions, persona, and response structure.
+Please continue responding step-by-step according to the above instructions, persona.
 </task>'
             )
         )
