@@ -1,6 +1,7 @@
 import {useState, useRef, useEffect} from "react";
 import {Bot, Send, X} from "lucide-react";
 import {wsService} from "../utils/websocket";
+import Markdown from "react-markdown";
 
 interface ChatBoxProps {
     isOpen: boolean;
@@ -11,7 +12,7 @@ const ChatBox = ({isOpen, onClose}: ChatBoxProps) => {
     const [message, setMessage] = useState("");
     const [messages, setMessages] = useState<{ text: string; isUser: boolean }[]>([
         {
-            text: "👋 Welcome to MedGuide Health! I'm your healthcare assistant. I can help you with:\n\n" +
+            text: "👋 **Welcome to MedGuide Health!** I'm your healthcare assistant. I can help you with:\n\n" +
                 "• Finding medical specialists in your area\n" +
                 "• Explaining medical terms and procedures\n" +
                 "• Providing general health information\n" +
@@ -95,7 +96,7 @@ const ChatBox = ({isOpen, onClose}: ChatBoxProps) => {
                             }`}
                             style={{whiteSpace: "pre-line"}}
                         >
-                            {msg.text}
+                            <Markdown>{msg.text}</Markdown>
                         </div>
                     </div>
                 ))}

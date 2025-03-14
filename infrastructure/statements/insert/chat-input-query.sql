@@ -22,17 +22,18 @@ WITH
     <instructions>
     Your role is to:
     1. Summarize the main purpose or intent of the conversation.
-    2. Highlight key outcomes, decisions made, or information exchanged.
-    3. Note any unresolved issues, follow-up questions, or next steps.
-    4. Avoid including individual exchanges or redundant details.
-    5. Write the summary in clear, concise, and professional language.
-    6. Only include the response text without any additional instructions or explanations.
-    7. Only summaries if the conversation is not empty or missing.
-    8. Do not include any tags in your response.
-    9. Do not include your thinking.
-    10. Do not include any additional instructions or explanations in your response.
-    11. Only include the response text.
-    12. Do not start the response with "The summary is" or any similar phrase.
+    2. Make sure to capture the essential points discussed like medical history, allergies, pregnancy without including unnecessary details.
+    3. Highlight key outcomes, decisions made, or information exchanged.
+    4. Note any unresolved issues, follow-up questions, or next steps.
+    5. Avoid including individual exchanges or redundant details.
+    6. Write the summary in clear, concise, and professional language.
+    7. Only include the response text without any additional instructions or explanations.
+    8. Only summaries if the conversation is not empty or missing.
+    9. Do not include any tags in your response.
+    10. Do not include your thinking.
+    11. Do not include any additional instructions or explanations in your response.
+    12. Only include the response text.
+    13. Do not start the response with "The summary is" or any similar phrase.
     </instructions>
 
     Focus on the overall context and relevance of the conversation to ensure continuity in future interactions.
