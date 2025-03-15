@@ -47,12 +47,16 @@ public class ChatInputProcessor {
                     query.limit(),
                     query.minScore());
 
+            final List<Medication> medications = products.stream().toList();
+            final String summary = medications.stream()
+                    .map(medication -> String.format("medication %d: %s", medications.indexOf(medication) + 1, medication.getSummary()))
+                    .collect(Collectors.joining("\n"));
+
             final ChatInputWithData chatInputWithData = new ChatInputWithData(
                     query.sessionId(),
-                    products.stream().toList(),
-                    products.stream().map(Medication::getSummary).collect(Collectors.joining("\n")),
-                    query.metadata()
-            );
+                    medications,
+                    summary,
+                    query.metadata());
 
             final ProducerRecord<ChatInputKey, ChatInputWithData> producerRecord = new ProducerRecord<>(
                     kafkaTopicConfig.getOutputTopic(),

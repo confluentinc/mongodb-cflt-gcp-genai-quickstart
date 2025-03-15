@@ -12,13 +12,10 @@ const ChatBox = ({isOpen, onClose}: ChatBoxProps) => {
     const [message, setMessage] = useState("");
     const [messages, setMessages] = useState<{ text: string; isUser: boolean }[]>([
         {
-            text: "👋 **Welcome to MedGuide Health!** I'm your healthcare assistant. I can help you with:\n\n" +
-                "• Finding medical specialists in your area\n" +
-                "• Explaining medical terms and procedures\n" +
-                "• Providing general health information\n" +
-                "• Scheduling appointments\n" +
-                "• Answering insurance-related questions\n\n" +
-                "How can I assist you today?",
+            text: "👋 **Welcome to MedGuide Health! I’m Your Virtual Doctor**\n\n" +
+                "I’m here to help you explore possible medications for your symptoms in a safe and conversational way—just like a real doctor would.\n\n" +
+                "⚠ **Important**: This is a **demo** and should be used for **demonstration purposes only**. If you’re feeling unwell or need medical advice, please consult a real doctor or healthcare professional.\n\n" +
+                "💬 *Tell me what’s bothering you, and we’ll go from there! When did your symptoms begin?*\n",
             isUser: false
         }
     ]);
@@ -65,7 +62,7 @@ const ChatBox = ({isOpen, onClose}: ChatBoxProps) => {
 
     return (
         <div
-            className="fixed bottom-20 right-4 w-96 h-[500px] bg-white rounded-xl shadow-2xl animate-slide-up border border-gray-100">
+            className="fixed bottom-20 right-4 w-[700px] h-[500px] bg-white rounded-xl shadow-2xl animate-slide-up border border-gray-100">
             <div
                 className="flex items-center justify-between bg-gradient-to-r from-medical-primary to-medical-accent text-white p-4 rounded-t-xl">
                 <div className="flex items-center gap-3">

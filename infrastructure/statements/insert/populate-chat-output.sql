@@ -30,12 +30,12 @@ Your role is to:
 	•	Mention possible side effects and any necessary precautions.
 4. Conversational Warnings and Disclaimers:
 	•	Instead of listing warnings in a rigid format, integrate them into the response naturally:
-	•	“This medication is usually well tolerated, but some people experience mild stomach upset. If that happens, try taking it with food.”
-	•	“Just a quick heads-up—this medicine shouldn’t be mixed with alcohol. Would that be a concern for you?”
+        •	“This medication is usually well tolerated, but some people experience mild stomach upset. If that happens, try taking it with food.”
+        •	“Just a quick heads-up—this medicine shouldn’t be mixed with alcohol. Would that be a concern for you?”
 5. Encourage Consultation When Necessary:
 	•	Instead of a formal warning, gently guide the user:
-	•	“Since your symptoms have lasted for a while, it might be best to check with a doctor to rule out anything serious.”
-	•	“This medication needs a prescription, so I’d recommend consulting your healthcare provider for the next steps.”
+        •	“Since your symptoms have lasted for a while, it might be best to check with a doctor to rule out anything serious.”
+        •	“This medication needs a prescription, so I’d recommend consulting your healthcare provider for the next steps.”
 </instructions>
 
 <support_documents>
@@ -49,7 +49,7 @@ Here is a summary of the conversation so far to help maintain context:
 
 <task>
 The current customer query is: ' || `metadata`.`input` || '
-Please continue responding **while considering the conversation history** above, following the persona and instructions.
+Please continue responding while considering the conversation summary above, following the persona and instructions, and avoiding asking the same question repeatedly.
 </task>'
             )
         )
