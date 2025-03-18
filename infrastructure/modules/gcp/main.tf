@@ -52,7 +52,7 @@ resource "google_service_account_key" "service_account_key" {
 resource "google_storage_bucket" "storage_bucket" {
   project                     = var.gcp_project_id
   location                    = var.gcp_region
-  name                        = "cfltquickstart-mediccations-${local.userid}"
+  name                        = "cfltquickstart-medications-${local.userid}"
   force_destroy               = true
   storage_class               = "STANDARD"
   uniform_bucket_level_access = true
