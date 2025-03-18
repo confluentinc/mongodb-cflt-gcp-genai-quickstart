@@ -1,41 +1,44 @@
 # GenAI Chatbot Quickstart
 
-Welcome to the Small Business Loan Agent Chatbot Quick Start! This repository provides a comprehensive guide to quickly
-deploy a fully functional chatbot for small business loan assistance. The solution leverages **MongoDB**, **Confluent
-Cloud**, **AWS**, **Anthropic** and **Flink** to deliver a scalable, intelligent, and real-time conversational
-experience.
+Welcome to the Medical Knowledge Database Quick Start! This repository offers a step-by-step guide to rapidly deploying 
+a fully functional chatbot that helps identify medications, their side effects, dosages, and essential information to 
+determine the best treatment for an illness.
 
-This quick start is designed to help businesses streamline their loan application process by providing a chatbot that
-understands and answers customer queries, retrieves relevant loan documents, and provides actionable insights. The
-system also includes structured document indexing into MongoDB's vector database, enabling efficient retrieval-augmented
-generation (RAG) to enhance the chatbot's response accuracy.
+The solution leverages **MongoDB**, **Confluent Cloud**, **GCP**, **Gemini** and **Flink** to deliver a scalable, intelligent, 
+and real-time conversational experience.
+
+This quick start is designed to help medical professionals efficiently access and manage medication data through an intelligent 
+chatbot. The system can answer medical queries, retrieve relevant drug information, and provide actionable insights. 
+It also includes structured indexing of medical records into MongoDB's vector database, enabling Retrieval-Augmented Generation (RAG) 
+to enhance the chatbot's accuracy and reliability.
 
 ## Key Features
 
 * **Real-Time Data Processing**: Powered by Confluent Cloud and Flink, ensuring low-latency communication and
   event-driven architecture.
-* **Intelligent Conversations**: Integrated with Anthropic's AI models for natural and accurate conversational
+* **Intelligent Conversations**: Integrated with Gemini's AI models for natural and accurate conversational
   responses.
 * **Efficient Document Retrieval**: Leverages MongoDB Atlas with vector search capabilities for quick and accurate
   document indexing and retrieval.
-* **Scalable and Cloud-Native**: Built with AWS Lambda for a flexible and serverless REST API.
+* **Scalable and Cloud-Native**: Built with Google Cloud Functions to provide a flexible and serverless REST API.
 * **Seamless Deployment**: Follow step-by-step instructions to deploy the entire solution with minimal effort.
 
 ## Use Case
 
-This chatbot is tailored for small business loan agents to:
+This chatbot is designed for medical professionals to:  
 
-* Provide instant responses to loan-related queries.
-* Retrieve structured documents and relevant loan information in real-time.
-* Automate repetitive tasks, enabling agents to focus on high-value interactions.
+* Provide instant responses to queries about prescription drugs, including dosages, side effects, and contraindications.  
+* Retrieve structured drug information based on symptoms, illness names, or treatment categories.  
+* Automate access to a comprehensive medication database, enabling faster and more informed decision-making.  
 
-Whether you're exploring new ways to enhance customer engagement or testing generative AI use cases in financial
-services, this quick start provides the perfect foundation.
+Whether you're looking to streamline drug research, enhance clinical decision support, or explore AI-powered medical 
+information retrieval, this quick start provides a strong foundation.  
 
-👉 Please note that this quick start builds a working AI infrastructure for you, but it's fueled by a small quantity of
-fake data, so the results won't be at the level that you're accustomed to with AI chatbots like Chat-GPT. Read the Next
-Steps section at the end of this document to find out how you can tweak the architecture and improve or alter the AI
-results.
+👉 This quick start sets up a functional AI-driven prescription drug database but operates on a limited set of sample 
+data. The information provided should not be treated as medical fact or used for real-world diagnosis or treatment 
+decisions. Always consult trusted medical sources or healthcare professionals for accurate and up-to-date drug information. 
+
+Refer to the **Next Steps** section at the end of this document to learn how you can refine the architecture and improve AI performance.
 
 ## Table of Contents
 
@@ -67,18 +70,18 @@ results.
 
 ![HLA](./assets/quickstart_architecture.png)
 
-Architecture for handling document indexing and chatbot functionality using a combination of AWS services, Anthropic
-Claude, MongoDB Atlas and Confluent Cloud. Below is a breakdown of the architecture and its components:
+Architecture for handling document indexing and chatbot functionality using a combination of GCP services, Gemini
+Vertex, MongoDB Atlas and Confluent Cloud. Below is a breakdown of the architecture and its components:
 
 ### Document Indexing
 
 This section focuses on ingesting and processing data for use in downstream applications like search and chatbots.
 
 1. **Data Sources:** Various data sources feed into the system. These could be structured or unstructured data streams.
-2. **Summarization:** Anthropic Claude is used to summarize data to extract meaningful information from documents.
-3. **Vectorization:** Embeddings are generated for the input data to convert textual information into high-dimensional
+2. **Summarisation:** Google Gemini is used to summarise data, extracting meaningful information from documents.
+3. **Vectorisation:** Embeddings are generated for the input data to convert textual information into high-dimensional
    numerical vectors.
-4. **Sink Connector:** Processed data (both summarized content and embeddings) is output via a sink connector to MongoDB
+4. **Sink Connector:** Processed data (both summarised content and embeddings) is output via a sink connector to MongoDB
    Atlas vector database.
 
 ### Chatbot
@@ -87,11 +90,11 @@ This section demonstrates how the system interacts with user queries in real tim
 
 1. **Frontend:** The frontend handles interactions with users. User inputs are sent to a topic for further processing.
 2. **Websocket:** Provides real-time communication between the frontend and backend for immediate responses.
-3. **Query Vectorization:** User queries are vectorized using the Embeddings model to transform them into numerical
+3. **Query Vectorisation:** User queries are vectorised using the Embeddings model to transform them into numerical
    representations. This is done to match queries against stored vectors in the vector search database.
-4. **Vector Search:** MongoDB Atlas vector database, retrieves relevant information based on the vectorized query. It
+4. **Vector Search:** MongoDB Atlas vector database, retrieves relevant information based on the vectorised query. It
    searches through embeddings generated during the document indexing phase.
-5. **Model Inference:** Anthropic Claude is used for model inference to generate responses.
+5. **Model Inference:** Google Gemini is used for model inference to generate responses.
 6. **Output to User:** The system sends the processed results back to the user via the websocket.
 
 ### Key Concepts
@@ -101,7 +104,7 @@ This section demonstrates how the system interacts with user queries in real tim
 2. **MongoDB Atlas:** Enables efficient, scalable, and real-time semantic matching of user queries against
    high-dimensional embeddings to deliver relevant results in the chatbot and document indexing workflows.
 
-3. **Anthropic Claude:** Used for both summarization and generating responses in natural language.
+3. **Google Gemini:** Used for both summarisation and generating responses in natural language.
 
 ## Requirements
 
@@ -133,65 +136,82 @@ If you feel like it, enter a name and description. Click the *Create API Key* (b
 
 ![mongodb-atlas-api-keys](./assets/mongodb-create-api-key.gif)
 
-1. Connect to the Atlas UI. You must have Organization Owner access to Atlas.
-2. Select *Organization Access* from the *Access Manager* menu in the navigation bar.
-3. Click *Access Manager* in the sidebar. (The Organization Access Manager page displays.)
+1. Connect to the Atlas UI. You must have Organisation Owner access to Atlas.
+2. Select *Organisation Access* from the *Access Manager* menu in the navigation bar.
+3. Click *Access Manager* in the sidebar. (The Organisation Access Manager page displays.)
 4. Click *Add new* then *API Key*
 5. In the *API Key Information*, enter a description.
-6. In the *Organization Permissions* menu, select the *Organization Owner* role. **Important:** Make sure that only the
-   *Organization Owner* role is selected, you may have to click the default *Organization Member* to un-select it.
+6. In the *Organisation Permissions* menu, select the *Organisation Owner* role. **Important:** Make sure that only the
+   *Organisation Owner* role is selected, you may have to click the default *Organisation Member* to un-select it.
 7. Click *Next*, copy the public and private key in a safe place and click *Done*.
 
 Useful links:
 
-* [Grant Programmatic Access to an Organization](https://www.mongodb.com/docs/atlas/configure-api-access/#grant-programmatic-access-to-an-organization)
+* [Grant Programmatic Access to an Organisation](https://www.mongodb.com/docs/atlas/configure-api-access/#grant-programmatic-access-to-an-organization)
 * [MongoDB Atlas API Keys](https://www.mongodb.com/developer/products/atlas/mongodb-atlas-with-terraform/) (part of a
   tutorial on Terraform with Atlas)
 
-At last, get your Atlas Organization ID from the Atlas UI.
+At last, get your Atlas Organisation ID from the Atlas UI.
 
-![Atlas Organization ID](./assets/atlas-org-id.png)
+![Atlas Organisation ID](./assets/atlas-org-id.png)
 
-#### AWS
+#### GCP
+
+To use Google Gemini within your chatbot, you need to obtain a Gemini API Key and your Google Cloud Project ID. 
+Follow the steps below to set up your credentials properly.
+
+* **Retrieve Your Google Cloud Project ID**:  If you don’t have a Google Cloud account yet, sign up at [Google Cloud](https://cloud.google.com/). 
+Once signed in, go to the Google Cloud Console, where you'll find your Project ID displayed beneath your project
+name on the Welcome screen. Save this Project ID, as you’ll need it later during deployment.
+* **Generate a Gemini API Key**: In the Google Cloud Console, open the navigation menu (☰) in the top-left corner 
+and go to APIs & Services → Credentials. Click + Create Credentials, then select API Key from the dropdown menu. 
+Your API key will be generated—copy and store it securely, copy and securely store this key, as it will be required during deployment.
+* **Use Your API Key During Deployment**: When running the deployment script (deploy.sh), the application will prompt you to enter the Gemini API Key.
+Provide the API key you saved in the previous step.
+
+By completing these steps, your Google Cloud environment will be configured for the chatbot to integrate with the Gemini API.
 
 ##### Enable Foundation Model Access
 
-Enable access to `amazon.titan-embed-text-v2:0` and `anthropic.claude-3-haiku-20240307-v1:0` models via the AWS Console.
+TBD
 
 ![Enable Foundation Model Access](./assets/aws-enable-foundation-models.gif)
 
-##### AWS API Keys
+##### GCP API Keys
 
-AWS credentials are required for Flink AI to connect to Bedrock, as well as using terraform to deploy resources. You
-will need a key and secret with appropriate IAM rights.
+Google Cloud credentials are required for Flink AI to connect to Vertex AI, as well as for deploying resources using 
+Terraform. You will need a service account key with appropriate IAM permissions.
 
 ###### Managed Policies
 
-If you are using managed policies, Attach the following managed policies to your IAM user or role:
+If you are using managed policies in Google Cloud, assign the following IAM roles to your service account or user:
 
-* `AmazonAPIGatewayAdministrator` - Manages and creates the websocket gateway.
-* `CloudFrontFullAccess` - Exposes the front end via CloudFront.
-* `IAMFullAccess` - Manages roles and policies for Lambda functions.
-* `AWSLambda_FullAccess` - Manages Lambda functions.
-* `CloudWatchFullAccess` - Manages logs and metrics.
-* `AmazonS3FullAccess` - Manages the S3 bucket for the front end and other Lambda resources.
-* `SecretsManagerReadWrite` - Manages secrets for Lambda functions.
-* `AmazonBedrockStudioPermissionsBoundary` - Invokes Bedrock foundational models.
+SERVICE ACCOUNTS
 
-###### Fine-tuned Policies
-
-For more granular permissions, refer to our [cloudtrail events](./assets/quickstart-iam-policy-cloudtrail.csv) for the
-exact resources and actions required.
+---
 
 **Useful links:**
 
-* [AWS API Keys](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html)
-* [Bedrock policies](https://docs.aws.amazon.com/bedrock/latest/userguide/security-iam-awsmanpol.html)
-* [Lambda policies](https://docs.aws.amazon.com/lambda/latest/dg/permissions-user-function.html)
+
 * [Flink AI: Create Model](https://docs.confluent.io/cloud/current/ai/ai-model-inference.html#create-an-ai-model)
 * [Bedrock from Flink AI](https://docs.confluent.io/cloud/current/ai/ai-model-inference.html#aws-bedrock)
 
-## Run the Quickstart
+---
+# Run the Quickstart
+
+### Regional Deployment Considerations
+
+When deploying this solution, ensure that all cloud services—**Confluent Cloud**, **fully managed source and sink connectors**, 
+**MongoDB Atlas**, **Google Cloud (Vertex AI & Gemini models)**, and **Confluent Flink** — are deployed in regions that can 
+communicate with each other to avoid network latency or connectivity issues. Each provider has specific guidelines for 
+cross-region communication and networking:
+
+- **Confluent Cloud Region Compatibility**: [Check supported regions](https://docs.confluent.io/cloud/current/clusters/regions.html)  
+- **Fully Managed Connectors Regions**: [Connector availability by region](https://docs.confluent.io/cloud/current/connectors/index.html)  
+- **MongoDB Atlas Multi-Region Setup**: [Atlas cloud provider regions](https://www.mongodb.com/docs/atlas/reference/google-gcp/#std-label-google-gcp)  
+- **Google Cloud Region Selection**: [GCP supported regions](https://cloud.google.com/about/locations)  
+- **Confluent Flink Regions & Deployment**: [Confluent Flink docs](https://docs.confluent.io/cloud/current/flink/reference/cloud-regions.html#flink-cloud-regions)  
+
 
 ### 1. Bring up the infrastructure
 
@@ -209,7 +229,7 @@ For example, if the terraform output is:
 
 ```sh
 ...
-frontend_url = "https://d35kqkkhgni7xb.cloudfront.net"
+frontend_url = "https://quickstart-gcp-mongo-xkwzufwj-664304379300.us-central1.run.app"
 ...
 ```
 
@@ -218,9 +238,11 @@ You may have the following conversation
 ![Chatbot Conversation](./assets/example-convo.gif)
 
 For the purposes of this quickstart, any username and password will be accepted, and you'll need to open the chat bubble
-on the bottom right (after you log in) to have a conversation
+on the bottom right (after you log in) to have a conversation. Consider questions like; `I have a headache, whats the best medicine?`
 
-#### 2b. Add a new product (Optional)
+# TODO is this still relevant?
+
+#### 2b. Add a new product (Optional) 
 
 To showcase our real-time document indexing capabilities, you can add a new document to the system by inserting a new
 record into the `products` topic in Confluent Cloud using Flink SQL. This product will then get indexed in MongoDB Atlas
@@ -258,21 +280,31 @@ VALUES
 
 ## Next Steps - Improving the Results
 
-There are numerous actions you can take to influence the responses given by the chatbot:
+There are several ways to enhance the chatbot's accuracy and relevance in retrieving medical information:
 
-- Increase the size and the quality of the data set. This demo is built on top of a very small set of insurance
-  products (found in `infrastructure/statements/insert/populate-products.sql`), and the description of each product is
-  limited to only a couple of fields. You can also modify the prompt used for summarizing the products in
-  `infrastructure/statements/insert/populate-products-summarized.sql`.
-- Modify the prompts controlling the chat. They are located in:
-  `infrastructure/statements/insert/chat-input-query.sql.old`
-  and `infrastructure/statements/insert/populate-chat-output.sql.old`
-- Modify the vectorization and search of the embeddings inside MongoDB Atlas: it's in `infrastructure/main.tf`, under
-  `resource "mongodbatlas_search_index" "search-vector" {`.
-  Check [Atlas Vector Search Index Fields](https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-type/#atlas-vector-search-index-fields)
-  and [Vector Search Queries](https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-stage/) for more
-  details.
-- Modify the parameters of the models, found in `infrastructure/statements/create-models/gcp-vertexai-embed.sql`.
-  Modifying the `temperature` of the model can yield to more accurate or creative results.
-  Check [Anthropic Claude models](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters-claude.html) for
-  more details on the model parameters.
+**Expand the Medical Knowledge Database**: The current demo operates on a limited set of sample prescription drugs data. 
+You can increase the dataset size by incorporating more drug references, side effect reports, and clinical guidelines.
+The dataset can be updated in `infrastructure/modules/data/medication.avro`.
+
+**Refine AI Prompts for Medical Queries**: The chatbot’s responses are influenced by the prompts used for query processing. 
+You can fine-tune these prompts in:
+
+* infrastructure/statements/insert/chat-input-query.sql
+* infrastructure/statements/insert/populate-chat-output.sql 
+
+Adjusting these prompts can improve the specificity and accuracy of AI-generated medical insights.
+
+**Optimise Vectorisation and Search in MongoDB Atlas**: Since the chatbot relies on MongoDB Atlas' vector search for 
+retrieving relevant medical documents, you can enhance search efficiency by adjusting indexing strategies. 
+The configuration can be updated in `infrastructure/main.tf`, under resource "mongodbatlas_search_index" "search-vector" 
+{ For further optimisations, refer to:
+[Atlas Vector Search Index Fields](https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-type/#atlas-vector-search-index-fields)
+[Vector Search Queries](https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-stage/)
+
+**Fine-Tune Google Gemini for Better Summarisation and Responses**: Google Gemini is responsible for both summarising medical data and generating conversational responses.
+You can tweak the temperature parameter in infrastructure/statements/create-models/gcp-vertexai-embed.sql to control response variability—lower values lead to more deterministic, fact-based answers, while higher values encourage creative phrasing.
+Refer to the Google Gemini documentation for detailed tuning options.
+
+By iterating on these improvements, you can enhance the chatbot’s reliability, making it a more powerful tool for medical professionals seeking accurate, real-time medication insights.
+
+
