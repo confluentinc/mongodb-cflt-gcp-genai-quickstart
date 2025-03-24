@@ -1,6 +1,6 @@
 CREATE TABLE
     chat_input_embeddings (
-        requestId STRING PRIMARY KEY NOT ENFORCED,
+        sessionId STRING PRIMARY KEY NOT ENFORCED,
         embeddings ARRAY < FLOAT >,
         numberOfCandidate INT,
         `limit` INT,

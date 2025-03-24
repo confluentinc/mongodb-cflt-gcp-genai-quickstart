@@ -1,0 +1,30 @@
+insert into
+    `medications_summarized_with_embeddings`
+select
+    `id`,
+    `name`,
+    `generic_name`,
+    `brand_names`,
+    `dosage_form`,
+    `strength`,
+    `route_of_administration`,
+    `frequency_per_day`,
+    `duration_in_days`,
+    `side_effects`,
+    `disclaimers`,
+    `illnesses_treated`,
+    `drug_class`,
+    `prescription_required`,
+    `pregnancy_category`,
+    `alcohol_interaction`,
+    `contraindications`,
+    `storage_instructions`,
+    `manufacturers`,
+    `cost_per_unit`,
+    `country_availability`,
+    `expiry_date`,
+     summary,
+     embeddings
+from
+    `medications_summarized`,
+    LATERAL TABLE (ML_PREDICT ('GCPVertexAIEmbed', summary));

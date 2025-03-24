@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: "QuickstartSearchService"
+  config:
+    activate.on-profile: dev
+  kafka:
+    bootstrap-servers: ${BOOTSTRAP_SERVER}
+    properties:
+      schema.registry.url: ${SR_URL}
+      basic.auth.credentials.source: USER_INFO
+      schema.registry.basic.auth.user.info: ${SR_API_KEY}:${SR_API_SECRET}
+      security.protocol: SASL_SSL
+      sasl.mechanism: PLAIN
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${KAFKA_API_KEY}" password="${KAFKA_API_SECRET}";
+    producer:
+      client-id: ${CLIENT_ID}|producer|search
+      key-serializer: io.confluent.pie.quickstart.gcp.mongodb.entities.key.ChatInputKeySerializer
+      value-serializer: io.confluent.pie.quickstart.gcp.mongodb.entities.data.ChatInputWithDataSerializer
+    consumer:
+      client-id: ${CLIENT_ID}|consumer|search
+      group-id: ${CLIENT_ID}_search_app
+      key-deserializer: io.confluent.pie.quickstart.gcp.mongodb.entities.key.ChatInputKeyDeserializer
+      value-deserializer: io.confluent.pie.quickstart.gcp.mongodb.entities.query.ChatInputQueryDeserializer
+mongodb:
+  uri: mongodb+srv://${MONGODB_USER}:${MONGODB_PWD}@${MONGODB_HOST}/?retryWrites=true&w=majority&maxIdleTimeMS=60000
+  database: ${MONGODB_DATABASE}
+  collection: ${MONGODB_COLLECTION}
+  field_path: "embeddings"
+  index_name: "medications_summarized_with_embeddings-vector"
+server:
+  port: ${PORT:8081}

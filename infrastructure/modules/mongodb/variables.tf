@@ -43,3 +43,8 @@ variable "mongodbatlas_collection" {
   description = "Atlas collection"
   type        = string
 }
+
+variable "unique_id" {
+  description = "A unique identifier for the deployment"
+  type        = string
+}

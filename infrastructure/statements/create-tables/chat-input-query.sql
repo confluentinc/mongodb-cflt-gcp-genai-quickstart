@@ -1,6 +1,6 @@
 CREATE TABLE
     chat_input_query (
-        requestId STRING PRIMARY KEY NOT ENFORCED,
+        sessionId STRING PRIMARY KEY NOT ENFORCED,
         query STRING,
         metadata ROW (
             `input` STRING,

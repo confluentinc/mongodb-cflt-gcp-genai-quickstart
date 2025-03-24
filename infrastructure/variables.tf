@@ -1,5 +1,20 @@
+variable "unique_id" {
+  description = "A unique identifier for the deployment"
+  type        = string
+}
+
 variable "confluent_cloud_api_key" {
   description = "Confluent Cloud API Key (also referred as Cloud API ID) with EnvironmentAdmin and AccountAdmin roles provided by Kafka Ops team"
+  type        = string
+}
+
+variable "gcp_gemini_api_key" {
+  description = "GCP Gemini API Key"
+  type        = string
+}
+
+variable "gcp_project_id" {
+  description = "GCP project ID"
   type        = string
 }
 
@@ -17,11 +32,16 @@ variable "confluent_cloud_region" {
 variable "confluent_cloud_service_provider" {
   description = "The cloud provider of Confluent Cloud Network"
   type        = string
-  default     = "AWS"
+  default     = "GCP"
 }
 
-variable "aws_region" {
-  description = "The AWS region to deploy the infrastructure"
+variable "gcp_region" {
+  description = "The GCP region to deploy the infrastructure"
+  type        = string
+}
+
+variable "gcp_account" {
+  description = "The GCP account used to deploy the infrastructure"
   type        = string
 }
 
@@ -62,7 +82,7 @@ variable "path_to_flink_sql_insert_statements" {
 variable "mongodbatlas_cloud_provider" {
   description = "The cloud provider of MongoDB Atlas"
   type        = string
-  default     = "AWS"
+  default     = "GCP"
 }
 
 variable "mongodbatlas_cloud_region" {
@@ -89,7 +109,7 @@ variable "mongodbatlas_private_key" {
 variable "mongodbatlas_project" {
   description = "Atlas project"
   type        = string
-  default     = "GenAI-Quickstart"
+  default     = "CFLT-GenAI-Quickstart"
 }
 
 variable "mongodbatlas_cluster" {
@@ -107,7 +127,7 @@ variable "mongodbatlas_database" {
 variable "mongodbatlas_collection" {
   description = "Atlas collection"
   type        = string
-  default     = "products_summarized_with_embeddings"
+  default     = "medications_summarized_with_embeddings"
 }
 
 variable "vectorsearch_topics_info" {
@@ -130,4 +150,10 @@ variable "connections_api_topics_info" {
   default = {
     input_topic = "chat_output"
   }
+}
+
+variable "architecture" {
+  description = "The architecture of the deployment"
+  type        = string
+  default     = "x86_64"
 }

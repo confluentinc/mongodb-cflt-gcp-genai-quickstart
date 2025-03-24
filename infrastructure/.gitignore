@@ -37,5 +37,6 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-claude-3-haiku-connection-result.json
-titan-embed-connection-result.json
+gcp-gemini-connection-result.json
+gcp-embed-connection-result.json
+service-account-key.json

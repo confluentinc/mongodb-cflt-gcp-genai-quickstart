@@ -15,7 +15,7 @@ output "connection_password" {
 }
 
 output "project_id" {
-  value       = mongodbatlas_project.test.id
+  value       = mongodbatlas_project.project.id
   description = "MongoDB Atlas Project ID"
 }
 

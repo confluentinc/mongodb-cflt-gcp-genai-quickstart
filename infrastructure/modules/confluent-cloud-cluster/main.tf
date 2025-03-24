@@ -45,6 +45,175 @@ data "confluent_schema_registry_cluster" "essentials" {
 }
 
 # ------------------------------------------------------
+# GCS Source Connector
+# ------------------------------------------------------
+resource "confluent_service_account" "gcs-source-connector" {
+  display_name = "gcs-source-connector-${var.env_display_id_postfix}"
+  description  = "Service account of GCS Source Connector"
+}
+
+resource "confluent_role_binding" "gcs-source-connector-cluster-admin" {
+  principal   = "User:${confluent_service_account.gcs-source-connector.id}"
+  role_name   = "CloudClusterAdmin"
+  crn_pattern = confluent_kafka_cluster.standard.rbac_crn
+}
+
+resource "confluent_kafka_acl" "gcs-source-connector-describe-on-cluster" {
+  kafka_cluster {
+    id = confluent_kafka_cluster.standard.id
+  }
+  resource_type = "CLUSTER"
+  resource_name = "kafka-cluster"
+  pattern_type  = "LITERAL"
+  principal     = "User:${confluent_service_account.gcs-source-connector.id}"
+  host          = "*"
+  operation     = "DESCRIBE"
+  permission    = "ALLOW"
+  rest_endpoint = confluent_kafka_cluster.standard.rest_endpoint
+  credentials {
+    key    = confluent_api_key.gcs-source-connector-key.id
+    secret = confluent_api_key.gcs-source-connector-key.secret
+  }
+  depends_on = [
+    confluent_role_binding.gcs-source-connector-cluster-admin
+  ]
+}
+
+resource "confluent_api_key" "gcs-source-connector-key" {
+  display_name = "gcs-source-connector-api-key-${var.env_display_id_postfix}"
+  description  = "GCS Source Connector API Key"
+  owner {
+    id          = confluent_service_account.gcs-source-connector.id
+    api_version = confluent_service_account.gcs-source-connector.api_version
+    kind        = confluent_service_account.gcs-source-connector.kind
+  }
+  managed_resource {
+    id          = confluent_kafka_cluster.standard.id
+    api_version = confluent_kafka_cluster.standard.api_version
+    kind        = confluent_kafka_cluster.standard.kind
+    environment {
+      id = confluent_environment.staging.id
+    }
+  }
+}
+
+resource "confluent_kafka_acl" "gcs-source-connector-read-on-gcs-lcc-group" {
+  kafka_cluster {
+    id = confluent_kafka_cluster.standard.id
+  }
+  resource_type = "TOPIC"
+  resource_name = "gcs-"
+  pattern_type  = "PREFIXED"
+  principal     = "User:${confluent_service_account.gcs-source-connector.id}"
+  host          = "*"
+  operation     = "READ"
+  permission    = "ALLOW"
+  rest_endpoint = confluent_kafka_cluster.standard.rest_endpoint
+  credentials {
+    key    = confluent_api_key.gcs-source-connector-key.id
+    secret = confluent_api_key.gcs-source-connector-key.secret
+  }
+  depends_on = [
+    confluent_role_binding.gcs-source-connector-cluster-admin
+  ]
+}
+
+resource "confluent_kafka_acl" "gcs-source-connector-write-on-gcs-lcc-group" {
+  kafka_cluster {
+    id = confluent_kafka_cluster.standard.id
+  }
+  resource_type = "TOPIC"
+  resource_name = "gcs-"
+  pattern_type  = "PREFIXED"
+  principal     = "User:${confluent_service_account.gcs-source-connector.id}"
+  host          = "*"
+  operation     = "WRITE"
+  permission    = "ALLOW"
+  rest_endpoint = confluent_kafka_cluster.standard.rest_endpoint
+  credentials {
+    key    = confluent_api_key.gcs-source-connector-key.id
+    secret = confluent_api_key.gcs-source-connector-key.secret
+  }
+  depends_on = [
+    confluent_role_binding.gcs-source-connector-cluster-admin
+  ]
+}
+
+resource "confluent_kafka_acl" "gcs-source-connector-create-on-gcs-lcc-group" {
+  kafka_cluster {
+    id = confluent_kafka_cluster.standard.id
+  }
+  resource_type = "TOPIC"
+  resource_name = "gcs-"
+  pattern_type  = "PREFIXED"
+  principal     = "User:${confluent_service_account.gcs-source-connector.id}"
+  host          = "*"
+  operation     = "CREATE"
+  permission    = "ALLOW"
+  rest_endpoint = confluent_kafka_cluster.standard.rest_endpoint
+  credentials {
+    key    = confluent_api_key.gcs-source-connector-key.id
+    secret = confluent_api_key.gcs-source-connector-key.secret
+  }
+  depends_on = [
+    confluent_role_binding.gcs-source-connector-cluster-admin
+  ]
+}
+
+
+data "local_file" "service_account_json" {
+  filename = var.gcp_service_account_key_file
+}
+
+resource "confluent_connector" "gcp_storage_source" {
+  environment {
+    id = confluent_environment.staging.id
+  }
+  kafka_cluster {
+    id = confluent_kafka_cluster.standard.id
+  }
+
+  config_sensitive = {
+    "gcs.credentials.json" = data.local_file.service_account_json.content
+  }
+
+  config_nonsensitive = {
+    "connector.class"          = "GcsSource"
+    "name"                     = "confluent-gcs-source"
+    "topic.regex.list"         = "gcs_medications:.*\\.avro"
+    "kafka.auth.mode"          = "SERVICE_ACCOUNT"
+    "kafka.service.account.id" = confluent_service_account.gcs-source-connector.id
+    "input.data.format"        = "AVRO"
+    "output.data.format"       = "JSON_SR"
+    "tasks.max"                = "1"
+    "gcs.bucket.name"          = var.gcp_bucket_name
+    "topics.dir"               = "data"
+    "behavior.on.error"        = "IGNORE"
+  }
+
+  depends_on = [
+    confluent_kafka_acl.gcs-source-connector-read-on-gcs-lcc-group,
+    confluent_kafka_acl.gcs-source-connector-write-on-gcs-lcc-group,
+    confluent_kafka_acl.gcs-source-connector-create-on-gcs-lcc-group,
+    confluent_kafka_acl.gcs-source-connector-describe-on-cluster
+  ]
+}
+
+locals {
+  data_files = fileset("${path.module}/data", "**/*")
+}
+
+resource "google_storage_bucket_object" "data" {
+  depends_on = [confluent_connector.gcp_storage_source]
+  for_each = local.data_files
+
+  name         = "data/${each.value}"
+  source       = "${path.module}/data/${each.value}"
+  content_type = "application/octet-stream"
+  bucket       = var.gcs_bucket_d
+}
+
+# ------------------------------------------------------
 # FLINK
 # ------------------------------------------------------
 
@@ -62,6 +231,7 @@ resource "confluent_flink_compute_pool" "main" {
     confluent_role_binding.app-manager-assigner,
     confluent_role_binding.app-manager-flink-developer,
     confluent_api_key.app-manager-flink-api-key,
+    google_storage_bucket_object.data
   ]
 }
 
@@ -100,9 +270,9 @@ resource "confluent_flink_statement" "create-tables" {
   }
 }
 
-# registers flink sql connections with bedrock. should be replaced when
+# registers flink sql connections with gcp. should be replaced when
 # terraform provider supports managing flink sql connections
-resource "null_resource" "create-flink-bedrock-connections" {
+resource "null_resource" "create-flink-gcp-connections" {
   provisioner "local-exec" {
     command = "${path.module}/scripts/flink-connection-create.sh"
     environment = {
@@ -111,12 +281,17 @@ resource "null_resource" "create-flink-bedrock-connections" {
       FLINK_ENV_ID        = confluent_flink_compute_pool.main.environment[0].id
       FLINK_ORG_ID        = data.confluent_organization.main.id
       FLINK_REST_ENDPOINT = data.confluent_flink_region.main.rest_endpoint
+
+      GCP_SERVICE_ACCOUNT_KEY_FILE = var.gcp_service_account_key_file
+      GCP_GEMINI_API_KEY           = var.gcp_gemini_api_key
+      GCP_PROJECT_ID               = var.gcp_project_id
+      GCP_REGION                   = var.gcp_region
       # the rest should be set by deploy.sh
     }
   }
 
   triggers = {
-    # changes to the flink sql cluster will trigger the bedrock connections to be created
+    # changes to the flink sql cluster will trigger the gcp connections to be created
     flink_sql_cluster_id = confluent_flink_compute_pool.main.id
     # change if the script changes
     script = filesha256("${path.module}/scripts/flink-connection-create.sh")
@@ -149,50 +324,12 @@ resource "confluent_flink_statement" "create-models" {
   }
   statement = file(abspath(each.value))
   depends_on = [
-    null_resource.create-flink-bedrock-connections
+    null_resource.create-flink-gcp-connections
   ]
   lifecycle {
     ignore_changes = [rest_endpoint, organization[0].id]
   }
 }
-
-resource "confluent_flink_statement" "insert-data" {
-  for_each = var.insert_data_sql_files
-  organization {
-    id = data.confluent_organization.main.id
-  }
-  environment {
-    id = confluent_environment.staging.id
-  }
-  compute_pool {
-    id = confluent_flink_compute_pool.main.id
-  }
-  principal {
-    id = confluent_service_account.statements-runner.id
-  }
-
-  properties = {
-    "sql.current-catalog"  = confluent_environment.staging.display_name
-    "sql.current-database" = confluent_kafka_cluster.standard.display_name
-  }
-  rest_endpoint = data.confluent_flink_region.main.rest_endpoint
-  credentials {
-    key    = confluent_api_key.app-manager-flink-api-key.id
-    secret = confluent_api_key.app-manager-flink-api-key.secret
-  }
-
-  stopped   = false
-  statement = file(abspath(each.value))
-
-  depends_on = [
-    confluent_flink_statement.create-tables,
-    confluent_flink_statement.create-models
-  ]
-  lifecycle {
-    ignore_changes = [rest_endpoint, organization[0].id]
-  }
-}
-
 
 # ------------------------------------------------------
 # Sink Connector to MongoDB
@@ -594,7 +731,6 @@ resource "confluent_kafka_acl" "mongodb-sink-connector-read-on-connect-lcc-group
   ]
 }
 
-
 resource "confluent_connector" "mongo-db-sink" {
   environment {
     id = confluent_environment.staging.id
@@ -619,7 +755,7 @@ resource "confluent_connector" "mongo-db-sink" {
     "connection.host"          = var.mongodb_host
     "connection.user"          = var.mongodb_user
     "input.data.format"        = "JSON_SR"
-    "topics"                   = "products_summarized_with_embeddings" // TODO replace with var?
+    "topics"                   = "medications_summarized_with_embeddings"
     "max.num.retries"          = "3"
     "retries.defer.timeout"    = "5000"
     "max.batch.size"           = "0"
@@ -639,6 +775,44 @@ resource "confluent_connector" "mongo-db-sink" {
     confluent_kafka_acl.mongodb-sink-connector-write-on-success-lcc-topics,
     confluent_kafka_acl.mongodb-sink-connector-read-on-connect-lcc-group,
     confluent_kafka_acl.mongodb-sink-connector-read-on-target-topic,
-    confluent_flink_statement.insert-data,
+    confluent_flink_statement.create-tables
   ]
+}
+
+resource "confluent_flink_statement" "insert-data" {
+  for_each = var.insert_data_sql_files
+  organization {
+    id = data.confluent_organization.main.id
+  }
+  environment {
+    id = confluent_environment.staging.id
+  }
+  compute_pool {
+    id = confluent_flink_compute_pool.main.id
+  }
+  principal {
+    id = confluent_service_account.statements-runner.id
+  }
+
+  properties = {
+    "sql.current-catalog"  = confluent_environment.staging.display_name
+    "sql.current-database" = confluent_kafka_cluster.standard.display_name
+  }
+  rest_endpoint = data.confluent_flink_region.main.rest_endpoint
+  credentials {
+    key    = confluent_api_key.app-manager-flink-api-key.id
+    secret = confluent_api_key.app-manager-flink-api-key.secret
+  }
+
+  stopped = false
+  statement = file(abspath(each.value))
+
+  depends_on = [
+    confluent_flink_statement.create-tables,
+    confluent_flink_statement.create-models,
+    confluent_connector.mongo-db-sink
+  ]
+  lifecycle {
+    ignore_changes = [rest_endpoint, organization[0].id]
+  }
 }
