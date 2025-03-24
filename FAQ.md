@@ -55,19 +55,3 @@ the chatbot is slow because the lambda function is cold and needs to be warmed u
 
 If you see the chatbox greyed out after logging in, it is likely due to the websocket connection being closed. This can
 happen after a long period of inactivity. To resolve this, simply refresh the page and log back in.
-
-confluent flink connection create gemini-connection \
---cloud GCP \
---region us-central1 \
---endpoint https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent
---api-key AIzaSyAJe59B1IaLlr5jYw1Gv99RU1a-swX8kL4
---type googleai \
---environment env-d1621d \
-
-confluent flink connection create googleai-cli-connection \
---cloud GCP \
---region us-east4 \
---endpoint https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent \
---api-key $API_KEY \
---type googleai \
---environment env-oqv0dy
