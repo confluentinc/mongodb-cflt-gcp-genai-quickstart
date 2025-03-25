@@ -55,11 +55,8 @@ Refer to the **Next Steps** section at the end of this document to learn how you
         - [Access Keys to Cloud Services Providers](#access-keys-to-cloud-services-providers)
             - [Confluent Cloud](#confluent-cloud)
             - [MongoDB Atlas](#mongodb-atlas)
-            - [AWS](#aws)
+            - [GCP](#GCP)
                 - [Enable Foundation Model Access](#enable-foundation-model-access)
-                - [AWS API Keys](#aws-api-keys)
-                    - [Managed Policies](#managed-policies)
-                    - [Fine-tuned Policies](#fine-tuned-policies)
     - [Run the Quickstart](#run-the-quickstart)
         - [1. Bring up the infrastructure](#1-bring-up-the-infrastructure)
         - [2. Have a conversation](#2-have-a-conversation)
@@ -68,7 +65,7 @@ Refer to the **Next Steps** section at the end of this document to learn how you
 
 ## Architecture
 
-![HLA](./assets/quickstart_architecture.png)
+![HLA](./assets/mongo_quickstart.png)
 
 Architecture for handling document indexing and chatbot functionality using a combination of GCP services, Gemini
 Vertex, MongoDB Atlas and Confluent Cloud. Below is a breakdown of the architecture and its components:
@@ -171,13 +168,13 @@ Provide the API key you saved in the previous step.
 
 By completing these steps, your Google Cloud environment will be configured for the chatbot to integrate with the Gemini API.
 
-##### Enable Foundation Model Access
+### GCP API Keys
 
-TBD
+To enable the Gemini API, navigate to **"APIs"** from the AI Studio dashboard's left-hand menu, select **"Gemini API"**, and click **"Enable"**.
+https://aistudio.google.com
 
-![Enable Foundation Model Access](./assets/aws-enable-foundation-models.gif)
+![Create Gemini Key](./assets/gemini-key.gif)
 
-##### GCP API Keys
 
 Google Cloud credentials are required for Flink AI to connect to Vertex AI, as well as for deploying resources using 
 Terraform. You will need a service account key with appropriate IAM permissions.
@@ -194,7 +191,7 @@ SERVICE ACCOUNTS
 
 
 * [Flink AI: Create Model](https://docs.confluent.io/cloud/current/ai/ai-model-inference.html#create-an-ai-model)
-* [Bedrock from Flink AI](https://docs.confluent.io/cloud/current/ai/ai-model-inference.html#aws-bedrock)
+* [Google AI from Flink AI](https://docs.confluent.io/cloud/current/ai/ai-model-inference.html#google-ai)
 
 ---
 # Run the Quickstart
@@ -215,7 +212,7 @@ cross-region communication and networking:
 
 ### 1. Bring up the infrastructure
 
-```sh
+```
 # Follow the prompts to enter your API keys
 ./deploy.sh
 ```
@@ -240,41 +237,10 @@ You may have the following conversation
 For the purposes of this quickstart, any username and password will be accepted, and you'll need to open the chat bubble
 on the bottom right (after you log in) to have a conversation. Consider questions like; `I have a headache, whats the best medicine?`
 
-# TODO is this still relevant?
-
-#### 2b. Add a new product (Optional) 
-
-To showcase our real-time document indexing capabilities, you can add a new document to the system by inserting a new
-record into the `products` topic in Confluent Cloud using Flink SQL. This product will then get indexed in MongoDB Atlas
-and be available for retrieval in the chatbot.
-
-```sql
-INSERT INTO
-        `products`
-VALUES
-        (
-                '00004',
-                '"small business loan" designed for small business owners to help them with their business expenses. \r\nThe loan amount ranges from $10,000 to $100,000. \r\nThe interest rate is competitive to support small businesses. \r\nRepayment starts immediately after the loan is disbursed. \r\nThe loan term can be up to 5 years. \r\nThe rate table for a "small business loan" is as follows:\r\n\r\n| credit score        | rate |\r\n| ------------------- | ---- |\r\n| more than 750       | 4.0  |\r\n| between 500 and 750 | 5.5  |\r\n| between 350 and 500 | 7.0  |\r\n| less than 350       | 9.5  |',
-                'loan',
-                'small business loan',
-                'USD',
-                'immediate',
-                '5 years',
-                'monthly',
-                'medium',
-                'active',
-                '| credit score        | rate |\n| ------------------- | ---- |\n| more than 750       | 4.0  |\n| between 500 and 750 | 5.5  |\n| between 350 and 500 | 7.0  |\n| less than 350       | 9.5  |',
-                '2024-11-01',
-                '2024-11-01',
-                'https://www.bigfriendlybank.com/small-business-loan.pdf'
-        );
-```
-
-![Add New Product](./assets/add-new-product.gif)
 
 ### 3. Bring down the infrastructure
 
-```sh
+```
 ./destroy.sh
 ```
 
