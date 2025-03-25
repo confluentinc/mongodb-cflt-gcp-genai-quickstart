@@ -55,9 +55,8 @@ Refer to the **Next Steps** section at the end of this document to learn how you
         - [Access Keys to Cloud Services Providers](#access-keys-to-cloud-services-providers)
             - [Confluent Cloud](#confluent-cloud)
             - [MongoDB Atlas](#mongodb-atlas)
-            - [AWS](#aws)
-                - [Enable Foundation Model Access](#enable-foundation-model-access)
-                - [AWS API Keys](#aws-api-keys)
+            - [GCP](#gcp)
+                - [GCP API Keys](#gcp-api-keys)
                     - [Managed Policies](#managed-policies)
                     - [Fine-tuned Policies](#fine-tuned-policies)
     - [Run the Quickstart](#run-the-quickstart)
@@ -171,12 +170,6 @@ Provide the API key you saved in the previous step.
 
 By completing these steps, your Google Cloud environment will be configured for the chatbot to integrate with the Gemini API.
 
-##### Enable Foundation Model Access
-
-TBD
-
-![Enable Foundation Model Access](./assets/aws-enable-foundation-models.gif)
-
 ##### GCP API Keys
 
 Google Cloud credentials are required for Flink AI to connect to Vertex AI, as well as for deploying resources using 
@@ -194,7 +187,7 @@ SERVICE ACCOUNTS
 
 
 * [Flink AI: Create Model](https://docs.confluent.io/cloud/current/ai/ai-model-inference.html#create-an-ai-model)
-* [Bedrock from Flink AI](https://docs.confluent.io/cloud/current/ai/ai-model-inference.html#aws-bedrock)
+* [Google AI from Flink AI](https://docs.confluent.io/cloud/current/ai/ai-model-inference.html#google-ai)
 
 ---
 # Run the Quickstart
