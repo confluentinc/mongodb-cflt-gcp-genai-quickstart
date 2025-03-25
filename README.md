@@ -55,10 +55,8 @@ Refer to the **Next Steps** section at the end of this document to learn how you
         - [Access Keys to Cloud Services Providers](#access-keys-to-cloud-services-providers)
             - [Confluent Cloud](#confluent-cloud)
             - [MongoDB Atlas](#mongodb-atlas)
-            - [GCP](#gcp)
-                - [GCP API Keys](#gcp-api-keys)
-                    - [Managed Policies](#managed-policies)
-                    - [Fine-tuned Policies](#fine-tuned-policies)
+            - [GCP](#GCP)
+                - [Enable Foundation Model Access](#enable-foundation-model-access)
     - [Run the Quickstart](#run-the-quickstart)
         - [1. Bring up the infrastructure](#1-bring-up-the-infrastructure)
         - [2. Have a conversation](#2-have-a-conversation)
@@ -170,7 +168,13 @@ Provide the API key you saved in the previous step.
 
 By completing these steps, your Google Cloud environment will be configured for the chatbot to integrate with the Gemini API.
 
-##### GCP API Keys
+### GCP API Keys
+
+To enable the Gemini API, navigate to **"APIs"** from the AI Studio dashboard's left-hand menu, select **"Gemini API"**, and click **"Enable"**.
+https://aistudio.google.com
+
+![Create Gemini Key](./assets/gemini-key.gif)
+
 
 Google Cloud credentials are required for Flink AI to connect to Vertex AI, as well as for deploying resources using 
 Terraform. You will need a service account key with appropriate IAM permissions.
