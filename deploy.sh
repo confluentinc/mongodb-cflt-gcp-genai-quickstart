@@ -150,7 +150,7 @@ fi
 [ -z "$MONGODB_GCP_REGION" ] && prompt_for_input MONGODB_GCP_REGION "Enter your MongoDB GCP Region" false
 [ -z "$MONGODB_CLUSTER" ] && prompt_for_input_with_default MONGODB_CLUSTER "Enter your MongoDB Cluster" "genai"
 [ -z "$MONGODB_DATABASE" ] && prompt_for_input_with_default MONGODB_DATABASE "Enter your MongoDB Database" "genai"
-[ -z "$MONGODB_COLLECTION" ] && prompt_for_input_with_default MONGODB_COLLECTION "Enter your MongoDB Collection" "products_summarized_with_embeddings"
+[ -z "$MONGODB_COLLECTION" ] && prompt_for_input_with_default MONGODB_COLLECTION "Enter your MongoDB Collection" "medications_summarized_with_embeddings"
 
 
 # Create .env file from variables set in this file
