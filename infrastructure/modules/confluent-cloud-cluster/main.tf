@@ -568,7 +568,7 @@ resource "confluent_kafka_acl" "mongodb-sink-connector-read-on-target-topic" {
     id = confluent_kafka_cluster.standard.id
   }
   resource_type = "TOPIC"
-  resource_name = "products_summarized_with_embeddings" // TODO replace with var
+  resource_name = "medications_summarized_with_embeddings" // TODO replace with var
   pattern_type  = "LITERAL"
   principal     = "User:${confluent_service_account.mongodb-sink-connector.id}"
   host          = "*"
