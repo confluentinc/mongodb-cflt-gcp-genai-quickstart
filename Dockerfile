@@ -1,5 +1,5 @@
 ARG IMAGE_ARCH
-FROM public.ecr.aws/sam/build-python3.12:1.129.0-${IMAGE_ARCH}
+FROM ubuntu:22.04-${IMAGE_ARCH}
 
 # install terraform
 RUN dnf install -y dnf-plugins-core && \
@@ -15,7 +15,7 @@ RUN dnf config-manager --add-repo https://packages.confluent.io/confluent-cli/rp
 WORKDIR /app
 
 # make the directories for frontend and infrastructure
-RUN mkdir -p frontend infrastructure
+RUN mkdir -p infrastructure
 
 WORKDIR /app/infrastructure
 
