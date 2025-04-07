@@ -168,12 +168,10 @@ Provide the API key you saved in the previous step.
 
 By completing these steps, your Google Cloud environment will be configured for the chatbot to integrate with the Gemini API.
 
-### GCP API Keys
+> [!IMPORTANT]  
+> Please be sure to select **Don't Restrict Key** under your Gemini API Key as you can see below.
 
-To enable the Gemini API, navigate to **"APIs"** from the AI Studio dashboard's left-hand menu, select **"Gemini API"**, and click **"Enable"**.
-https://aistudio.google.com
-
-![Create Gemini Key](./assets/gemini-key.gif)
+![Unrestricted Gemini Key](./assets/gemini-key.png)
 
 
 Google Cloud credentials are required for Flink AI to connect to Vertex AI, as well as for deploying resources using 
@@ -243,6 +241,24 @@ on the bottom right (after you log in) to have a conversation. Consider question
 ```
 ./destroy.sh
 ```
+## FAQ
+### When I run destroy.sh I encounter **gcp reauth needed** error. How can I solve this problem?
+The credentials associated with the session have expired due to a timeout.
+Reauthentication is not enabled while you have an existing **.config** file.
+Try deleting both **.config** files under `root` and `/services` directory.
+
+### Which deploy.sh and destroy.sh should I run?
+When deploying and destroying the project please run the root directory script files.
+
+
+### Is there a shortcut to pass environment variables once instead providing them every time I deploy?
+Yes, after your first deploy you can find all of them under your .env file. Be sure to export these variables before your next deploy.
+
+### I am hitting "Error: error reading Kafka Topic: 401 API-key based authentication failed.: API-key based authentication failed." error while rotating my keys. How can I fix this?
+Kindly check if this is a key propagation issue and if the enough time has passed after creation. Check if all permissions, ACLs, etc are correctly set.
+If everything looks in place then most probably the revoked API values were cached in the credentials section of the terraform resource confluent_kafka_topic.
+A `terraform apply -refresh=false` under `/infrastructure` directory should correct the issue.
+
 
 ## Next Steps - Improving the Results
 
