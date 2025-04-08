@@ -173,6 +173,15 @@ By completing these steps, your Google Cloud environment will be configured for 
 
 ![Unrestricted Gemini Key](./assets/gemini-key.png)
 
+If not enabled yet please navigate to the **+Enable APIs and Services** tab to enable APIs below.
+- Artifact Registry API
+- Cloud Build API
+- Cloud Run Admin API
+- Cloud Logging API
+- BigQuery API
+- Compute Engine API
+- Identity and Access Management (IAM) API
+- Cloud Pub/Sub API
 
 Google Cloud credentials are required for Flink AI to connect to Vertex AI, as well as for deploying resources using 
 Terraform. You will need a service account key with appropriate IAM permissions.
