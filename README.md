@@ -173,6 +173,15 @@ By completing these steps, your Google Cloud environment will be configured for 
 
 ![Unrestricted Gemini Key](./assets/gemini-key.png)
 
+If not enabled yet please navigate to the **+Enable APIs and Services** tab to enable APIs below.
+- Artifact Registry API
+- Cloud Build API
+- Cloud Run Admin API
+- Cloud Logging API
+- BigQuery API
+- Compute Engine API
+- Identity and Access Management (IAM) API
+- Cloud Pub/Sub API
 
 Google Cloud credentials are required for Flink AI to connect to Vertex AI, as well as for deploying resources using 
 Terraform. You will need a service account key with appropriate IAM permissions.
@@ -258,6 +267,9 @@ Yes, after your first deploy you can find all of them under your .env file. Be s
 Kindly check if this is a key propagation issue and if the enough time has passed after creation. Check if all permissions, ACLs, etc are correctly set.
 If everything looks in place then most probably the revoked API values were cached in the credentials section of the terraform resource confluent_kafka_topic.
 A `terraform apply -refresh=false` under `/infrastructure` directory should correct the issue.
+
+### Do I need to provide credit card information when I create an account at Google Cloud Platform and Confluent Cloud?
+Yes, please provide your credit card information if you do not already have an account at GCP or Confluent Cloud and need to create one for this quickstart.
 
 
 ## Next Steps - Improving the Results
