@@ -1,5 +1,5 @@
 resource "mongodbatlas_project" "project" {
-  name   = var.mongodbatlas_project
+  name   = "${var.mongodbatlas_project}-${lower(var.unique_id)}"
   org_id = var.mongodbatlas_org_id
 }
 
