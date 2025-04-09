@@ -1,20 +1,23 @@
 ARG IMAGE_ARCH
-FROM ubuntu:22.04-${IMAGE_ARCH}
+FROM --platform=${IMAGE_ARCH} fedora:latest
 
-# install terraform
-RUN dnf install -y dnf-plugins-core && \
-    dnf config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo && \
+RUN dnf -y update && \
+    dnf -y install dnf-plugins-core curl gnupg unzip jq && \
+    \
+    # Add HashiCorp repo and install the latest Terraform
+    curl -fsSL https://rpm.releases.hashicorp.com/fedora/hashicorp.repo -o /etc/yum.repos.d/hashicorp.repo && \
     dnf -y install terraform && \
-    dnf clean all
-
-# install confluent cli
-RUN dnf config-manager --add-repo https://packages.confluent.io/confluent-cli/rpm/confluent-cli.repo && \
+    \
+    # Add Confluent repo and install the latest Confluent CLI
+    curl -sL --http1.1 https://packages.confluent.io/rpm/7.6/archive.key | gpg --dearmor -o /etc/pki/rpm-gpg/RPM-GPG-KEY-confluent && \
+    curl -fsSL https://packages.confluent.io/rpm/7.6/confluent.repo -o /etc/yum.repos.d/confluent.repo && \
     dnf -y install confluent-cli && \
+    \
+    # Clean up
     dnf clean all
 
 WORKDIR /app
 
-# make the directories for frontend and infrastructure
 RUN mkdir -p infrastructure
 
 WORKDIR /app/infrastructure
