@@ -28,7 +28,7 @@ from
     `gcs_medications`,
     LATERAL TABLE (
         ML_PREDICT (
-            'GCPGeneralModel',
+            'GCPGeneralModel$1',
             (
 '
 <instructions>

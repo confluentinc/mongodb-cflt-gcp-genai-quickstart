@@ -60,6 +60,45 @@ module "confluent_cloud_cluster" {
   ]
 }
 
+# Wait for insert-data statements to start and data to flow to MongoDB
+# This gives time for the MongoDB sink connector to create the collection
+resource "time_sleep" "wait_for_collection" {
+  depends_on = [
+    module.confluent_cloud_cluster.insert_data_statements
+  ]
+  
+  create_duration = "5m"
+}
+
+# Verify network connectivity to MongoDB Atlas API before creating search index
+# This helps catch DNS/network issues early
+resource "null_resource" "verify_mongodb_connectivity" {
+  depends_on = [
+    time_sleep.wait_for_collection
+  ]
+
+  provisioner "local-exec" {
+    command = <<-EOT
+      # Retry DNS lookup up to 5 times with 10 second intervals
+      for i in 1 2 3 4 5; do
+        if nslookup cloud.mongodb.com > /dev/null 2>&1 || getent hosts cloud.mongodb.com > /dev/null 2>&1; then
+          echo "DNS resolution successful"
+          exit 0
+        fi
+        echo "DNS lookup attempt $i failed, retrying in 10 seconds..."
+        sleep 10
+      done
+      echo "ERROR: Unable to resolve cloud.mongodb.com after 5 attempts"
+      exit 1
+    EOT
+  }
+
+  triggers = {
+    # Re-run if dependencies change
+    insert_statements = jsonencode(module.confluent_cloud_cluster.insert_data_statements)
+  }
+}
+
 resource "mongodbatlas_search_index" "search-vector" {
   name            = "${var.mongodbatlas_collection}-vector"
   project_id      = module.mongodb.project_id
@@ -68,8 +107,15 @@ resource "mongodbatlas_search_index" "search-vector" {
   database        = var.mongodbatlas_database
   type            = "vectorSearch"
   depends_on = [
-    module.confluent_cloud_cluster
+    time_sleep.wait_for_collection,
+    null_resource.verify_mongodb_connectivity
   ]
+  
+  # Retry on transient network errors
+  lifecycle {
+    create_before_destroy = true
+  }
+  
   fields = <<-EOF
 [{
       "type": "vector",

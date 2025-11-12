@@ -40,3 +40,8 @@ output "organization_id" {
   value       = data.confluent_organization.main.id
   description = "Confluent Cloud Organization ID"
 }
+
+output "insert_data_statements" {
+  value       = confluent_flink_statement.insert-data
+  description = "Flink insert-data statements that populate MongoDB collections"
+}

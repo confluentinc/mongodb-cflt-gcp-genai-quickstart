@@ -9,7 +9,7 @@ FROM
     `chat_input_with_medications` /*+ OPTIONS('scan.startup.mode'='latest-offset') */,
     LATERAL TABLE (
         ML_PREDICT (
-            'GCPGeneralModel',
+            'GCPGeneralModel$1',
             (
 'You are a highly knowledgeable and responsible virtual doctor specializing in providing guidance on medications. Your goal is to help users determine the right medication for their symptoms while ensuring safety. You engage in a conversational manner, gathering necessary details gradually, like a real doctor would.
 

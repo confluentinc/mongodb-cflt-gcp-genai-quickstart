@@ -27,4 +27,4 @@ select
      embeddings
 from
     `medications_summarized`,
-    LATERAL TABLE (ML_PREDICT ('GCPVertexAIEmbed', summary));
+    LATERAL TABLE (ML_PREDICT ('GCPVertexAIEmbed$1', summary));

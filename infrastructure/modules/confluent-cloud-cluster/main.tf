@@ -779,6 +779,16 @@ resource "confluent_connector" "mongo-db-sink" {
   ]
 }
 
+# Wait for models to be fully provisioned and registered before using them
+# Models need time to be fully registered in the Flink catalog after creation
+resource "time_sleep" "wait_for_models" {
+  depends_on = [
+    confluent_flink_statement.create-models
+  ]
+  
+  create_duration = "60s"
+}
+
 resource "confluent_flink_statement" "insert-data" {
   for_each = var.insert_data_sql_files
   organization {
@@ -810,7 +820,8 @@ resource "confluent_flink_statement" "insert-data" {
   depends_on = [
     confluent_flink_statement.create-tables,
     confluent_flink_statement.create-models,
-    confluent_connector.mongo-db-sink
+    confluent_connector.mongo-db-sink,
+    time_sleep.wait_for_models
   ]
   lifecycle {
     ignore_changes = [rest_endpoint, organization[0].id]
