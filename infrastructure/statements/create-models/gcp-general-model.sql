@@ -5,6 +5,5 @@ WITH
         'provider' = 'googleai',
         'googleai.connection' = 'gcp-gemini-connection',
         'googleai.client_timeout' = '120',
-        'googleai.system_prompt' = '',
-        'googleai.safety_settings' = 'BLOCK_NONE'
+        'googleai.system_prompt' = ''
     );
