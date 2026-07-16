@@ -35,7 +35,7 @@
     <properties>
         <java.version>21</java.version>
         <confluent.version>7.9.1-140</confluent.version>
-        <kstream.version>3.9.0</kstream.version>
+        <kstream.version>4.3.1</kstream.version>
         <springboot.version>3.4.4</springboot.version>
         <spingkafka.version>3.3.2</spingkafka.version>
         <lombok.version>1.18.38</lombok.version>
