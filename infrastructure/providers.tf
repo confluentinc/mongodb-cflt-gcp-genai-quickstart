@@ -6,11 +6,11 @@ terraform {
     }
     gcp = {
       source  = "hashicorp/google"
-      version = "~> 6.25.0"
+      version = "~> 6.50.0"
     }
     mongodbatlas = {
       source  = "mongodb/mongodbatlas"
-      version = "1.21.4"
+      version = "1.41.1"
     }
   }
 }
