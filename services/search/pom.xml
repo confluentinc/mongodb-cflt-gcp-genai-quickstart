@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.4.4</version>
+        <version>3.5.16</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -37,10 +37,10 @@
         <java.version>21</java.version>
         <confluent.version>7.9.1-140</confluent.version>
         <kstream.version>3.9.0</kstream.version>
-        <springboot.version>3.4.4</springboot.version>
+        <springboot.version>3.5.16</springboot.version>
         <spingkafka.version>3.3.2</spingkafka.version>
-        <lombok.version>1.18.38</lombok.version>
-        <mongo.version>5.4.0</mongo.version>
+        <lombok.version>1.18.46</lombok.version>
+        <mongo.version>5.10.0</mongo.version>
     </properties>
 
     <dependencies>
